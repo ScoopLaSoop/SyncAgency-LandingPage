@@ -1,0 +1,32 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout
+  title="Page introuvable (404) — SyncAgency"
+  description="Cette page n'existe pas ou a été déplacée. Retrouve le CRM des agences OFM SyncAgency depuis l'accueil."
+  pageKey="crm"
+>
+  <Fragment slot="head">
+    <meta name="robots" content="noindex" />
+  </Fragment>
+
+  <section class="section section--hero spotlight-zone" style="min-height: 70vh; display: flex; align-items: center;">
+    <div class="glow-blobs">
+      <div class="glow-blob glow-blob-1"></div>
+      <div class="glow-blob glow-blob-2"></div>
+    </div>
+    <div class="container fade-in-up" style="max-width: 640px; text-align: center;">
+      <p style="font-size: 72px; font-weight: 800; color: #8AA5FF; line-height: 1; margin-bottom: 8px;">404</p>
+      <h1 style="font-size: 32px; font-weight: 800; color: #F2F2F2; margin-bottom: 16px;">Cette page n'existe pas.</h1>
+      <p style="font-size: 16px; color: #999; line-height: 1.7; margin-bottom: 32px;">
+        Le lien est peut-être cassé ou la page a été déplacée. Voici par où continuer.
+      </p>
+      <div style="display: flex; gap: 12px; justify-content: center; flex-wrap: wrap;">
+        <a href="/" class="btn-primary">Accueil</a>
+        <a href="/marketing" class="btn-secondary">Growth Marketing</a>
+        <a href="/migration-infloww" class="btn-secondary">Migration Infloww</a>
+        <a href="/blog" class="btn-secondary">Blog</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -6,7 +6,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
   title="About SyncAgency — The CRM for creator talent agencies"
   description="SyncAgency: the CRM for creator talent agencies managing operations on Telegram and WhatsApp. Our mission, story, and the team behind the product."
   pageKey="about"
-  ogImage="/assets/images/og-default.jpg"
+  ogImage="/og/og-about.png"
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify({
@@ -136,7 +136,7 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
       </div>
       <div style="display: flex; justify-content: center;">
         <div class="about-team-card">
-          <img src="/assets/images/lucas-avatar.jpg" alt="Lucas Provenzano — Founder SyncAgency" class="about-team-photo" />
+          <img src="/assets/images/lucas-avatar.jpg" alt="Lucas Provenzano — Founder SyncAgency" class="about-team-photo" width="100" height="100" loading="lazy" />
           <h3 class="about-team-name">Lucas Provenzano</h3>
           <p class="about-team-role">Founder &amp; CEO</p>
           <p class="about-team-bio">

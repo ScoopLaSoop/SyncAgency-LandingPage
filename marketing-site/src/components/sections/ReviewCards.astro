@@ -67,7 +67,7 @@ function renderStars(n: number = 5): string {
             <div class="review-card">
               <div class="review-card-header">
                 {card.avatar && (
-                  <img src={card.avatar} alt={card.name} class="review-avatar-photo" width="48" height="48" />
+                  <img src={card.avatar} alt={card.name} class="review-avatar-photo" width="48" height="48" loading="lazy" />
                 )}
                 <div>
                   <strong class="review-card-name">{card.name}</strong>

@@ -3,6 +3,11 @@
   "trailingSlash": false,
   "redirects": [
     {
+      "source": "/en/terms",
+      "destination": "/en/cgu",
+      "permanent": true
+    },
+    {
       "source": "/:path*",
       "has": [{ "type": "host", "value": "syncagency.fr" }],
       "destination": "https://www.syncagency.fr/:path*",

@@ -5,8 +5,37 @@ const articles = [
   { title: "Google Sheet pour agence OFM : pourquoi c'est mathématiquement impossible de scaler", slug: "google-sheet-agence-ofm-pas-scaler", date: "10-05-2026", excerpt: "Analyse des 4 douleurs du tracking manuel et pourquoi un vrai CRM change tout." },
   { title: "Processeur de paiement pour agence OFM : Dropp Fans vs SyncAgency vs Stripe", slug: "processeur-paiement-ofm-comparatif", date: "10-05-2026", excerpt: "Comparatif chiffré des solutions de paiement pour agences OnlyFans Management." }
 ];
+
+const schemaCollection = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "Blog SyncAgency",
+  "description": "Articles sur le CRM Telegram pour agences OFM, l'acquisition Instagram/TikTok, et les outils de paiement.",
+  "url": "https://www.syncagency.fr/blog",
+  "inLanguage": "fr-FR",
+  "isPartOf": { "@id": "https://www.syncagency.fr/#organization" },
+  "hasPart": articles.map((a) => ({
+    "@type": "BlogPosting",
+    "headline": a.title,
+    "url": `https://www.syncagency.fr/blog/${a.slug}`,
+    "description": a.excerpt,
+  })),
+};
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.syncagency.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.syncagency.fr/blog" },
+  ],
+};
 ---
 <BaseLayout title="Blog SyncAgency — CRM et Marketing pour agences OFM" description="Articles sur le CRM Telegram pour agences OFM, l'acquisition Instagram/TikTok, et les outils de paiement." pageKey="crm" ogImage="/og/og-blog.png">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaCollection)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  </Fragment>
   <section class="section section--pain" id="blog">
     <div class="container">
       <div style="text-align:center;margin-bottom:56px;">

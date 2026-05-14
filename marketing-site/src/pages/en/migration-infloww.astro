@@ -5,8 +5,19 @@ const schemaBreadcrumb = {
   "@context": "https://schema.org",
   "@type": "BreadcrumbList",
   "itemListElement": [
-    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.syncagency.fr/en/" },
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.syncagency.fr/en" },
     { "@type": "ListItem", "position": 2, "name": "Migration from Infloww", "item": "https://www.syncagency.fr/en/migration-infloww" }
+  ]
+};
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "How long does the migration take?", "acceptedAnswer": { "@type": "Answer", "text": "Usually 24 to 48 hours depending on data volume. A SyncAgency team member walks you through it step by step. You don't migrate alone." } },
+    { "@type": "Question", "name": "What about my Infloww data — history, contacts, scripts?", "acceptedAnswer": { "@type": "Answer", "text": "We can import your contacts, scripts and history into the SyncAgency format. An export from Infloww plus a guided import is all it takes. Nothing is lost." } },
+    { "@type": "Question", "name": "Do my chatters need to reconnect?", "acceptedAnswer": { "@type": "Answer", "text": "No. Your chatters keep working from their usual interface. You're the one switching tools on the agency side — they don't see a thing." } },
+    { "@type": "Question", "name": "What exactly is the Empire OS plan?", "acceptedAnswer": { "@type": "Answer", "text": "Empire OS = Core Chatting (Telegram/WhatsApp CRM, Vault, Mass DM, 20% payments) + Growth Marketing (Instagram/TikTok/Twitter tracking, attribution, A/B testing) in a single plan at €129/model/month." } }
   ]
 };
 ---
@@ -19,6 +30,7 @@ const schemaBreadcrumb = {
 >
   <Fragment slot="head">
     <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
   </Fragment>
 
   <style>

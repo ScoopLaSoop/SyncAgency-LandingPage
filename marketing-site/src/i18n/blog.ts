@@ -13,4 +13,4 @@ export const blogSlugEnToFr: Record<string, string> = Object.fromEntries(
 );
 
 // Pages that exist only in English (no FR equivalent yet).
-export const enOnlyPaths = ['/cookies', '/terms'];
+export const enOnlyPaths = ['/cookies'];

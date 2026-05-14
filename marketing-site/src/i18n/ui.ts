@@ -32,6 +32,7 @@ export const ui = {
     'nav.about': 'À propos',
     'nav.pricing': 'Tarifs',
     'nav.faq': 'FAQ',
+    'nav.blog': 'Blog',
     'nav.login': 'Connexion',
     'nav.ctaTrial': '7 jours gratuits',
     // Footer
@@ -89,6 +90,7 @@ export const ui = {
     'nav.about': 'About',
     'nav.pricing': 'Pricing',
     'nav.faq': 'FAQ',
+    'nav.blog': 'Blog',
     'nav.login': 'Log in',
     'nav.ctaTrial': 'Start free',
     'footer.tagline.crm': 'The CRM for creator talent agencies managing on Telegram.',

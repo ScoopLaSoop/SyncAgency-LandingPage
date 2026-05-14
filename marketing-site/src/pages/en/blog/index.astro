@@ -5,8 +5,37 @@ const articles = [
   { title: "Google Sheet for OFM agency: why it's mathematically impossible to scale", slug: "google-sheet-ofm-cannot-scale", date: "10-05-2026", excerpt: "An analysis of the 4 pain points of manual tracking and why a real CRM changes everything." },
   { title: "Payment processor for OFM agency: Dropp Fans vs SyncAgency vs Stripe", slug: "payment-processor-ofm-comparison", date: "10-05-2026", excerpt: "A data-driven comparison of payment solutions for OnlyFans Management agencies." }
 ];
+
+const schemaCollection = {
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "name": "SyncAgency Blog",
+  "description": "Articles on the Telegram CRM for OFM agencies, Instagram/TikTok acquisition, and payment tools.",
+  "url": "https://www.syncagency.fr/en/blog",
+  "inLanguage": "en-US",
+  "isPartOf": { "@id": "https://www.syncagency.fr/#organization" },
+  "hasPart": articles.map((a) => ({
+    "@type": "BlogPosting",
+    "headline": a.title,
+    "url": `https://www.syncagency.fr/en/blog/${a.slug}`,
+    "description": a.excerpt,
+  })),
+};
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.syncagency.fr/en" },
+    { "@type": "ListItem", "position": 2, "name": "Blog", "item": "https://www.syncagency.fr/en/blog" },
+  ],
+};
 ---
 <BaseLayout lang="en" title="SyncAgency Blog — CRM and Marketing for OFM agencies" description="Articles on the Telegram CRM for OFM agencies, Instagram/TikTok acquisition, and payment tools." pageKey="crm" ogImage="/og/og-blog.png">
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaCollection)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  </Fragment>
   <section class="section section--pain" id="blog">
     <div class="container">
       <div style="text-align:center;margin-bottom:56px;">

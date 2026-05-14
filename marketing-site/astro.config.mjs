@@ -5,6 +5,7 @@ import sitemap from '@astrojs/sitemap';
 export default defineConfig({
   site: 'https://www.syncagency.fr',
   output: 'static',
+  trailingSlash: 'never',
   i18n: {
     defaultLocale: 'fr',
     locales: ['fr', 'en'],

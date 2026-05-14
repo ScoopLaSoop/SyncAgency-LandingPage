@@ -25,7 +25,29 @@ Première passe de corrections réalisée après l'audit :
   navigateur / la géolocalisation. Le site sert le FR par défaut à la racine ; l'EN reste
   accessible manuellement via le `LanguageSwitcher`.
 
-Les autres points du tableau §3 restent à traiter.
+### Deuxième passe (reste du plan d'action §4)
+
+- ✅ **`llms.txt`** réécrit : domaine `www`, pages `/about` + mentions légales ajoutées,
+  couverture EN complète, prix/offres à jour.
+- ✅ **Conflit de slash résolu** : `trailingSlash: 'never'` dans `astro.config.mjs` +
+  `getAlternateUrls` normalisé → canonical, `hreflang` et sitemap émettent désormais des URL
+  sans slash final, cohérentes avec la config Vercel.
+- ✅ **`aggregateRating` retiré** des schémas `SoftwareApplication` (`index.astro` FR + EN).
+- ✅ **`/empire` reliée** depuis le header (dropdown + mobile) et le footer ; **Blog ajouté**
+  au header (desktop + mobile), nouvelle clé i18n `nav.blog`.
+- ✅ **`/en/terms` supprimée** : page-redirection retirée, redirection 301 ajoutée dans
+  `vercel.json` (`/en/terms` → `/en/cgu`), `enOnlyPaths` nettoyé — plus présente au sitemap.
+- ✅ **`FAQPage`** ajouté sur `/migration-infloww` (FR + EN) ; **`CollectionPage` +
+  `BreadcrumbList`** ajoutés sur le blog index (FR + EN), articles typés `BlogPosting`.
+- ✅ **Page 404 personnalisée** créée (`src/pages/404.astro`, `noindex`, maillage de secours).
+- ✅ **`sameAs` alignés** FR/EN (5 profils des deux côtés) ; **OG de `en/about`** pointé sur
+  `og-about.png` au lieu du fallback générique.
+- ✅ **Performance** : `preconnect` PostHog ajouté ; `loading="lazy"` + dimensions sur les
+  images sous la ligne de flottaison (avatars d'avis, photo équipe).
+
+Restent ouverts (non bloquants) : `font-display` explicite, titres des pages légales,
+liens sociaux `taap.it` du footer (URLs réelles inconnues — à fournir), vélocité éditoriale
+du blog, schémas `WebSite`+`SearchAction` / `Person` / `Product-Offer` détaillés.
 
 ---
 

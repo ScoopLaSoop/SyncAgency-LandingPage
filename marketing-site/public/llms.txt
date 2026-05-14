@@ -1,24 +1,36 @@
 # SyncAgency
 
-> Le CRM des agences OFM qui chattent sur Telegram. Tout le chatting hors-plateforme + le marketing dans un seul outil.
+> Le CRM des agences OFM (OnlyFans Management) qui chattent sur Telegram et WhatsApp. Tout le chatting hors-plateforme + le marketing d'acquisition dans un seul outil. Lancé en 2026.
 
-## Pages principales
+## Pages principales (FR)
 
-- [Landing CRM Telegram](https://syncagency.fr/) : CRM pour agences OFM qui chattent sur Telegram, WhatsApp et plateformes privées. Vault PPV, Mass DM, processeur de paiement intégré 20%.
-- [Landing Marketing](https://syncagency.fr/marketing) : Tracking acquisition organique sur Instagram, TikTok, Twitter pour agences OFM. Scraping automatique, attribution funnel, A/B testing.
-- [Migration depuis Infloww](https://syncagency.fr/migration-infloww) : Comparatif et guide de migration depuis Infloww vers SyncAgency. Migration assistée gratuite sur Empire OS.
-- [Programme d'affiliation 40%](https://syncagency.fr/affiliation) : Programme de parrainage avec 40% de commission récurrente à vie sur chaque abonnement actif.
-- [Blog](https://syncagency.fr/blog) : Articles sur le CRM pour agences OFM, la comparaison avec Infloww, le tracking acquisition.
+- [Landing CRM Telegram](https://www.syncagency.fr/) : CRM pour agences OFM qui chattent sur Telegram, WhatsApp et plateformes privées. Vault PPV, Mass DM, processeur de paiement intégré 20%.
+- [Landing Marketing](https://www.syncagency.fr/marketing) : Tracking acquisition organique sur Instagram, TikTok, Twitter pour agences OFM. Scraping automatique, attribution funnel, A/B testing.
+- [Migration depuis Infloww](https://www.syncagency.fr/migration-infloww) : Comparatif et guide de migration depuis Infloww vers SyncAgency. Migration assistée gratuite sur Empire OS.
+- [Programme d'affiliation 40%](https://www.syncagency.fr/affiliation) : Programme de parrainage avec 40% de commission récurrente à vie sur chaque abonnement actif.
+- [Blog](https://www.syncagency.fr/blog) : Articles sur le CRM pour agences OFM, la comparaison avec Infloww, le tracking d'acquisition.
+- [À propos](https://www.syncagency.fr/about) : Mission, histoire et équipe derrière SyncAgency. Fondateur : Lucas Provenzano.
+- Mentions légales : [CGU](https://www.syncagency.fr/cgu) — [CGV](https://www.syncagency.fr/cgv) — [Confidentialité](https://www.syncagency.fr/privacy).
 
-## Plans tarifaires
+## Main pages (EN)
 
-- Core Chatting : 59€/modèle/mois — CRM Telegram & WhatsApp, Vault PPV, Mass DM, processeur de paiement 20%
-- Growth Marketing : 89€/modèle/mois — Tracking Instagram/TikTok/Twitter, attribution funnel, A/B testing, tracking links illimités
-- Empire OS : 129€/modèle/mois — CRM Chatting + Growth Marketing tout-en-un + migration assistée gratuite
+- [Telegram CRM landing](https://www.syncagency.fr/en/) : CRM for OFM agencies chatting on Telegram, WhatsApp and private platforms. PPV Vault, Mass DM, integrated 20% payment processor.
+- [Marketing landing](https://www.syncagency.fr/en/marketing) : Organic acquisition tracking on Instagram, TikTok, Twitter for OFM agencies.
+- [Migration from Infloww](https://www.syncagency.fr/en/migration-infloww) : Comparison and migration guide from Infloww to SyncAgency. Free assisted migration on Empire OS.
+- [Affiliate program 40%](https://www.syncagency.fr/en/affiliation) : Referral program with 40% lifetime recurring commission on every active subscription.
+- [Blog](https://www.syncagency.fr/en/blog) : Articles on the OFM CRM, the Infloww comparison, acquisition tracking.
+- [About](https://www.syncagency.fr/en/about) : Mission, story and team behind SyncAgency. Founder: Lucas Provenzano.
 
-## Contexte produit
+## Plans tarifaires / Pricing
 
-SyncAgency est un CRM conçu spécifiquement pour les agences OnlyFans Management (OFM) qui opèrent hors des plateformes natives (Telegram, WhatsApp). Il combine chatting centralisé, scripting, paiements et marketing en un seul outil. Comparé à Infloww, SyncAgency est optimisé pour le hors-plateforme et prend 20% de commission processeur (vs 40% chez OnlyFans/MYM).
+- Core Chatting : 59€/modèle/mois — CRM Telegram & WhatsApp, Vault PPV, Mass DM, processeur de paiement 20%.
+- Growth Marketing : 89€/modèle/mois — Tracking Instagram/TikTok/Twitter, attribution funnel, A/B testing, tracking links illimités.
+- Empire OS : 129€/modèle/mois — CRM Chatting + Growth Marketing tout-en-un + migration assistée gratuite.
+- Essai gratuit de 7 jours sur tous les plans, sans carte bancaire / 7-day free trial on all plans, no credit card required.
+
+## Contexte produit / Product context
+
+SyncAgency est un CRM conçu spécifiquement pour les agences OnlyFans Management (OFM) qui opèrent hors des plateformes natives, sur Telegram et WhatsApp. Il combine chatting centralisé, scripting (Vault), processeur de paiement intégré et marketing d'acquisition dans un seul outil. Comparé à Infloww, SyncAgency est optimisé pour le hors-plateforme et prend 20% de commission processeur (vs 40% chez OnlyFans/MYM/Fansly).
 
 ## Contact
 

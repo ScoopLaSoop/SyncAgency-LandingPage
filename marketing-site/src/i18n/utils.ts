@@ -69,7 +69,7 @@ export function getAlternateUrls(url: URL, lang: Lang): { fr: string | null; en:
     enPath = `/en${logical}`;
   } else {
     frPath = logical;
-    enPath = logical === '/' ? '/en/' : `/en${logical}`;
+    enPath = logical === '/' ? '/en' : `/en${logical}`;
   }
 
   return {

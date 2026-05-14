@@ -17,7 +17,9 @@ const headerCtaAttr = pageKey === 'marketing' ? 'header-7j-gratuits' : '7_jours_
 
 const homeHref = localizedPath('/', lang);
 const marketingHref = localizedPath('/marketing', lang);
+const empireHref = localizedPath('/empire', lang);
 const aboutHref = localizedPath('/about', lang);
+const blogHref = localizedPath('/blog', lang);
 const affiliationHref = localizedPath(
   `/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`,
   lang,
@@ -37,13 +39,14 @@ const affiliationHref = localizedPath(
       <div class="nav-dropdown-panel" role="menu">
         <a href={homeHref} class="nav-dropdown-item" role="menuitem">{t('nav.crm')}</a>
         <a href={marketingHref} class="nav-dropdown-item" role="menuitem">{t('nav.marketing')}</a>
-        <a href="#" class="nav-dropdown-item nav-dropdown-item--disabled" role="menuitem" aria-disabled="true">
+        <a href={empireHref} class="nav-dropdown-item" role="menuitem">
           {t('nav.empireOs')} <span class="footer-badge-soon">{t('nav.soon')}</span>
         </a>
       </div>
     </div>
     <a href={affiliationHref} class="header-nav-link">{t('nav.affiliation')}</a>
     <a href={aboutHref} class="header-nav-link">{t('nav.about')}</a>
+    <a href={blogHref} class="header-nav-link">{t('nav.blog')}</a>
     <a href={pricingHref} class="header-nav-link">{t('nav.pricing')}</a>
     <a href={faqHref} class="header-nav-link">{t('nav.faq')}</a>
   </nav>
@@ -60,11 +63,12 @@ const affiliationHref = localizedPath(
   <p class="mobile-nav-group-title">{t('nav.product')}</p>
   <a href={homeHref} class="mobile-nav-link">{t('nav.crm')}</a>
   <a href={marketingHref} class="mobile-nav-link">{t('nav.marketing')}</a>
-  <a href="#" class="mobile-nav-link mobile-nav-link--disabled">
+  <a href={empireHref} class="mobile-nav-link">
     {t('nav.empireOs')} <span class="mobile-nav-soon">{t('nav.soon')}</span>
   </a>
   <a href={affiliationHref} class="mobile-nav-link">{t('nav.affiliation')}</a>
   <a href={aboutHref} class="mobile-nav-link">{t('nav.about')}</a>
+  <a href={blogHref} class="mobile-nav-link">{t('nav.blog')}</a>
   <a href={pricingHref} class="mobile-nav-link">{t('nav.pricing')}</a>
   <a href={faqHref} class="mobile-nav-link">{t('nav.faq')}</a>
   <div class="mobile-nav-actions">
