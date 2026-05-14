@@ -39,12 +39,16 @@ export default function middleware(request: Request): Response | undefined {
   if (chosen === 'fr') return;
 
   // 2. First visit — detect preferred language.
+  // The browser's primary language wins; geolocation is only the tiebreaker
+  // for visitors whose browser is set to some other language entirely.
   const country = (request.headers.get('x-vercel-ip-country') ?? '').toUpperCase();
   const accept = (request.headers.get('accept-language') ?? '').toLowerCase();
-  const prefersFr =
-    FR_COUNTRIES.includes(country) ||
-    accept.startsWith('fr') ||
-    accept.includes(',fr');
+  const primaryLang = accept.split(',')[0]?.trim().slice(0, 2);
+
+  let prefersFr: boolean;
+  if (primaryLang === 'fr') prefersFr = true;
+  else if (primaryLang === 'en') prefersFr = false;
+  else prefersFr = FR_COUNTRIES.includes(country);
 
   // FR is the default locale at the root — stay put.
   if (prefersFr) return;
