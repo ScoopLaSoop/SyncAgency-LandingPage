@@ -1,7 +1,0 @@
-User-agent: *
-Allow: /
-Disallow: /_preview
-Disallow: /admin
-Disallow: /api
-
-Sitemap: https://syncagency-en.vercel.app/sitemap-index.xml

@@ -1,8 +1,0 @@
----
-interface Props {
-  intensity?: 'subtle' | 'strong';
-  class?: string;
-}
-const { intensity = 'subtle', class: className } = Astro.props;
----
-<div class={`grid-background grid-background--${intensity}${className ? ' ' + className : ''}`} aria-hidden="true"></div>
