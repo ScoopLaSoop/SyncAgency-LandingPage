@@ -243,10 +243,13 @@ const schemaVideo = {
       }
     }
 
-    /* ── Comparison table ──────────────────────────────────────────────── */
+    /* ── Comparative table ─────────────────────────────────────────────── */
     .vs-table-wrap {
       overflow-x: auto;
       -webkit-overflow-scrolling: touch;
+      border: 1px solid #1E1E1E;
+      border-radius: 16px;
+      background: #0E0E0E;
     }
     .vs-table {
       width: 100%;
@@ -254,70 +257,75 @@ const schemaVideo = {
       min-width: 560px;
     }
     .vs-th {
-      padding: 16px 20px;
+      padding: 20px 24px;
       font-size: 13px;
       font-weight: 600;
       letter-spacing: 0.04em;
       text-align: center;
-      border-bottom: 1px solid rgba(255,255,255,0.07);
+      border-bottom: 1px solid rgba(255,255,255,0.08);
     }
     .vs-th-feature {
       text-align: left;
-      color: var(--color-text-secondary, #999);
+      color: #CCCCCC;
       width: 45%;
     }
     .vs-th-sync {
-      background: rgba(138,165,255,0.06);
-      border-radius: 12px 12px 0 0;
+      background: #131828;
+      border-top: 2px solid rgba(138,165,255,0.7);
+      border-left: 1px solid rgba(138,165,255,0.2);
+      border-right: 1px solid rgba(138,165,255,0.2);
       color: var(--color-primary);
       width: 27.5%;
     }
     .vs-th-comp {
-      color: var(--color-text-tertiary, #737373);
+      color: #555;
       width: 27.5%;
     }
     .vs-th-logo {
       display: block;
       font-size: 15px;
-      margin-bottom: 4px;
+      margin-bottom: 6px;
     }
     .vs-th-badge {
       display: inline-block;
-      background: rgba(138,165,255,0.15);
+      background: rgba(138,165,255,0.2);
       color: var(--color-primary);
       font-size: 10px;
       letter-spacing: 0.08em;
-      padding: 2px 8px;
+      padding: 3px 10px;
       border-radius: 6px;
       text-transform: uppercase;
     }
-    .vs-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+    .vs-table tbody tr:last-child td { border-bottom: none; }
+    .vs-table tbody tr:hover td { background: #141414; }
     .vs-table tbody tr td {
-      padding: 14px 20px;
-      border-bottom: 1px solid rgba(255,255,255,0.04);
+      padding: 15px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
       font-size: 14px;
       transition: background 0.15s;
     }
     .vs-td-feature {
-      color: var(--color-text-secondary, #999);
+      color: #CCCCCC;
       text-align: left;
     }
     .vs-td-sync {
       text-align: center;
-      background: rgba(138,165,255,0.03);
-      color: var(--color-text-primary, #F2F2F2);
+      background: #111620;
+      border-left: 1px solid rgba(138,165,255,0.2);
+      border-right: 1px solid rgba(138,165,255,0.2);
+      color: #F2F2F2;
       font-weight: 500;
     }
     .vs-td-comp {
       text-align: center;
-      color: var(--color-text-tertiary, #737373);
+      color: #4A4A4A;
     }
     .vs-check {
       color: var(--color-primary);
-      font-weight: 600;
+      font-weight: 700;
     }
     .vs-cross {
-      color: #555;
+      color: #3E3E3E;
     }
     .vs-partial {
       color: #F59E0B;
