@@ -1,63 +1,76 @@
 ---
+import { useTranslations, localizedPath, type Lang } from '@/i18n/utils';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+
 interface Props {
   pageKey?: string;
+  lang?: Lang;
 }
 
-const { pageKey = 'crm' } = Astro.props;
+const { pageKey = 'crm', lang = 'fr' } = Astro.props;
+const t = useTranslations(lang);
 
 const isLandingPage = pageKey === 'crm' || pageKey === 'marketing';
-const pricingHref = isLandingPage ? '#pricing' : '/#pricing';
-const faqHref = isLandingPage ? '#faq' : '/#faq';
+const pricingHref = isLandingPage ? '#pricing' : localizedPath('/', lang) + '#pricing';
+const faqHref = isLandingPage ? '#faq' : localizedPath('/', lang) + '#faq';
 const headerCtaAttr = pageKey === 'marketing' ? 'header-7j-gratuits' : '7_jours_gratuits';
+
+const homeHref = localizedPath('/', lang);
+const marketingHref = localizedPath('/marketing', lang);
+const aboutHref = localizedPath('/about', lang);
+const affiliationHref = localizedPath(
+  `/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`,
+  lang,
+);
 ---
 
 <header class="header" id="header">
-  <a href="/" class="header-logo" aria-label="SyncAgency — Accueil">
+  <a href={homeHref} class="header-logo" aria-label={t('header.logoLabel')}>
     <img src="/assets/images/logo-original.webp" alt="" class="header-logo-img" />
     <span class="header-logo-name">SyncAgency</span>
   </a>
-  <nav class="header-nav" aria-label="Navigation principale">
+  <nav class="header-nav" aria-label={t('header.navLabel')}>
     <div class="nav-dropdown" id="navProductDropdown">
       <button class="nav-dropdown-btn" id="navProductBtn" aria-haspopup="true" aria-expanded="false">
-        Produit <i data-lucide="chevron-down" class="nav-chevron" aria-hidden="true"></i>
+        {t('nav.product')} <i data-lucide="chevron-down" class="nav-chevron" aria-hidden="true"></i>
       </button>
       <div class="nav-dropdown-panel" role="menu">
-        <a href="/" class="nav-dropdown-item" role="menuitem">CRM Chatting</a>
-        <a href="/marketing" class="nav-dropdown-item" role="menuitem">Growth Marketing</a>
+        <a href={homeHref} class="nav-dropdown-item" role="menuitem">{t('nav.crm')}</a>
+        <a href={marketingHref} class="nav-dropdown-item" role="menuitem">{t('nav.marketing')}</a>
         <a href="#" class="nav-dropdown-item nav-dropdown-item--disabled" role="menuitem" aria-disabled="true">
-          Empire OS <span class="footer-badge-soon">Bientôt</span>
+          {t('nav.empireOs')} <span class="footer-badge-soon">{t('nav.soon')}</span>
         </a>
       </div>
     </div>
-    <a href={`/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`} class="header-nav-link">Affiliation</a>
-    <a href="/about" class="header-nav-link">À propos</a>
-    <a href={pricingHref} class="header-nav-link">Tarifs</a>
-    <a href={faqHref} class="header-nav-link">FAQ</a>
+    <a href={affiliationHref} class="header-nav-link">{t('nav.affiliation')}</a>
+    <a href={aboutHref} class="header-nav-link">{t('nav.about')}</a>
+    <a href={pricingHref} class="header-nav-link">{t('nav.pricing')}</a>
+    <a href={faqHref} class="header-nav-link">{t('nav.faq')}</a>
   </nav>
   <div class="header-actions">
-    <a href="https://app.syncagency.fr/login" class="header-nav-link header-login">Connexion</a>
-    <a href="https://syncagency-en.vercel.app" class="header-nav-link header-lang" aria-label="Switch to English">🇬🇧 EN</a>
-    <a href={pricingHref} class="btn-primary" data-cta={headerCtaAttr} data-section="header">7 jours gratuits</a>
+    <a href="https://app.syncagency.fr/login" class="header-nav-link header-login">{t('nav.login')}</a>
+    <LanguageSwitcher lang={lang} />
+    <a href={pricingHref} class="btn-primary" data-cta={headerCtaAttr} data-section="header">{t('nav.ctaTrial')}</a>
   </div>
-  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label={t('header.menuLabel')} aria-expanded="false">
     <i data-lucide="menu" class="menu-icon"></i>
   </button>
 </header>
 
-<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Menu mobile" aria-hidden="true">
-  <p class="mobile-nav-group-title">Produit</p>
-  <a href="/" class="mobile-nav-link">CRM Chatting</a>
-  <a href="/marketing" class="mobile-nav-link">Growth Marketing</a>
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label={t('header.mobileNavLabel')} aria-hidden="true">
+  <p class="mobile-nav-group-title">{t('nav.product')}</p>
+  <a href={homeHref} class="mobile-nav-link">{t('nav.crm')}</a>
+  <a href={marketingHref} class="mobile-nav-link">{t('nav.marketing')}</a>
   <a href="#" class="mobile-nav-link mobile-nav-link--disabled">
-    Empire OS <span class="mobile-nav-soon">Bientôt</span>
+    {t('nav.empireOs')} <span class="mobile-nav-soon">{t('nav.soon')}</span>
   </a>
-  <a href={`/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`} class="mobile-nav-link">Affiliation</a>
-  <a href="/about" class="mobile-nav-link">À propos</a>
-  <a href={pricingHref} class="mobile-nav-link">Tarifs</a>
-  <a href={faqHref} class="mobile-nav-link">FAQ</a>
+  <a href={affiliationHref} class="mobile-nav-link">{t('nav.affiliation')}</a>
+  <a href={aboutHref} class="mobile-nav-link">{t('nav.about')}</a>
+  <a href={pricingHref} class="mobile-nav-link">{t('nav.pricing')}</a>
+  <a href={faqHref} class="mobile-nav-link">{t('nav.faq')}</a>
   <div class="mobile-nav-actions">
-    <a href="https://app.syncagency.fr/login" class="mobile-nav-link">Connexion</a>
-    <a href={pricingHref} class="btn-primary" data-cta={headerCtaAttr} data-section="mobile_nav">7 jours gratuits</a>
+    <a href="https://app.syncagency.fr/login" class="mobile-nav-link">{t('nav.login')}</a>
+    <a href={pricingHref} class="btn-primary" data-cta={headerCtaAttr} data-section="mobile_nav">{t('nav.ctaTrial')}</a>
   </div>
 </div>
 

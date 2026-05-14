@@ -1,4 +1,6 @@
 ---
+import { useTranslations, type Lang } from '@/i18n/utils';
+
 interface Bullet {
   label: string;       // texte en gras (ex: "Connexion en QR code :")
   text: string;        // suite du texte
@@ -18,10 +20,13 @@ interface Props {
   items: SolutionItem[];
   idPrefix?: string;
   mode?: 'crm' | 'marketing';
+  lang?: Lang;
 }
 
-const { introTitle, items, idPrefix = 'solution-', mode = 'crm' } = Astro.props;
+const { introTitle, items, idPrefix = 'solution-', mode = 'crm', lang = 'fr' } = Astro.props;
+const t = useTranslations(lang);
 const ctaClass = mode === 'marketing' ? 'btn-tertiary mktg-micro-cta' : 'btn-tertiary';
+const videoComing = t('solution.videoComing');
 
 // index pair (0, 2, 4…) → section--solution-odd (#080808), vidéo gauche / texte droite
 // index impair (1, 3, 5…) → section--solution-even (#0A0D1A), vidéo droite / texte gauche (--reverse)
@@ -46,7 +51,7 @@ const ctaClass = mode === 'marketing' ? 'btn-tertiary mktg-micro-cta' : 'btn-ter
           <div class="solution-video-card mktg-video-ph">
             <div class="mktg-ph-inner">
               <i data-lucide="video"></i>
-              <span>VIDÉO À VENIR</span>
+              <span>{videoComing}</span>
             </div>
           </div>
         )}
@@ -66,7 +71,7 @@ const ctaClass = mode === 'marketing' ? 'btn-tertiary mktg-micro-cta' : 'btn-ter
           <div class="solution-video-card mktg-video-ph">
             <div class="mktg-ph-inner">
               <i data-lucide="video"></i>
-              <span>VIDÉO À VENIR</span>
+              <span>{videoComing}</span>
             </div>
           </div>
         )}

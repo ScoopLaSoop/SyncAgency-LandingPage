@@ -1,4 +1,6 @@
 ---
+import { useTranslations, type Lang } from '@/i18n/utils';
+
 interface FAQItem {
   question: string;
   answer: string;
@@ -10,9 +12,11 @@ interface Props {
   items: FAQItem[];
   contact: string;
   idPrefix?: string;
+  lang?: Lang;
 }
 
-const { title, subtitle, items, contact, idPrefix = 'faq' } = Astro.props;
+const { title, subtitle, items, contact, idPrefix = 'faq', lang = 'fr' } = Astro.props;
+const t = useTranslations(lang);
 
 const delayClasses = ['delay-1', 'delay-2', 'delay-3', 'delay-4'];
 ---
@@ -40,9 +44,9 @@ const delayClasses = ['delay-1', 'delay-2', 'delay-3', 'delay-4'];
     </div>
 
     <p class="faq-contact fade-in-up">
-      Une question qui n'est pas dans la liste ?{' '}
+      {t('faq.contactPrompt')}{' '}
       {contact.startsWith('http') ? (
-        <a href={contact} class="faq-link" target="_blank" rel="noopener">Contacte-nous sur Telegram</a>
+        <a href={contact} class="faq-link" target="_blank" rel="noopener">{t('faq.contactLink')}</a>
       ) : (
         <a href={`mailto:${contact}`} class="faq-link">{contact}</a>
       )}.

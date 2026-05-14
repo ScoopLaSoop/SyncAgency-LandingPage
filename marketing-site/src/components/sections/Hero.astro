@@ -1,4 +1,6 @@
 ---
+import { useTranslations, type Lang } from '@/i18n/utils';
+
 interface HeroData {
   eyebrow: string;
   h1: string;
@@ -15,14 +17,19 @@ interface Props {
   data: HeroData;
   pageKey?: 'crm' | 'marketing';
   ctaDataAttr?: string;
+  lang?: Lang;
 }
 
-const { data, pageKey = 'crm', ctaDataAttr = 'hero-cta' } = Astro.props;
+const { data, pageKey = 'crm', ctaDataAttr = 'hero-cta', lang = 'fr' } = Astro.props;
+const t = useTranslations(lang);
 
 const isMarketing = pageKey === 'marketing';
 const vslId = isMarketing ? 'vslMarketing' : 'vslChatting';
 const vslWrapperId = isMarketing ? 'vslMarketingWrap' : 'vslChattingWrap';
 const vslOverlayId = isMarketing ? 'vslMarketingOverlay' : 'vslChattingOverlay';
+
+// No VSL video → centered text-only hero.
+const isCentered = !data.vslSrc;
 ---
 
 <section class="section section--hero spotlight-zone" id="hero">
@@ -30,13 +37,27 @@ const vslOverlayId = isMarketing ? 'vslMarketingOverlay' : 'vslChattingOverlay';
     <div class="glow-blob glow-blob-1"></div>
     <div class="glow-blob glow-blob-2"></div>
   </div>
-  <div class={`container hero-inner${isMarketing ? ' mktg-hero-reversed' : ''}`}>
 
-    {isMarketing ? (
-      <>
-        <!-- Marketing : VSL à gauche, texte à droite -->
-        <div class="hero-vsl-col fade-in-up delay-2">
-          {data.vslSrc && (
+  {isCentered ? (
+    <div class="container hero-inner hero-inner--centered">
+      <div class="hero-text fade-in-up">
+        <p class="hero-eyebrow eyebrow eyebrow--animated" set:html={data.eyebrow} />
+        <h1 class="hero-h1">{data.h1}</h1>
+        <p class="hero-subtitle" set:html={data.subtitle} />
+        <div class="hero-cta-group">
+          <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero">
+            {data.ctaText}
+          </a>
+          <p class="hero-reassurance">{data.reassurance}</p>
+        </div>
+      </div>
+    </div>
+  ) : (
+    <div class={`container hero-inner${isMarketing ? ' mktg-hero-reversed' : ''}`}>
+      {isMarketing ? (
+        <>
+          <!-- Marketing : VSL à gauche, texte à droite -->
+          <div class="hero-vsl-col fade-in-up delay-2">
             <div class="vsl-video-wrap" id={vslWrapperId}>
               <video
                 class="vsl-video"
@@ -52,7 +73,7 @@ const vslOverlayId = isMarketing ? 'vslMarketingOverlay' : 'vslChattingOverlay';
                 class="vsl-video-overlay"
                 id={vslOverlayId}
                 role="button"
-                aria-label="Lire la vidéo de présentation"
+                aria-label={t('hero.videoPlayLabel')}
                 tabindex="0"
               >
                 <div class="testi-video-play">
@@ -62,44 +83,42 @@ const vslOverlayId = isMarketing ? 'vslMarketingOverlay' : 'vslChattingOverlay';
                 </div>
               </div>
             </div>
-          )}
-          <div class="hero-cta-group hero-cta-mobile">
-            <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero_mobile">
-              {data.ctaText}
-            </a>
-            <p class="hero-reassurance">{data.reassurance}</p>
+            <div class="hero-cta-group hero-cta-mobile">
+              <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero_mobile">
+                {data.ctaText}
+              </a>
+              <p class="hero-reassurance">{data.reassurance}</p>
+            </div>
           </div>
-        </div>
 
-        <div class="hero-text fade-in-up">
-          <p class="hero-eyebrow eyebrow eyebrow--animated" set:html={data.eyebrow} />
-          <h1 class="hero-h1">{data.h1}</h1>
-          <p class="hero-subtitle" set:html={data.subtitle} />
-          <div class="hero-cta-group hero-cta-desktop">
-            <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero">
-              {data.ctaText}
-            </a>
-            <p class="hero-reassurance">{data.reassurance}</p>
+          <div class="hero-text fade-in-up">
+            <p class="hero-eyebrow eyebrow eyebrow--animated" set:html={data.eyebrow} />
+            <h1 class="hero-h1">{data.h1}</h1>
+            <p class="hero-subtitle" set:html={data.subtitle} />
+            <div class="hero-cta-group hero-cta-desktop">
+              <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero">
+                {data.ctaText}
+              </a>
+              <p class="hero-reassurance">{data.reassurance}</p>
+            </div>
           </div>
-        </div>
-      </>
-    ) : (
-      <>
-        <!-- CRM : texte à gauche, VSL à droite -->
-        <div class="hero-text fade-in-up">
-          <p class="hero-eyebrow eyebrow eyebrow--animated" set:html={data.eyebrow} />
-          <h1 class="hero-h1">{data.h1}</h1>
-          <p class="hero-subtitle" set:html={data.subtitle} />
-          <div class="hero-cta-group hero-cta-desktop">
-            <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero">
-              {data.ctaText}
-            </a>
-            <p class="hero-reassurance">{data.reassurance}</p>
+        </>
+      ) : (
+        <>
+          <!-- CRM : texte à gauche, VSL à droite -->
+          <div class="hero-text fade-in-up">
+            <p class="hero-eyebrow eyebrow eyebrow--animated" set:html={data.eyebrow} />
+            <h1 class="hero-h1">{data.h1}</h1>
+            <p class="hero-subtitle" set:html={data.subtitle} />
+            <div class="hero-cta-group hero-cta-desktop">
+              <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero">
+                {data.ctaText}
+              </a>
+              <p class="hero-reassurance">{data.reassurance}</p>
+            </div>
           </div>
-        </div>
 
-        <div class="fade-in-up delay-2">
-          {data.vslSrc && (
+          <div class="fade-in-up delay-2">
             <div class="vsl-video-wrap" id={vslWrapperId}>
               <video
                 class="vsl-video"
@@ -115,7 +134,7 @@ const vslOverlayId = isMarketing ? 'vslMarketingOverlay' : 'vslChattingOverlay';
                 class="vsl-video-overlay"
                 id={vslOverlayId}
                 role="button"
-                aria-label="Lire la vidéo de présentation"
+                aria-label={t('hero.videoPlayLabel')}
                 tabindex="0"
               >
                 <div class="testi-video-play">
@@ -125,16 +144,30 @@ const vslOverlayId = isMarketing ? 'vslMarketingOverlay' : 'vslChattingOverlay';
                 </div>
               </div>
             </div>
-          )}
-          <div class="hero-cta-group hero-cta-mobile">
-            <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero_mobile">
-              {data.ctaText}
-            </a>
-            <p class="hero-reassurance">{data.reassurance}</p>
+            <div class="hero-cta-group hero-cta-mobile">
+              <a href={data.ctaUrl} class="btn-primary" data-cta={ctaDataAttr} data-section="hero_mobile">
+                {data.ctaText}
+              </a>
+              <p class="hero-reassurance">{data.reassurance}</p>
+            </div>
           </div>
-        </div>
-      </>
-    )}
-
-  </div>
+        </>
+      )}
+    </div>
+  )}
 </section>
+
+<style>
+  .hero-inner--centered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .hero-inner--centered .hero-text {
+    text-align: center;
+    max-width: 720px;
+  }
+  .hero-inner--centered .hero-cta-group {
+    justify-content: center;
+  }
+</style>

@@ -1,0 +1,364 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://www.syncagency.fr/en/" },
+    { "@type": "ListItem", "position": 2, "name": "Affiliate Program", "item": "https://www.syncagency.fr/en/affiliation" }
+  ]
+};
+---
+
+<BaseLayout lang="en"
+  title="SyncAgency Affiliate Program — 40% lifetime commission"
+  description="Refer SyncAgency to other creator agencies. Earn a recurring lifetime commission on every active subscription."
+  pageKey="affiliation"
+  ogImage="/og/og-affiliation-en.png"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  </Fragment>
+  <style>
+    /* ── Hero affiliation ────────────────────────────────────────────────── */
+    .affi-hero-h1 {
+      font-size: 64px;
+      font-weight: 800;
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+    .affi-percent {
+      color: var(--color-primary);
+    }
+    @media (max-width: 768px) {
+      .affi-hero-h1 { font-size: 40px; }
+    }
+
+    /* ── Calculator ──────────────────────────────────────────────────────── */
+    .affi-calc {
+      text-align: center;
+      max-width: 640px;
+      margin: 0 auto;
+    }
+    .affi-earnings {
+      font-size: 72px;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .affi-count {
+      font-size: 16px;
+      color: var(--color-text-secondary);
+      margin-bottom: 40px;
+    }
+    .affi-slider-wrap {
+      position: relative;
+      margin-bottom: 16px;
+    }
+    .affi-slider {
+      width: 100%;
+      -webkit-appearance: none;
+      appearance: none;
+      height: 6px;
+      border-radius: 3px;
+      background: rgba(255,255,255,0.08);
+      outline: none;
+      cursor: pointer;
+    }
+    .affi-slider::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      appearance: none;
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(138,165,255,0.20);
+      cursor: pointer;
+      transition: box-shadow 0.2s ease;
+    }
+    .affi-slider::-webkit-slider-thumb:hover {
+      box-shadow: 0 0 0 8px rgba(138,165,255,0.25);
+    }
+    .affi-slider::-moz-range-thumb {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: var(--color-primary);
+      box-shadow: 0 0 0 4px rgba(138,165,255,0.20);
+      cursor: pointer;
+      border: none;
+      transition: box-shadow 0.2s ease;
+    }
+    .affi-note {
+      font-size: 12px;
+      color: var(--color-text-muted, #666);
+    }
+
+    /* ── Steps grid ──────────────────────────────────────────────────────── */
+    .steps-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+    .step-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 32px;
+    }
+    .step-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 12px;
+      background: rgba(138,165,255,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--color-primary);
+      margin-bottom: 20px;
+    }
+    .step-icon svg {
+      width: 24px;
+      height: 24px;
+      stroke: currentColor;
+    }
+    .step-title {
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--color-text-primary, #F2F2F2);
+      margin-bottom: 10px;
+    }
+    .step-desc {
+      font-size: 14px;
+      color: var(--color-text-secondary, #999);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .steps-grid { grid-template-columns: 1fr; }
+    }
+
+    /* ── Target section ──────────────────────────────────────────────────── */
+    .affi-target-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 64px;
+      align-items: start;
+    }
+    .affi-target-left h2 {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 20px;
+    }
+    .affi-target-left p {
+      font-size: 16px;
+      color: var(--color-text-secondary, #999);
+      line-height: 1.7;
+    }
+    .affi-target-cards {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .target-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 16px;
+      padding: 24px;
+    }
+    .target-card-title {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--color-text-primary, #F2F2F2);
+      margin-bottom: 6px;
+    }
+    .target-card-desc {
+      font-size: 13px;
+      color: var(--color-text-secondary, #999);
+      line-height: 1.6;
+    }
+    @media (max-width: 768px) {
+      .affi-target-grid {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+      .affi-target-left h2 { font-size: 32px; }
+    }
+
+    /* ── Final CTA ───────────────────────────────────────────────────────── */
+    .affi-final {
+      text-align: center;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .affi-final-title {
+      font-size: 48px;
+      font-weight: 700;
+      line-height: 1.1;
+      margin-bottom: 32px;
+      background: linear-gradient(135deg, rgba(255,255,255,0.95) 0%, rgba(138,165,255,0.80) 60%, rgba(100,120,255,0.60) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    .affi-final-meta {
+      font-size: 13px;
+      color: var(--color-text-muted, #666);
+      margin-top: 16px;
+    }
+    @media (max-width: 768px) {
+      .affi-final-title { font-size: 32px; }
+    }
+  </style>
+
+  <!-- ============================================================
+       Section 1 : Hero + Calculator (visible without scroll)
+  ============================================================ -->
+  <section class="section section--hero spotlight-zone" id="hero" style="padding-bottom: 80px;">
+    <div class="glow-blobs">
+      <div class="glow-blob glow-blob-1"></div>
+      <div class="glow-blob glow-blob-2"></div>
+    </div>
+    <div class="container fade-in-up" style="text-align: center; max-width: 680px; margin: 0 auto;">
+      <p class="hero-eyebrow eyebrow eyebrow--animated">
+        Affiliate Program &nbsp;•&nbsp; <span data-plan-name>Core Chatting</span> &nbsp;•&nbsp; Lifetime commission
+      </p>
+      <h1 class="affi-hero-h1">
+        <span class="affi-percent" data-plan-percent>40%</span> commission.<br>Every month. Forever.
+      </h1>
+      <p class="hero-subtitle" style="margin-bottom: 48px;">
+        Refer SyncAgency to other creator agencies.<br>
+        Earn <span data-plan-percent>40%</span> of every subscription, for as long as they stay.
+      </p>
+
+      <!-- Embedded calculator -->
+      <div class="affi-calc">
+        <p class="affi-earnings" id="sliderAmount">118€</p>
+        <p class="affi-count" id="sliderCount">5 agencies referred</p>
+        <div class="affi-slider-wrap">
+          <input
+            type="range"
+            class="affi-slider"
+            id="affiSlider"
+            min="0"
+            max="50"
+            step="1"
+            value="5"
+            aria-label="Number of agencies referred"
+          />
+        </div>
+        <p class="affi-note" id="affiNote">* Based on 59€/month × 40% = 23.60€ per active subscription</p>
+      </div>
+
+      <div class="hero-cta-group" style="display: flex; align-items: center; justify-content: center; margin-top: 40px;">
+        <a href="https://taap.it/pvzlucas" class="btn-primary" target="_blank" rel="noopener" data-cta="affiliation_hero" data-section="hero">
+          Join the program
+        </a>
+      </div>
+      <p class="hero-reassurance" style="margin-top: 16px;">Free • No limits • Monthly payouts</p>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 3 : How it works
+  ============================================================ -->
+  <section class="section section--pain" id="how-it-works" style="background: #080808;">
+    <div class="container fade-in-up">
+      <div style="text-align: center; margin-bottom: 56px;">
+        <h2 class="section-title">How it works?</h2>
+      </div>
+
+      <div class="steps-grid">
+        <!-- Step 1 -->
+        <div class="step-card">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <p class="step-title">Contact us on Telegram</p>
+          <p class="step-desc">Send us a message. We generate your affiliate link in minutes.</p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="step-card">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="18" cy="5" r="3"/>
+              <circle cx="6" cy="12" r="3"/>
+              <circle cx="18" cy="19" r="3"/>
+              <line x1="8.59" y1="13.51" x2="15.42" y2="17.49"/>
+              <line x1="15.41" y1="6.51" x2="8.59" y2="10.49"/>
+            </svg>
+          </div>
+          <p class="step-title">Share your link</p>
+          <p class="step-desc">Share it with your contacts in the creator economy. Every signup through your link is tracked automatically.</p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="step-card">
+          <div class="step-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+              <polyline points="17 6 23 6 23 12"/>
+            </svg>
+          </div>
+          <p class="step-title">Collect every month</p>
+          <p class="step-desc">You receive <span data-plan-percent>40%</span> of every active subscription. As long as they stay, you earn.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 4 : Who is this for
+  ============================================================ -->
+  <section class="section section--key" id="target" style="background: #050505;">
+    <div class="container fade-in-up">
+      <div class="affi-target-grid">
+        <!-- Left -->
+        <div class="affi-target-left">
+          <h2>Who is this program for?</h2>
+          <p>For any professional in the creator economy who is connected to agencies. No audience required — just a network.</p>
+        </div>
+
+        <!-- Right -->
+        <div class="affi-target-cards">
+          <div class="target-card">
+            <p class="target-card-title">Creator Agencies</p>
+            <p class="target-card-desc">You have contacts in the industry. Every referral pays you.</p>
+          </div>
+          <div class="target-card">
+            <p class="target-card-title">Content Creators</p>
+            <p class="target-card-desc">You talk about creator monetization to your audience. Monetize your recommendations.</p>
+          </div>
+          <div class="target-card">
+            <p class="target-card-title">Consultants &amp; Coaches</p>
+            <p class="target-card-desc">Your clients are looking for tools. Give them SyncAgency.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============================================================
+       Section 5 : Final CTA
+  ============================================================ -->
+  <section class="section section--key spotlight-zone" id="cta-final" style="background: #050505;">
+    <div class="container fade-in-up">
+      <div class="affi-final">
+        <h2 class="affi-final-title">Ready to earn your first commissions?</h2>
+        <a href="https://taap.it/pvzlucas" class="btn-primary" target="_blank" rel="noopener" data-cta="affiliation_final" data-section="cta_final">
+          Join the program →
+        </a>
+        <p class="affi-final-meta">
+          <span data-plan-percent>40%</span> lifetime commission &nbsp;•&nbsp; No commitment &nbsp;•&nbsp; Monthly payouts
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <script src="/scripts/affiliation.js" defer></script>
+</BaseLayout>

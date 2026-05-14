@@ -9,7 +9,7 @@ import PricingCards from '@/components/sections/PricingCards.astro';
 import FAQ from '@/components/sections/FAQ.astro';
 import { getEntry } from 'astro:content';
 
-const entry = await getEntry('landings', 'marketing');
+const entry = await getEntry('landings', 'fr/marketing');
 if (!entry) throw new Error('Marketing landing data not found');
 const data = entry.data;
 

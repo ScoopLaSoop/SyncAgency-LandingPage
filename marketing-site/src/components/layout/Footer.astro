@@ -1,24 +1,34 @@
 ---
+import { useTranslations, localizedPath, type Lang } from '@/i18n/utils';
+
 interface Props {
   pageKey?: string;
+  lang?: Lang;
 }
 
-const { pageKey = 'crm' } = Astro.props;
+const { pageKey = 'crm', lang = 'fr' } = Astro.props;
+const t = useTranslations(lang);
 
 const tagline = pageKey === 'marketing'
-  ? 'Track ton acquisition Instagram, TikTok et Twitter depuis un seul dashboard.'
-  : 'Le CRM des agences OFM qui chattent sur Telegram.';
+  ? t('footer.tagline.marketing')
+  : t('footer.tagline.crm');
+
+const homeHref = localizedPath('/', lang);
+const affiliationHref = localizedPath(
+  `/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`,
+  lang,
+);
 ---
 
 <footer class="footer" role="contentinfo">
   <div class="footer-grid">
     <div class="footer-brand">
-      <a href="/" class="footer-logo" aria-label="SyncAgency — Accueil">
+      <a href={homeHref} class="footer-logo" aria-label={t('header.logoLabel')}>
         <img src="/assets/images/logo-original.webp" alt="" class="footer-logo-img" />
         <span class="footer-logo-name">SyncAgency</span>
       </a>
       <p class="footer-tagline">{tagline}</p>
-      <a href="https://app.syncagency.fr/register" class="footer-cta">7 jours gratuits →</a>
+      <a href="https://app.syncagency.fr/register" class="footer-cta">{t('footer.cta')}</a>
       <div class="footer-socials">
         <a href="https://taap.it/SyncAgencyy" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
@@ -43,37 +53,40 @@ const tagline = pageKey === 'marketing'
     </div>
 
     <div class="footer-col">
-      <p class="footer-col-title">Solutions</p>
-      <a href="/" class="footer-link">CRM Chatting</a>
-      <a href="/marketing" class="footer-link">Growth Marketing</a>
-      <a href="#" class="footer-link footer-link--soon">Empire OS <span class="footer-badge-soon">Bientôt</span></a>
+      <p class="footer-col-title">{t('footer.col.solutions')}</p>
+      <a href={homeHref} class="footer-link">{t('nav.crm')}</a>
+      <a href={localizedPath('/marketing', lang)} class="footer-link">{t('nav.marketing')}</a>
+      <a href="#" class="footer-link footer-link--soon">{t('nav.empireOs')} <span class="footer-badge-soon">{t('nav.soon')}</span></a>
     </div>
 
     <div class="footer-col">
-      <p class="footer-col-title">Ressources</p>
-      <a href="/blog" class="footer-link">Blog</a>
-      <a href="/about" class="footer-link">À propos</a>
-      <a href="/migration-infloww" class="footer-link">Migration Infloww</a>
+      <p class="footer-col-title">{t('footer.col.resources')}</p>
+      <a href={localizedPath('/blog', lang)} class="footer-link">{t('footer.blog')}</a>
+      <a href={localizedPath('/about', lang)} class="footer-link">{t('nav.about')}</a>
+      <a href={localizedPath('/migration-infloww', lang)} class="footer-link">{t('footer.migration')}</a>
     </div>
 
     <div class="footer-col">
-      <p class="footer-col-title">Compte</p>
-      <a href="https://app.syncagency.fr/login" class="footer-link">Se connecter</a>
-      <a href="https://app.syncagency.fr/register" class="footer-link">Créer un compte</a>
-      <a href={`/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`} class="footer-link">Affiliation</a>
-      <a href="https://calendly.com/lucas-provenzano9/30min" class="footer-link" target="_blank" rel="noopener">Réserver une démo</a>
-      <a href="https://taap.it/provenzanolucas" class="footer-link" target="_blank" rel="noopener">Contact</a>
+      <p class="footer-col-title">{t('footer.col.account')}</p>
+      <a href="https://app.syncagency.fr/login" class="footer-link">{t('footer.signIn')}</a>
+      <a href="https://app.syncagency.fr/register" class="footer-link">{t('footer.signUp')}</a>
+      <a href={affiliationHref} class="footer-link">{t('footer.affiliation')}</a>
+      <a href="https://calendly.com/lucas-provenzano9/30min" class="footer-link" target="_blank" rel="noopener">{t('footer.bookDemo')}</a>
+      <a href="https://taap.it/provenzanolucas" class="footer-link" target="_blank" rel="noopener">{t('footer.contact')}</a>
     </div>
 
     <div class="footer-col">
-      <p class="footer-col-title">Légal</p>
-      <a href="/cgu" class="footer-link">CGU</a>
-      <a href="/cgv" class="footer-link">CGV</a>
-      <a href="/privacy" class="footer-link">Confidentialité</a>
+      <p class="footer-col-title">{t('footer.col.legal')}</p>
+      <a href={localizedPath('/cgu', lang)} class="footer-link">{t('footer.cgu')}</a>
+      <a href={localizedPath('/cgv', lang)} class="footer-link">{t('footer.cgv')}</a>
+      <a href={localizedPath('/privacy', lang)} class="footer-link">{t('footer.privacy')}</a>
+      {lang === 'en' && (
+        <a href={localizedPath('/cookies', lang)} class="footer-link">{t('footer.cookies')}</a>
+      )}
     </div>
   </div>
 
   <div class="footer-bottom">
-    <span>© 2026 SyncAgency. Tous droits réservés.</span>
+    <span>{t('footer.copyright')}</span>
   </div>
 </footer>

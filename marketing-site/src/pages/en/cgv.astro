@@ -1,0 +1,158 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout lang="en" title="Terms of Sale — SyncAgency" description="SyncAgency Terms of Sale." pageKey="crm">
+  <div style="max-width: 800px; margin: 120px auto; padding: 0 24px 120px;">
+    <style>
+      .legal-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted, #737373); margin-bottom: 16px; }
+      .legal-title { font-size: clamp(28px, 5vw, 40px); font-weight: 700; color: var(--color-text-primary, #F2F2F2); line-height: 1.15; margin-bottom: 12px; }
+      .legal-date { font-size: 13px; color: var(--color-text-muted, #737373); margin-bottom: 56px; }
+      .legal-intro { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 56px; }
+      .legal-section { margin-bottom: 44px; }
+      .legal-section-title { font-size: 16px; font-weight: 600; color: var(--color-text-primary, #F2F2F2); margin-bottom: 14px; }
+      .legal-section p { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin: 0 0 12px; }
+      .legal-section ul { padding-left: 20px; margin: 8px 0 12px; }
+      .legal-section li { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 6px; }
+      .legal-section strong { color: var(--color-text-primary, #F2F2F2); font-weight: 600; }
+      .legal-section a { color: var(--color-primary, #8AA5FF); text-decoration: none; }
+      .legal-section a:hover { text-decoration: underline; }
+      .legal-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 0 0 44px; }
+      .pricing-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+      .pricing-table th, .pricing-table td { padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .pricing-table th { color: #F2F2F2; font-weight: 600; }
+      .pricing-table td { color: #999; }
+      .pricing-table tr:last-child td { border-bottom: none; }
+    </style>
+
+    <p class="legal-eyebrow">Legal</p>
+    <h1 class="legal-title">Terms of Sale</h1>
+    <p class="legal-date">Last updated: May 13, 2026</p>
+
+    <p class="legal-intro">These Terms of Sale apply to any subscription to a paid plan offered by SyncAgency. They supplement the <a href="/en/cgu">Terms of Use</a> and, together with the latter, constitute the agreement between SyncAgency and the Customer.</p>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">1. Seller</h2>
+      <ul>
+        <li><strong>Legal name:</strong> SyncAgency LLC</li>
+        <li><strong>Managing member:</strong> Lucas Provenzano (Sole Member)</li>
+        <li><strong>EIN:</strong> 35-2955550</li>
+        <li><strong>Registered office:</strong> 1209 Mountain Rd Pl NE Ste H, Albuquerque, NM 87110, United States</li>
+        <li><strong>Email:</strong> <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></li>
+      </ul>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">2. Plans and Pricing</h2>
+      <p>SyncAgency offers the following subscription plans, billed per model per month:</p>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Price (excl. tax, per model/month)</th>
+            <th>Main features</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Chatting</strong></td>
+            <td>59 €</td>
+            <td>Telegram CRM, Vault, Mass DM, payment processor</td>
+          </tr>
+          <tr>
+            <td><strong>Growth Marketing</strong></td>
+            <td>89 €</td>
+            <td>Core Chatting + IG/TikTok/Twitter acquisition module, tracking links</td>
+          </tr>
+          <tr>
+            <td><strong>Empire OS</strong></td>
+            <td>129 €</td>
+            <td>Growth Marketing + Empire dashboard, free assisted migration</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Add-ons may be offered as extras (additional social accounts, etc.). Prices are shown excluding tax. The applicable VAT is that of the Customer's country, in accordance with the regulations in force.</p>
+      <p>SyncAgency reserves the right to change its pricing with 30 days' notice. Price changes do not apply to ongoing subscriptions during the current billing period.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">3. Free Trial</h2>
+      <p>SyncAgency offers a <strong>7-day</strong> free trial on all of its plans. The free trial:</p>
+      <ul>
+        <li>Does not require a credit card;</li>
+        <li>Gives access to all the features of the selected plan;</li>
+        <li>Ends automatically at the end of the 7 days, with no automatic charge;</li>
+        <li>May only be used once per Agency.</li>
+      </ul>
+      <p>At the end of the free trial, the Customer must subscribe to a paid plan to continue using the Service. In the absence of a subscription, the account is deactivated and the data is retained for 30 days before permanent deletion.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">4. Order and Billing</h2>
+      <p>Subscription to a plan is done directly from the customer area at <a href="https://app.syncagency.fr">https://app.syncagency.fr</a>. The Customer acknowledges having reviewed these Terms of Sale before proceeding with payment.</p>
+      <p>The subscription is billed monthly, on the anniversary date of the subscription. Invoices are available in the customer area and sent by email to the billing address provided.</p>
+      <p>Payment is made by credit card via our secure payment provider. Banking data is not stored by SyncAgency.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">5. Renewal and Termination</h2>
+      <p>The subscription is automatically renewed each month. The Customer may terminate their subscription at any time from the settings of their customer area, with no termination fees.</p>
+      <p>Termination takes effect at the end of the current monthly billing period. No pro-rata refund is made for the remaining period, except where required by law.</p>
+      <p>SyncAgency may terminate a subscription in the event of non-payment after 7 days of delay, or in the event of a breach of the Terms of Use, without prejudice to any claim for damages.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">6. Integrated Payment Processor</h2>
+      <p>SyncAgency offers an integrated payment processor allowing Agencies to receive payments directly within their Telegram conversations. This service is subject to the following specific terms:</p>
+      <ul>
+        <li>A markup of <strong>20% is added on the fan side</strong> to the sale price set by the Agency (the fan pays price × 1.20);</li>
+        <li>The Agency receives 100% of the nominal price it has set;</li>
+        <li>Payment processing fees apply depending on the provider used (Tagada, EFI, etc.);</li>
+        <li>Payouts to the Agency are made according to a schedule defined in the account settings, subject to a 10% reserve held for 60 days;</li>
+        <li>The Agency is solely responsible for the tax and legal compliance of sales made through the processor.</li>
+      </ul>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">7. Right of Withdrawal</h2>
+      <p>In accordance with applicable regulations, the business Customer (B2B) does not benefit from the right of withdrawal provided for consumers.</p>
+      <p>For individual Customers (B2C), by subscribing to a paid plan and immediately accessing the features of the Service, the Customer expressly acknowledges waiving their 14-day right of withdrawal in accordance with applicable consumer protection law.</p>
+      <p>However, SyncAgency offers a 7-day free trial period allowing the Service to be evaluated before any financial commitment. In case of difficulty, contact us at <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a>.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">8. Warranties and Service Level</h2>
+      <p>SyncAgency undertakes to provide the Service professionally and to maintain a reasonably high level of availability. However, no continuous availability guarantee (SLA) is provided on standard plans.</p>
+      <p>In the event of prolonged unavailability of the Service attributable to SyncAgency (longer than 48 consecutive hours), the Customer may request a credit or an extension of their subscription period equivalent to the duration of the unavailability.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">9. Data and Confidentiality</h2>
+      <p>Customer data and media integrated into SyncAgency belong exclusively to the Customer. In the event of termination, the data is retained for 30 days and may be exported on request before permanent deletion.</p>
+      <p>SyncAgency never uses Customers' data for its own commercial purposes, nor does it transfer it to third parties. Data processing is governed by the <a href="/en/privacy">Privacy Policy</a>.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">10. Governing Law and Disputes</h2>
+      <p>These Terms of Sale are subject to the laws of the State of New Mexico (United States). In the event of a dispute, the parties undertake to seek an amicable solution within 30 days. Failing an agreement, the dispute shall be submitted to the competent courts of Bernalillo County, New Mexico (United States), except where mandatory provisions applicable to consumers provide otherwise.</p>
+      <p>For any claim, contact us at <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

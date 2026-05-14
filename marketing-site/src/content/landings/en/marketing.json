@@ -1,0 +1,271 @@
+{
+  "meta": {
+    "title": "SyncAgency — The marketing CRM for OFM agencies",
+    "description": "Track your Instagram, TikTok, and Twitter data. Identify the posts that convert. Scale your acquisition with data, not gut feeling."
+  },
+  "hero": {
+    "eyebrow": "Marketing CRM &nbsp;•&nbsp; Instagram, TikTok, Twitter &nbsp;•&nbsp; Tracking + Acquisition",
+    "h1": "The marketing CRM for OFM agencies.",
+    "subtitle": "Track your Instagram, TikTok, and Twitter data. Identify the posts that convert. Scale your acquisition with data, not gut feeling.",
+    "ctaText": "7 days free →",
+    "ctaUrl": "https://app.syncagency.fr/register?plan=growth_marketing",
+    "reassurance": "No commitment • Cancel in 1 click • French support",
+    "proofBadge": "7 OFM agencies already use SyncAgency to scale their organic acquisition."
+  },
+  "painSection": {
+    "title": "Why your acquisition is stalling.",
+    "cards": [
+      {
+        "icon": "file-spreadsheet",
+        "title": "No tracking, or a <em>Google Sheet</em> filled in by hand.",
+        "description": "Your Instagram, TikTok, Twitter stats — you jot them down by hand in a spreadsheet when you have time. You steer by gut feeling, not by data.",
+        "highlightPhrase": "Google Sheet"
+      },
+      {
+        "icon": "search-x",
+        "title": "You don't know what actually converts.",
+        "description": "Your last 40 posts of the month — you can't rank them best to worst by fans brought in. You redo the same hooks at random.",
+        "highlightPhrase": "last 40 posts"
+      },
+      {
+        "icon": "flask-conical",
+        "title": "Your A/B testing is nonexistent, or half-done.",
+        "description": "To compare two hooks, you have to compile the data by hand across three platforms. Most people give up. Nobody really optimizes.",
+        "highlightPhrase": "three platforms"
+      },
+      {
+        "icon": "filter",
+        "title": "You don't know where your <strong>funnel leaks</strong>.",
+        "description": "Between the view, the click, the contact, the sale: you inevitably lose fans at every step. But you don't know where, how many, or why.",
+        "highlightPhrase": "funnel leaks"
+      }
+    ],
+    "bridgeText": "The result: <span class=\"text-accent\">your acquisition is stalling</span>. Without data, without a visible funnel, without A/B testing,<br>\n          you can't optimize what you don't measure."
+  },
+  "pivot": {
+    "line1": "The real problem isn't your content.",
+    "line2": "It's that you can't see what works.",
+    "supportText": "You want to scale your acquisition, but you're not making the right decisions<br>\n          because you can't see your <strong>data</strong>.",
+    "transitionTitle": "What SyncAgency changes."
+  },
+  "solution": {
+    "introTitle": "Here's how your acquisition is going to run.",
+    "items": [
+      {
+        "eyebrow": "01 · ACCOUNTS &amp; NETWORKS",
+        "title": "All your acquisition accounts, scraped automatically every day.",
+        "description": "Connect all your accounts by model, by network. The scraping runs automatically, updated every morning. You see all your data in a single dashboard. No more three apps running in parallel.",
+        "bullets": [
+          { "label": "Multi-account per model", "text": " : each creator can have multiple accounts per network" },
+          { "label": "Daily auto-scraping", "text": " : Instagram, TikTok, Twitter refreshed every morning" },
+          { "label": "A single dashboard", "text": " : no more 12 tabs open between native apps" }
+        ],
+        "microCta": "See the scraping in action",
+        "videoSrc": "/assets/videos/marketing-accounts-scraping.mp4"
+      },
+      {
+        "eyebrow": "02 · CALENDAR &amp; TEAM",
+        "title": "Your post calendar and your tasks, shared with your team.",
+        "description": "Create the posts to publish, assign tasks to your managers or your creators. Everyone sees what's to be done, what's done, what's late. Automatic notifications so nothing slips through.",
+        "bullets": [
+          { "label": "Shared calendar", "text": " : scheduled posts and tasks in a single view" },
+          { "label": "Assignment per member", "text": " : you know who does what, without chasing anyone" },
+          { "label": "Auto notifications", "text": " : each member is notified on Telegram or Discord" }
+        ],
+        "microCta": "See the team calendar",
+        "videoSrc": "/assets/videos/marketing-calendar-team.mp4"
+      },
+      {
+        "eyebrow": "03 · POSTS &amp; DATA",
+        "title": "Every post of every account, with all its stats.",
+        "description": "Auto-scraping of all your published posts. Views, likes, saves, retweets, engagement rate: it's all there. Sort by account, by period, by performance, and identify the winning patterns.",
+        "bullets": [
+          { "label": "Every stat per post", "text": " : views, engagement, saves, engagement rate" },
+          { "label": "Multi-criteria sorting", "text": " : by account, by period, by performance, by model" },
+          { "label": "Winning patterns", "text": " : the hooks that keep coming back in your posts that blow up" }
+        ],
+        "microCta": "See the tracked posts",
+        "videoSrc": "/assets/videos/marketing-posts-data.mp4"
+      },
+      {
+        "eyebrow": "04 · PERFORMANCE",
+        "title": "The analysis of every account and every network.",
+        "description": "Which account performs, which one drops off. Which network brings you the most fans. Which format converts best. Every question you're asking yourself has a number-backed answer.",
+        "bullets": [
+          { "label": "Performance per account", "text": " : who's scaling, who's stalling, who's dropping" },
+          { "label": "Performance per network", "text": " : TikTok vs IG vs X, ROI per channel" },
+          { "label": "Data you can visualize fast", "text": " : every metric collected to calculate your conversion rate and build a perfect pre-funnel" }
+        ],
+        "microCta": "See the performance dashboard",
+        "videoSrc": "/assets/videos/marketing-performance.mp4"
+      },
+      {
+        "eyebrow": "05 · TRACKING LINKS",
+        "title": "Tracking links to know where your fans really come from.",
+        "description": "Create tracking links per bio or per campaign. You see exactly which link generated which fan, and how much revenue. Never any mystery on attribution again: you double down on what works, you cut what doesn't.",
+        "bullets": [
+          { "label": "Unlimited tracking links", "text": "" },
+          { "label": "Full attribution", "text": " : which link → which fan → how much revenue" },
+          { "label": "No more mystery", "text": " : you know where every dollar of revenue comes from." }
+        ],
+        "microCta": "See a tracking link",
+        "videoSrc": "/assets/videos/marketing-tracking-links.mp4"
+      },
+      {
+        "eyebrow": "06 · ACQUISITION FUNNEL",
+        "title": "The complete funnel of your accounts: from view to sale.",
+        "description": "How many views on that TikTok. How many clicks afterwards on your bio. How many landed on your contact point. How many bought. Every step is measured. Every drop-off is visible.",
+        "bullets": [
+          { "label": "Multi-step funnel", "text": " : view → bio click → contact → sale" },
+          { "label": "Conversion rate per step", "text": " : you see exactly where it drops off" },
+          { "label": "Comparison per campaign", "text": " : which funnel performs, which one needs fixing" }
+        ],
+        "microCta": "See a complete funnel",
+        "videoSrc": "/assets/videos/marketing-funnel.mp4"
+      }
+    ]
+  },
+  "reviews": {
+    "title": "What agencies say about it.",
+    "subtitle": "",
+    "trust": [
+      "Unpaid reviews",
+      "+30% revenue increase",
+      "Team loves the product"
+    ],
+    "cards": [
+      {
+        "name": "Luca",
+        "context": "",
+        "avatar": "/assets/images/review-luca.webp",
+        "stars": 5,
+        "beforeQuote": "\"i was posting on several accounts without really knowing which one performed. i was looking at Instagram Insights by hand but i couldn't reach any clear conclusion. now i see right away which content converted and on which account. i'd have saved a lot of time if i'd had it before\""
+      },
+      {
+        "name": "MaxaM",
+        "context": "",
+        "avatar": "/assets/images/review-maxam.webp",
+        "stars": 5,
+        "beforeQuote": "\"before, i didn't know where my fans came from. i was making content kind of at random and i had no clean data. now with the tracking links i know which post brought who. i stopped wasting time on what wasn't working and my results show it\""
+      }
+    ],
+    "transitionText": ""
+  },
+  "pricing": {
+    "title": "Three plans. No commitment.",
+    "subtitle": "Billed per model, monthly, cancellable in 1 click. 7-day free trial on all plans.",
+    "plans": [
+      {
+        "id": "core",
+        "badge": "TELEGRAM CRM",
+        "name": "Core Chatting",
+        "price": "59€",
+        "priceNote": "/ model / month",
+        "description": "The full Telegram CRM for agencies focused on off-platform chatting.",
+        "features": [
+          { "text": "Native Telegram &amp; WhatsApp inbox", "included": true },
+          { "text": "Media vault + scripts per model", "included": true },
+          { "text": "Mass DM per campaign (status, group, tag)", "included": true },
+          { "text": "Built-in payment processor", "included": true },
+          { "text": "Automatic chatter + sales tracking", "included": true },
+          { "text": "CRM dashboard + chatter KPIs", "included": true },
+          { "text": "Chatter shifts &amp; scheduling", "included": true },
+          { "text": "French support", "included": true }
+        ],
+        "ctaText": "7 days free →",
+        "ctaUrl": "https://app.syncagency.fr/register?plan=core_chatting",
+        "ctaDataAttr": "pricing-core-chatting",
+        "ctaSecondaryText": "See the CRM offer →",
+        "ctaSecondaryUrl": "/en/",
+        "ctaSecondaryDataAttr": "pricing-crm-redirect",
+        "isCurrent": false,
+        "isSoon": false
+      },
+      {
+        "id": "growth",
+        "badge": "GROWTH MARKETING",
+        "name": "Growth Marketing",
+        "price": "89€",
+        "priceNote": "/ model / month",
+        "description": "Everything to scale your organic acquisition: IG / TikTok / Twitter scraping, full attribution, automated A/B testing.",
+        "features": [
+          { "text": "Daily Instagram, TikTok, Twitter scraping", "included": true },
+          { "text": "Team-shared post calendar + tasks", "included": true },
+          { "text": "Analytics per account, per network, per format", "included": true },
+          { "text": "Complete acquisition funnel (view → sale)", "included": true },
+          { "text": "Unlimited tracking links + attribution by source", "included": true },
+          { "text": "Multi-account per model, per network", "included": true },
+          { "text": "Automatic team notifications", "included": true },
+          { "text": "French support", "included": true }
+        ],
+        "ctaText": "7 days free →",
+        "ctaUrl": "https://app.syncagency.fr/register?plan=growth_marketing",
+        "ctaDataAttr": "pricing-growth-marketing",
+        "isCurrent": true,
+        "isSoon": false
+      },
+      {
+        "id": "empire",
+        "badge": "ALL-IN-ONE",
+        "name": "Empire OS",
+        "price": "129€",
+        "priceNote": "/ model / month",
+        "description": "The Telegram CRM + all the marketing in a single plan. For agencies that want to manage everything in one place.",
+        "features": [
+          { "text": "<strong>Everything</strong> in Core Chatting", "included": true },
+          { "text": "<strong>Everything</strong> in Growth Marketing", "included": true },
+          { "text": "Assisted migration from your old CRM", "included": true },
+          { "text": "Dedicated team onboarding &amp; training", "included": true },
+          { "text": "Priority support", "included": true },
+          { "text": "Built-in SOP &amp; Knowledge Base", "included": true }
+        ],
+        "ctaText": "See the Empire offer",
+        "ctaUrl": "#",
+        "isCurrent": false,
+        "isSoon": true
+      }
+    ],
+    "guarantees": [
+      "<strong>7-day free trial</strong> on all plans",
+      "<strong>No commitment</strong>: cancellable in 1 click",
+      "<strong>French support</strong> on all plans",
+      "<strong>Migration from your old CRM</strong> assisted for free (Empire OS)"
+    ],
+    "transitionText": ""
+  },
+  "faq": {
+    "title": "Your questions, our answers.",
+    "subtitle": "Everything we tell you here, we stand behind.",
+    "items": [
+      {
+        "question": "How do I connect my Instagram, TikTok, and Twitter accounts?",
+        "answer": "You just enter the <strong>@username</strong> of your public accounts in the dashboard. No credentials to hand over, no OAuth to validate, no app to connect. The scraping runs on the public pages of each network, like an intelligent crawler that monitors and collects the data for you."
+      },
+      {
+        "question": "How often is the scraping updated?",
+        "answer": "<strong>Once a day,</strong> at the time you choose. You set the update time yourself from your account settings — for example every morning at 8am. You find the new data of your accounts (views, likes, comments, saves, shares) refreshed at the chosen time in your dashboard. The daily rhythm is more than enough to steer your content strategy."
+      },
+      {
+        "question": "How many accounts can I connect per model?",
+        "answer": "The <strong>Growth Marketing</strong> plan includes <strong>2 Instagram accounts + 2 Twitter accounts + 2 TikTok accounts</strong> per model. If your models have more accounts, you can add add-ons: <span class=\"mktg-price-tag\">+5€/month</span> for a Twitter account, <span class=\"mktg-price-tag\">+10€/month</span> for an Instagram account, <span class=\"mktg-price-tag\">+17€/month</span> for a TikTok account."
+      },
+      {
+        "question": "How does automated A/B testing work?",
+        "answer": "You publish several versions of the same post (different hooks, thumbnails, captions) on your accounts. SyncAgency tracks the performance of each one in parallel: views, engagement rate, clicks on your bio, fans brought in. You get a clear comparison within a few days, without compiling a spreadsheet by hand."
+      },
+      {
+        "question": "How many tracking links can I create?",
+        "answer": "<strong>Unlimited tracking links</strong> on the <strong>Growth Marketing</strong> and <strong>Empire OS</strong> plans. Create a link per post, per bio, per campaign, per story, with no limit at all. Each link gives you the click counter, the geographic source, the device, and the revenue generated if the click leads to a sale."
+      },
+      {
+        "question": "Is my data and my models' data private?",
+        "answer": "Yes. All your data (post stats, tracking links, attributed sales) is hosted in France, encrypted at rest and in transit. No data is shared with other agencies or used to train third-party models. You can export everything at any time."
+      },
+      {
+        "question": "Why 89€ per month and per model?",
+        "answer": "Because that's the cost of running a service that scrapes Instagram, TikTok, and Twitter every day, that maintains unlimited tracking links, that calculates funnel attribution, and that delivers it all to you in a unified dashboard. Compare that to the scattered tools you used before (a scraper, a tracking tool, a content calendar, a spreadsheet): you pay for a single plan for a more powerful, unified system."
+      }
+    ],
+    "contact": "https://taap.it/pvzlucas"
+  }
+}

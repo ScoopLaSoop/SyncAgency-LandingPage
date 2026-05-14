@@ -1,6 +1,7 @@
 ---
 import Header from '@/components/layout/Header.astro';
 import Footer from '@/components/layout/Footer.astro';
+import { useTranslations, getAlternateUrls, type Lang } from '@/i18n/utils';
 import '../styles/global.css';
 import '../styles/marketing-overrides.css';
 
@@ -9,14 +10,156 @@ interface Props {
   description: string;
   pageKey?: string;
   ogImage?: string;
+  lang?: Lang;
 }
 
-const { title, description, pageKey = 'crm', ogImage = '/assets/images/og-default.jpg' } = Astro.props;
+const {
+  title,
+  description,
+  pageKey = 'crm',
+  ogImage = '/assets/images/og-default.jpg',
+  lang = 'fr',
+} = Astro.props;
+
+const t = useTranslations(lang);
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 const ogImageURL = new URL(ogImage, Astro.site);
+
+const ogLocale = lang === 'en' ? 'en_US' : 'fr_FR';
+const ogLocaleAlt = lang === 'en' ? 'fr_FR' : 'en_US';
+const twitterSite = lang === 'en' ? '@syncagency' : '@syncagency_ofm';
+
+// hreflang alternates — `null` when no counterpart page exists in that locale.
+const alt = getAlternateUrls(Astro.url, lang);
+const xDefault = alt.fr ?? alt.en;
+
+// Organization JSON-LD — localized, single canonical domain.
+const orgSchema = lang === 'en'
+  ? {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.syncagency.fr/#organization",
+      "name": "SyncAgency",
+      "alternateName": ["Sync Agency", "SyncAgency CRM"],
+      "legalName": "SyncAgency",
+      "url": "https://www.syncagency.fr/en/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.syncagency.fr/assets/images/logo-original.webp",
+        "width": 240,
+        "height": 240,
+      },
+      "description": "The CRM for creator talent agencies managing Telegram and WhatsApp conversations, tracking operators, and attributing revenue across creators.",
+      "foundingDate": "2026",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Lucas Provenzano",
+          "url": "https://www.linkedin.com/in/lucas-provenzanooo/",
+        },
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Gerpinnes",
+        "addressCountry": "BE",
+      },
+      "knowsAbout": [
+        "Creator talent agency software",
+        "Telegram CRM",
+        "WhatsApp CRM",
+        "Creator economy SaaS",
+        "Operator management",
+        "Broadcast campaign automation",
+        "Social media analytics",
+        "Marketing attribution",
+        "Acquisition tracking",
+        "Subscription analytics",
+        "Revenue attribution",
+      ],
+      "knowsLanguage": ["en", "fr"],
+      "sameAs": [
+        "https://t.me/syncagency",
+        "https://www.instagram.com/syncagency",
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@syncagency.fr",
+        "availableLanguage": ["English", "French"],
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide",
+      },
+    }
+  : {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "@id": "https://www.syncagency.fr/#organization",
+      "name": "SyncAgency",
+      "alternateName": ["Sync Agency", "SyncAgency CRM", "SYNC OFM"],
+      "legalName": "SyncAgency",
+      "url": "https://www.syncagency.fr/",
+      "logo": {
+        "@type": "ImageObject",
+        "url": "https://www.syncagency.fr/assets/images/logo-original.webp",
+        "width": 240,
+        "height": 240,
+      },
+      "description": "Le CRM des agences OFM (OnlyFans Management) qui chattent sur Telegram et WhatsApp. SaaS spécialisé dans le tracking de chatters, le scraping marketing IG/TikTok/Twitter, et l'attribution de revenus pour agences de creator economy.",
+      "foundingDate": "2026",
+      "founders": [
+        {
+          "@type": "Person",
+          "name": "Provenzano Lucas",
+          "url": "https://www.linkedin.com/in/lucas-provenzanooo/",
+        },
+      ],
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Paris",
+        "addressCountry": "FR",
+      },
+      "knowsAbout": [
+        "OnlyFans Management",
+        "OFM agency software",
+        "Telegram CRM",
+        "WhatsApp CRM",
+        "Creator economy SaaS",
+        "Chatter management",
+        "Mass DM automation",
+        "Social media scraping",
+        "Marketing attribution",
+        "Acquisition tracking",
+        "Subscription analytics",
+        "PPV payment processing",
+      ],
+      "knowsLanguage": ["fr", "en"],
+      "sameAs": [
+        "https://t.me/syncagency",
+        "https://www.instagram.com/syncagency",
+        "https://www.producthunt.com/products/syncagency",
+        "https://www.trustpilot.com/review/syncagency.fr",
+        "https://www.crunchbase.com/organization/syncagency",
+      ],
+      "contactPoint": {
+        "@type": "ContactPoint",
+        "contactType": "customer support",
+        "email": "contact@syncagency.fr",
+        "availableLanguage": ["French", "English"],
+      },
+      "areaServed": {
+        "@type": "Place",
+        "name": "Worldwide",
+      },
+      "serviceArea": {
+        "@type": "AdministrativeArea",
+        "name": "France, Belgique, Suisse, Canada, USA, UK",
+      },
+    };
 ---
 <!DOCTYPE html>
-<html lang="fr" class="scroll-smooth">
+<html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -27,10 +170,16 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <meta name="description" content={description} />
     <link rel="canonical" href={canonicalURL} />
 
+    <!-- hreflang alternates -->
+    {alt.fr && <link rel="alternate" hreflang="fr" href={alt.fr} />}
+    {alt.en && <link rel="alternate" hreflang="en" href={alt.en} />}
+    {xDefault && <link rel="alternate" hreflang="x-default" href={xDefault} />}
+
     <!-- Open Graph -->
     <meta property="og:type" content="website" />
     <meta property="og:site_name" content="SyncAgency" />
-    <meta property="og:locale" content="fr_FR" />
+    <meta property="og:locale" content={ogLocale} />
+    <meta property="og:locale:alternate" content={ogLocaleAlt} />
     <meta property="og:url" content={canonicalURL} />
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
@@ -40,7 +189,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:site" content="@syncagency_ofm" />
+    <meta name="twitter:site" content={twitterSite} />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content={ogImageURL} />
@@ -67,83 +216,15 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <slot name="head" />
 
     <!-- Organization JSON-LD -->
-    <script type="application/ld+json" set:html={JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "Organization",
-      "@id": "https://www.syncagency.fr/#organization",
-      "name": "SyncAgency",
-      "alternateName": [
-        "Sync Agency",
-        "SyncAgency CRM",
-        "SYNC OFM"
-      ],
-      "legalName": "SyncAgency",
-      "url": "https://www.syncagency.fr/",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.syncagency.fr/assets/images/logo-original.webp",
-        "width": 240,
-        "height": 240
-      },
-      "description": "Le CRM des agences OFM (OnlyFans Management) qui chattent sur Telegram et WhatsApp. SaaS spécialisé dans le tracking de chatters, le scraping marketing IG/TikTok/Twitter, et l'attribution de revenus pour agences de creator economy.",
-      "foundingDate": "2026",
-      "founders": [
-        {
-          "@type": "Person",
-          "name": "Provenzano Lucas",
-          "url": "https://www.linkedin.com/in/lucas-provenzanooo/"
-        }
-      ],
-      "address": {
-        "@type": "PostalAddress",
-        "addressLocality": "Paris",
-        "addressCountry": "FR"
-      },
-      "knowsAbout": [
-        "OnlyFans Management",
-        "OFM agency software",
-        "Telegram CRM",
-        "WhatsApp CRM",
-        "Creator economy SaaS",
-        "Chatter management",
-        "Mass DM automation",
-        "Social media scraping",
-        "Marketing attribution",
-        "Acquisition tracking",
-        "Subscription analytics",
-        "PPV payment processing"
-      ],
-      "knowsLanguage": ["fr", "en"],
-      "sameAs": [
-        "https://t.me/syncagency",
-        "https://www.instagram.com/syncagency",
-        "https://www.producthunt.com/products/syncagency",
-        "https://www.trustpilot.com/review/syncagency.fr",
-        "https://www.crunchbase.com/organization/syncagency"
-      ],
-      "contactPoint": {
-        "@type": "ContactPoint",
-        "contactType": "customer support",
-        "email": "contact@syncagency.fr",
-        "availableLanguage": ["French", "English"]
-      },
-      "areaServed": {
-        "@type": "Place",
-        "name": "Worldwide"
-      },
-      "serviceArea": {
-        "@type": "AdministrativeArea",
-        "name": "France, Belgique, Suisse, Canada, USA, UK"
-      }
-    })} />
+    <script type="application/ld+json" set:html={JSON.stringify(orgSchema)} />
   </head>
   <body>
-    <a href="#main-content" class="skip-link">Aller au contenu principal</a>
-    <Header pageKey={pageKey} />
+    <a href="#main-content" class="skip-link">{t('skip.link')}</a>
+    <Header pageKey={pageKey} lang={lang} />
     <main id="main-content">
       <slot />
     </main>
-    <Footer pageKey={pageKey} />
+    <Footer pageKey={pageKey} lang={lang} />
 
     <!-- Scripts -->
     <script src="/scripts/header-scroll.js" defer></script>
@@ -156,7 +237,7 @@ const ogImageURL = new URL(ogImage, Astro.site);
     <script src="/scripts/ref-tracking.js" defer></script>
     <!-- Chat widget SAV -->
     <div class="chat-widget" id="chatWidget" aria-live="polite">
-      <div class="chat-panel" id="chatPanel" role="dialog" aria-label="Support SyncAgency" aria-hidden="true">
+      <div class="chat-panel" id="chatPanel" role="dialog" aria-label={t('chat.dialogLabel')} aria-hidden="true">
         <div class="chat-panel-header">
           <div class="chat-panel-identity">
             <div class="chat-panel-avatar">
@@ -164,24 +245,24 @@ const ogImageURL = new URL(ogImage, Astro.site);
             </div>
             <div>
               <p class="chat-panel-name">Lucas</p>
-              <span class="chat-panel-status"><span class="chat-status-dot"></span>En ligne</span>
+              <span class="chat-panel-status"><span class="chat-status-dot"></span>{t('chat.status')}</span>
             </div>
           </div>
-          <button class="chat-panel-close" id="chatClose" aria-label="Fermer">
+          <button class="chat-panel-close" id="chatClose" aria-label={t('chat.close')}>
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
           </button>
         </div>
         <div class="chat-panel-body">
-          <p class="chat-greeting">Bonjour 👋</p>
-          <p class="chat-message">Une question sur SyncAgency ? On répond rapidement sur Telegram.</p>
+          <p class="chat-greeting">{t('chat.greeting')}</p>
+          <p class="chat-message">{t('chat.message')}</p>
           <a href="https://taap.it/pvzlucas" class="chat-tg-btn" target="_blank" rel="noopener">
             <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/></svg>
-            Ouvrir Telegram
+            {t('chat.openTelegram')}
           </a>
-          <p class="chat-hint">Réponse en moins de 24h</p>
+          <p class="chat-hint">{t('chat.hint')}</p>
         </div>
       </div>
-      <button class="chat-bubble" id="chatBubble" aria-label="Ouvrir le support" aria-expanded="false">
+      <button class="chat-bubble" id="chatBubble" aria-label={t('chat.bubbleLabel')} aria-expanded="false">
         <svg class="chat-icon-msg" xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
         <svg class="chat-icon-close" xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
       </button>

@@ -1,0 +1,39 @@
+---
+import { getAlternateUrls, useTranslations, type Lang } from '@/i18n/utils';
+
+interface Props {
+  lang: Lang;
+  /** Extra classes to merge with the base link styling. */
+  class?: string;
+}
+
+const { lang, class: extraClass = '' } = Astro.props;
+const other: Lang = lang === 'fr' ? 'en' : 'fr';
+const t = useTranslations(lang);
+
+// Equivalent page in the other locale. `getAlternateUrls` returns absolute URLs;
+// fall back to the other locale's home when no counterpart exists (EN-only pages,
+// blog articles without a translated slug).
+const alt = getAlternateUrls(Astro.url, lang);
+const target = other === 'fr' ? alt.fr : alt.en;
+const fallback = other === 'fr' ? '/' : '/en/';
+const href = target ? new URL(target).pathname : fallback;
+---
+
+<a
+  href={href}
+  class:list={['header-nav-link', 'header-lang', extraClass]}
+  aria-label={t('lang.switchAria')}
+  data-lang-switch={other}
+>{t('lang.switchLabel')}</a>
+
+<script>
+  // Persist the manual language choice so the Vercel edge middleware stops
+  // auto-redirecting on subsequent visits.
+  document.querySelectorAll('[data-lang-switch]').forEach((el) => {
+    el.addEventListener('click', () => {
+      const choice = el.getAttribute('data-lang-switch');
+      document.cookie = `lang=${choice}; path=/; max-age=31536000; samesite=lax`;
+    });
+  });
+</script>
