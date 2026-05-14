@@ -1,0 +1,83 @@
+---
+interface TestimonialItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  qa: TestimonialItem[];
+  context?: string;
+  videoSrc?: string;
+  videoPoster?: string;
+}
+
+const { title, subtitle, qa, context, videoSrc, videoPoster } = Astro.props;
+---
+
+<section class="section section--testimonial" id="temoignage">
+  <div class="container">
+    <h2 class="section-title fade-in-up" set:html={title} />
+    {subtitle && <p class="section-subtitle fade-in-up delay-1" set:html={subtitle} />}
+
+    <div class="testi-grid fade-in-up delay-2">
+
+      <!-- Vidéo témoignage -->
+      <div class="testi-video-wrap">
+        <div class="testi-video-card" id="testiVideoCard">
+          <video
+            class="solution-video"
+            id="testiVideo"
+            playsinline
+            preload="metadata"
+            poster={videoPoster}
+            controlsList="nofullscreen nodownload noremoteplayback"
+          >
+            {videoSrc && <source src={videoSrc} type="video/mp4" />}
+          </video>
+          <div class="testi-video-overlay" id="testiOverlay" role="button" aria-label="Lire le témoignage" tabindex="0">
+            <div class="testi-video-play">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                <path d="M8 5v14l11-7z"/>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Q&A témoignage -->
+      <div class="testi-qa">
+        {context && <p class="testi-context" set:html={context} />}
+        {qa.map((item) => (
+          <div class="testi-qa-item">
+            <p class="testi-question" set:html={item.question} />
+            <p class="testi-answer" set:html={item.answer} />
+          </div>
+        ))}
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script>
+  const card = document.getElementById('testiVideoCard');
+  const video = document.getElementById('testiVideo') as HTMLVideoElement | null;
+  const overlay = document.getElementById('testiOverlay');
+
+  function playVideo() {
+    if (!video || !overlay) return;
+    overlay.style.display = 'none';
+    video.controls = true;
+    video.play();
+  }
+
+  overlay?.addEventListener('click', playVideo);
+  overlay?.addEventListener('keydown', (e: KeyboardEvent) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      playVideo();
+    }
+  });
+</script>

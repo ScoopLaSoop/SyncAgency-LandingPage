@@ -1,0 +1,171 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="CGU — SyncAgency" description="Conditions générales d'utilisation de SyncAgency.">
+  <div style="max-width: 800px; margin: 120px auto; padding: 0 24px 120px;">
+    <style>
+      .legal-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted, #737373); margin-bottom: 16px; }
+      .legal-title { font-size: clamp(28px, 5vw, 40px); font-weight: 700; color: var(--color-text-primary, #F2F2F2); line-height: 1.15; margin-bottom: 12px; }
+      .legal-date { font-size: 13px; color: var(--color-text-muted, #737373); margin-bottom: 56px; }
+      .legal-intro { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 56px; }
+      .legal-section { margin-bottom: 44px; }
+      .legal-section-title { font-size: 16px; font-weight: 600; color: var(--color-text-primary, #F2F2F2); margin-bottom: 14px; }
+      .legal-section p { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin: 0 0 12px; }
+      .legal-section ul { padding-left: 20px; margin: 8px 0 12px; }
+      .legal-section li { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 6px; }
+      .legal-section strong { color: var(--color-text-primary, #F2F2F2); font-weight: 600; }
+      .legal-section a { color: var(--color-primary, #8AA5FF); text-decoration: none; }
+      .legal-section a:hover { text-decoration: underline; }
+      .legal-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 0 0 44px; }
+    </style>
+
+    <p class="legal-eyebrow">Légal</p>
+    <h1 class="legal-title">Conditions Générales d'Utilisation</h1>
+    <p class="legal-date">Dernière mise à jour : 13 mai 2026</p>
+
+    <p class="legal-intro">Les présentes Conditions Générales d'Utilisation (CGU) régissent l'accès et l'utilisation de la plateforme SyncAgency, accessible à l'adresse <a href="https://www.syncagency.fr">https://www.syncagency.fr</a> et de l'application associée à l'adresse <a href="https://app.syncagency.fr">https://app.syncagency.fr</a>. En accédant ou en utilisant le Service, vous acceptez d'être lié par les présentes CGU.</p>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">1. Éditeur du service</h2>
+      <p>SyncAgency est édité par :</p>
+      <ul>
+        <li><strong>Dénomination :</strong> SyncAgency LLC</li>
+        <li><strong>Membre gérant :</strong> Lucas Provenzano (Sole Member)</li>
+        <li><strong>EIN :</strong> 35-2955550</li>
+        <li><strong>Siège social :</strong> 1209 Mountain Rd Pl NE Ste H, Albuquerque, NM 87110, États-Unis</li>
+        <li><strong>Email :</strong> <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></li>
+        <li><strong>Site web :</strong> <a href="https://www.syncagency.fr">https://www.syncagency.fr</a></li>
+      </ul>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">2. Définitions</h2>
+      <ul>
+        <li><strong>« Service »</strong> désigne la plateforme SyncAgency, ses fonctionnalités et les logiciels associés.</li>
+        <li><strong>« Utilisateur »</strong> désigne toute personne physique ou morale accédant au Service.</li>
+        <li><strong>« Compte »</strong> désigne l'espace personnel créé par l'Utilisateur pour accéder au Service.</li>
+        <li><strong>« Agence »</strong> désigne l'entité commerciale inscrite sur la plateforme, pouvant associer plusieurs membres d'équipe et modèles.</li>
+        <li><strong>« Données »</strong> désigne l'ensemble des informations transmises ou générées par l'Utilisateur dans le cadre de l'utilisation du Service.</li>
+      </ul>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">3. Accès au service et création de compte</h2>
+      <p>L'accès au Service nécessite la création d'un compte. L'Utilisateur s'engage à fournir des informations exactes, complètes et à les maintenir à jour.</p>
+      <p>L'Utilisateur est seul responsable de la confidentialité de ses identifiants de connexion. Toute utilisation du Service depuis son compte est présumée effectuée par l'Utilisateur. En cas de compromission des identifiants, l'Utilisateur s'engage à en informer SyncAgency sans délai à l'adresse <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a>.</p>
+      <p>SyncAgency se réserve le droit de refuser l'accès ou de suspendre un compte à tout moment, notamment en cas de violation des présentes CGU.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">4. Description du service</h2>
+      <p>SyncAgency est un logiciel CRM (Customer Relationship Management) en mode SaaS destiné aux agences de gestion de créatrices de contenu opérant sur des plateformes de messagerie telles que Telegram et WhatsApp. Le Service comprend notamment :</p>
+      <ul>
+        <li>La centralisation des conversations Telegram et WhatsApp dans une interface unifiée ;</li>
+        <li>La gestion d'une bibliothèque de médias et de scripts par modèle (Vault) ;</li>
+        <li>Un module d'envoi de messages en masse (Mass DM) avec segmentation ;</li>
+        <li>Un processeur de paiement intégré permettant de recevoir des paiements directement dans les conversations ;</li>
+        <li>Des tableaux de bord de suivi de performance pour les équipes de chatters ;</li>
+        <li>Un module d'acquisition marketing (selon le plan souscrit) incluant le suivi des comptes sur les réseaux sociaux et la gestion de tracking links ;</li>
+        <li>Un système de notifications en temps réel.</li>
+      </ul>
+      <p>Les fonctionnalités disponibles dépendent du plan d'abonnement souscrit par l'Utilisateur. SyncAgency se réserve le droit de modifier, d'ajouter ou de supprimer des fonctionnalités à tout moment, sous réserve d'un préavis raisonnable.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">5. Obligations de l'utilisateur</h2>
+      <p>L'Utilisateur s'engage à utiliser le Service de manière légale, loyale et conforme aux présentes CGU. Il est notamment interdit de :</p>
+      <ul>
+        <li>Utiliser le Service à des fins illicites, frauduleuses ou contraires à l'ordre public ;</li>
+        <li>Tenter d'accéder sans autorisation aux systèmes, données ou comptes d'autres utilisateurs ;</li>
+        <li>Introduire des virus, malwares ou tout code nuisible dans le Service ;</li>
+        <li>Reproduire, copier, revendre ou exploiter commercialement tout ou partie du Service sans autorisation écrite préalable de SyncAgency ;</li>
+        <li>Automatiser l'accès au Service par des robots ou scripts non autorisés ;</li>
+        <li>Envoyer des communications non sollicitées (spam) via les fonctionnalités du Service ;</li>
+        <li>Collecter des données personnelles de tiers sans leur consentement.</li>
+      </ul>
+      <p>L'Utilisateur est seul responsable des contenus qu'il envoie, publie ou transmet via le Service, ainsi que des conséquences de ces envois à l'égard des tiers.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">6. Propriété intellectuelle</h2>
+      <p>L'ensemble des éléments constitutifs du Service (logiciel, interface, graphismes, textes, marques, logos) sont la propriété exclusive de SyncAgency ou de ses concédants de licence. Toute reproduction, représentation, modification ou exploitation non autorisée est strictement interdite.</p>
+      <p>L'Utilisateur conserve la propriété des contenus qu'il intègre dans le Service (scripts, médias, données clients). Il accorde à SyncAgency une licence limitée, non exclusive et non transférable, aux seules fins de l'exécution du Service.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">7. Disponibilité et maintenance</h2>
+      <p>SyncAgency s'efforce de maintenir le Service accessible 24h/24 et 7j/7. Toutefois, des interruptions peuvent survenir pour cause de maintenance, de mise à jour ou d'incidents techniques indépendants de la volonté de SyncAgency.</p>
+      <p>SyncAgency s'engage à informer les Utilisateurs des maintenances planifiées avec un préavis raisonnable. En cas d'interruption imprévue, SyncAgency met tout en œuvre pour rétablir le Service dans les meilleurs délais.</p>
+      <p>La responsabilité de SyncAgency ne saurait être engagée en cas d'indisponibilité du Service due à des causes extérieures (pannes internet, force majeure, défaillances des plateformes tierces telles que Telegram ou WhatsApp).</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">8. Limitation de responsabilité</h2>
+      <p>Dans les limites permises par la loi applicable, SyncAgency ne pourra être tenu responsable de :</p>
+      <ul>
+        <li>Tout dommage indirect, incidental ou consécutif résultant de l'utilisation ou de l'impossibilité d'utiliser le Service ;</li>
+        <li>La perte de données due à un comportement de l'Utilisateur ou à des circonstances indépendantes de la volonté de SyncAgency ;</li>
+        <li>Tout préjudice résultant de l'utilisation de plateformes tierces intégrées au Service (Telegram, WhatsApp, etc.) ;</li>
+        <li>L'exactitude ou l'exhaustivité des données affichées dans les tableaux de bord analytiques.</li>
+      </ul>
+      <p>En tout état de cause, la responsabilité de SyncAgency au titre des présentes CGU est limitée aux montants effectivement payés par l'Utilisateur au cours des trois mois précédant le fait générateur du dommage.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">9. Protection des données personnelles</h2>
+      <p>Le traitement des données personnelles collectées dans le cadre de l'utilisation du Service est régi par la <a href="/privacy">Politique de Confidentialité</a> de SyncAgency, accessible sur le site web. Cette politique est conforme au Règlement Général sur la Protection des Données (RGPD) et à la législation belge applicable.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">10. Durée, résiliation et suspension</h2>
+      <p>Les présentes CGU sont conclues pour une durée indéterminée à compter de la création du Compte par l'Utilisateur.</p>
+      <p>L'Utilisateur peut résilier son compte à tout moment depuis les paramètres de son espace personnel ou en contactant SyncAgency à <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a>. La résiliation prend effet à la fin de la période de facturation en cours.</p>
+      <p>SyncAgency se réserve le droit de suspendre ou de résilier l'accès d'un Utilisateur en cas de violation des présentes CGU, sans préjudice de tout recours en dommages et intérêts.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">11. Modifications des CGU</h2>
+      <p>SyncAgency se réserve le droit de modifier les présentes CGU à tout moment. Les modifications sont notifiées aux Utilisateurs par email ou via une notification dans l'application avec un préavis minimum de 15 jours avant leur entrée en vigueur.</p>
+      <p>La poursuite de l'utilisation du Service après la date d'entrée en vigueur des nouvelles CGU vaut acceptation de celles-ci. En cas de refus, l'Utilisateur peut résilier son compte conformément à l'article 10.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">12. Droit applicable et juridiction compétente</h2>
+      <p>Les présentes CGU sont régies par le droit de l'État du Nouveau-Mexique (États-Unis). En cas de litige relatif à l'interprétation ou à l'exécution des présentes CGU, les parties s'engagent à rechercher une solution amiable avant tout recours judiciaire.</p>
+      <p>À défaut d'accord amiable dans un délai de 30 jours, tout litige sera soumis à la compétence exclusive des tribunaux compétents du comté de Bernalillo, Nouveau-Mexique (États-Unis), sauf disposition légale impérative contraire applicable aux consommateurs.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">13. Contact</h2>
+      <p>Pour toute question relative aux présentes CGU, vous pouvez nous contacter :</p>
+      <ul>
+        <li><strong>Par email :</strong> <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></li>
+        <li><strong>Via Telegram :</strong> <a href="https://taap.it/provenzanolucas" target="_blank" rel="noopener">https://taap.it/provenzanolucas</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

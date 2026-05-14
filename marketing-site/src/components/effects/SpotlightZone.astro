@@ -1,0 +1,11 @@
+---
+interface Props {
+  enabled?: boolean;
+  class?: string;
+}
+const { enabled = true, class: className } = Astro.props;
+const cls = ['spotlight-zone', className].filter(Boolean).join(' ');
+---
+<div class={cls} data-spotlight={enabled ? 'true' : undefined}>
+  <slot />
+</div>

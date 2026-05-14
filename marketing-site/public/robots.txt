@@ -1,0 +1,7 @@
+User-agent: *
+Allow: /
+Disallow: /_preview
+Disallow: /admin
+Disallow: /api
+
+Sitemap: https://www.syncagency.fr/sitemap-index.xml

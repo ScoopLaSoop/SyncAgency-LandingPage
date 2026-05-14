@@ -1,0 +1,298 @@
+{
+  "meta": {
+    "title": "SyncAgency — Le CRM des agences OFM qui chattent sur Telegram",
+    "description": "Centralise tes conversations Telegram et WhatsApp, tracke tes chatters et chaque vente. Aussi complet qu'Infloww — mais pensé pour Telegram."
+  },
+  "hero": {
+    "eyebrow": "CRM Chatting &nbsp;•&nbsp; Inspiré d'Infloww &nbsp;•&nbsp; 20% processeur intégré &nbsp;•&nbsp; Vault PPV &nbsp;•&nbsp; Mass DM",
+    "h1": "Le CRM des agences OFM qui chattent sur Telegram.",
+    "subtitle": "Centralise tes conversations Telegram et WhatsApp, tracke tes chatters et chaque vente.<br>\n    Aussi complet qu'Infloww — mais pensé pour Telegram.",
+    "ctaText": "7 jours gratuits →",
+    "ctaUrl": "#pricing",
+    "reassurance": "Sans engagement • Annulation en 1 clic • Support FR",
+    "proofBadge": "4 agences OFM utilisent déjà SyncAgency pour leur chatting Telegram et WhatsApp.",
+    "vslSrc": "/assets/videos/vsl-chatting.mp4",
+    "vslPoster": "/assets/images/vsl-chatting-poster.jpg"
+  },
+  "painSection": {
+    "title": "Pourquoi tu plafonnes.",
+    "cards": [
+      {
+        "icon": "layout-grid",
+        "title": "Aucune organisation.",
+        "description": "Telegram n'est pas pensé pour gérer plusieurs modèles, plusieurs chatters et des centaines de fans en parallèle. Tout part dans tous les sens. Aucune vue globale, aucune priorité."
+      },
+      {
+        "icon": "folder-x",
+        "title": "Pas de vault. Pas de scripts.",
+        "description": "Tes chatters cherchent leurs médias dans dix dossiers et recopient les mêmes phrases à la main, conversation après conversation. Chaque minute perdue à chercher, c'est une vente en moins."
+      },
+      {
+        "icon": "mail-warning",
+        "title": "Ton processeur externe grignote ta marge.",
+        "description": "Les processeurs tiers prennent une grosse commission sur chaque vente. Les notifs arrivent en retard, par mail. Tu sais ni quand la vente s'est jouée, ni quel chatter l'a closée."
+      },
+      {
+        "icon": "file-spreadsheet",
+        "title": "Ton tracking, c'est un Google Sheet fait main.",
+        "description": "Tes chatters notent chaque vente ligne par ligne dans des onglets éparpillés. C'est chronophage, fragile, et le jour où tu passes à <strong>5 chatters</strong>, c'est ingérable."
+      }
+    ],
+    "bridgeText": "Résultat : <span class=\"text-accent\">tu plafonnes</span>. Sans un CRM qui centralise et automatise tout ça,<br>\n          c'est mathématiquement impossible de scaler une agence OFM hors-plateforme."
+  },
+  "pivot": {
+    "line1": "Le vrai problème, c'est pas ton agence.",
+    "line2": "C'est ce sur quoi elle tourne.",
+    "supportText": "Tu veux faire avancer ton agence, mais tu prends pas les bonnes décisions<br>\n          parce que ton <strong>chatting est bloqué</strong>.",
+    "transitionTitle": "Ce que SyncAgency change."
+  },
+  "solution": {
+    "introTitle": "Voici sur quoi elle va tourner.",
+    "items": [
+      {
+        "eyebrow": "01 — COMPTES & CONTACTS",
+        "title": "Tous tes comptes, tous tes contacts, au même endroit.",
+        "description": "Connecte tous tes comptes Telegram et WhatsApp en quelques secondes, via un simple QR code. Tous tes contacts, tous tes modèles, toutes tes conversations, dans un seul outil. Plus besoin de jongler entre douze onglets ou quatre téléphones différents pour répondre à un fan.",
+        "bullets": [
+          { "label": "Connexion en QR code", "text": " : Telegram et WhatsApp natifs, en quelques secondes" },
+          { "label": "Multi-modèles, multi-comptes", "text": " : bascule entre tous tes modèles en un clic" },
+          { "label": "Historique complet récupéré", "text": " : rien ne se perd lors de la connexion" }
+        ],
+        "microCta": "Voir comment connecter un compte",
+        "videoSrc": "/assets/videos/sync-acount.mp4"
+      },
+      {
+        "eyebrow": "02 — VAULT & SCRIPTS",
+        "title": "Tes scripts et tes médias, prêts en 2 clics.",
+        "description": "Vault organisé par modèle. Tes chatters trouvent le bon média et le bon script en un clic, directement pendant la conversation. Plus de dossiers à fouiller, plus de scripts recopiés à la main, plus de temps perdu sur ce qui devrait être fluide.",
+        "bullets": [
+          { "label": "Vault par modèle", "text": " : chaque créatrice a ses propres médias et scripts cloisonnés" },
+          { "label": "Photos, vidéos, vocaux", "text": " : upload tes médias une fois, réutilise-les à tout moment pendant le chatting" },
+          { "label": "Insertion en 2 clics", "text": " : sans jamais quitter la conversation en cours" }
+        ],
+        "microCta": "Voir le vault en action",
+        "videoSrc": "/assets/videos/script-vault.mp4"
+      },
+      {
+        "eyebrow": "03 — PAIEMENT",
+        "title": "Ton processeur de paiement intégré.",
+        "description": "Le paiement se passe directement dans le CRM, sans renvoyer ton fan vers une plateforme externe. Notification temps réel à la seconde où la vente tombe. Tu sais exactement quel chatter a closé, sur quel modèle, à quel moment.",
+        "bullets": [
+          { "label": "Paiement natif dans le CRM", "text": " : carte bancaire et Apple Pay supportés" },
+          { "label": "Notification temps réel", "text": " : la vente apparaît à l'instant où elle tombe" },
+          { "label": "Attribution automatique", "text": " : quel chatter, quel modèle, quel montant" }
+        ],
+        "microCta": "Voir le flux de paiement",
+        "videoSrc": "/assets/videos/etoiles-processeur.mp4"
+      },
+      {
+        "eyebrow": "04 — TRACKING",
+        "title": "Chaque chatter et chaque vente, trackés automatiquement.",
+        "description": "Plus de Google Sheet rempli à la main. Chaque message envoyé, chaque vente closée, chaque heure travaillée : auto-trackés et compilés. Tu connais la performance exacte de chaque chatter, en temps réel. Combien il vend, à quelle vitesse il répond, quel est son taux de conversion.",
+        "bullets": [
+          { "label": "Performance par chatter", "text": " : revenue, messages envoyés, taux de conversion, vitesse de réponse" },
+          { "label": "Performance par modèle", "text": " : quel modèle ramène, lequel décroche" },
+          { "label": "Dashboard temps réel", "text": " : toutes tes stats lisibles à la seconde près" }
+        ],
+        "microCta": "Voir le dashboard performance",
+        "videoSrc": "/assets/videos/dashboard.mp4"
+      },
+      {
+        "eyebrow": "05 — MASS DM",
+        "title": "Mass DM par campagne.",
+        "description": "Filtre tes fans par statut d'activité, par groupe ou par tag personnalisé. Envoie un Mass DM précis en 2 clics.",
+        "bullets": [
+          { "label": "Filtrage par statut, groupe ou tag", "text": " : tu cibles exactement qui tu veux" },
+          { "label": "Variables dynamiques", "text": " : chaque message est personnalisé automatiquement" },
+          { "label": "Tracking par campagne", "text": " : tu mesures le revenue généré, envoi par envoi" }
+        ],
+        "microCta": "Voir une campagne Mass DM",
+        "videoSrc": "/assets/videos/mass-dm.mp4"
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Ce qu'en disent les agences.",
+    "subtitle": "",
+    "trust": [
+      "Avis non rémunérés",
+      "Augmentation de +30% de CA",
+      "Équipe aime le produit"
+    ],
+    "cards": [
+      {
+        "name": "Luca",
+        "context": "Fondateur d'agence OFM • 4 modèles • OnlyFans + Telegram",
+        "avatar": "/assets/images/review-luca.webp",
+        "beforeQuote": "“ça fait plus de 2 ans que je suis dans l'OFM et c'est clairement le CRM le plus complet du marché pour le hors-plateforme, de loin. j'ai testé d'autres CRM très connus mais celui-là a énormément de fonctionnalités et tout est optimisé dans les moindres détails. et avec le processeur de paiement intégré les frais sont extrêmement minimaux, je recommande fortement”"
+      },
+      {
+        "name": "MaxaM",
+        "context": "Fondateur d'agence OFM • Telegram hors-plateforme",
+        "avatar": "/assets/images/review-maxam.webp",
+        "beforeQuote": "“avant c'était vraiment galère de chatter et d'avoir une équipe sur un CRM complet et bien organisé. maintenant je génère bien plus qu'avant grâce aux optimisations sur chaque aspect. j'aurais clairement eu besoin de ça dès que j'ai commencé à vendre sur Telegram”"
+      }
+    ],
+    "transitionText": ""
+  },
+  "testimonial": {
+    "title": "Ce qu'en dit un fondateur d'agence.",
+    "subtitle": "Témoignage anonymisé. Citations brutes, mot pour mot.",
+    "qa": [
+      {
+        "question": "AVANT SYNCAGENCY, MON PROBLÈME :",
+        "answer": "C'était très compliqué de chatter et d'avoir du personnel sur un CRM complet et bien organisé."
+      },
+      {
+        "question": "AUJOURD'HUI, JE GAGNE CONCRÈTEMENT :",
+        "answer": "Bien plus qu'avant, grâce à toutes les optimisations sur chaque aspect."
+      },
+      {
+        "question": "J'EN AURAIS EU BESOIN :",
+        "answer": "Quand j'ai commencé à vendre en hors-plateforme."
+      },
+      {
+        "question": "JE LE RECOMMANDERAIS À :",
+        "answer": "Quelqu'un qui veut vendre en hors-plateforme et qui veut tracker chaque détail."
+      }
+    ],
+    "context": "Fondateur d'agence OFM • 4 modèles • OnlyFans + Telegram"
+  },
+  "pricing": {
+    "title": "Trois plans. Aucun engagement.",
+    "subtitle": "Facturation par modèle, mensuelle, résiliable en 1 clic. 7 jours d'essai gratuit sur tous les plans.",
+    "plans": [
+      {
+        "id": "core",
+        "badge": "CRM TELEGRAM",
+        "name": "Core Chatting",
+        "price": "59€",
+        "priceNote": "/ modèle / mois",
+        "description": "",
+        "features": [
+          { "text": "CRM Telegram &amp; WhatsApp natifs", "included": true },
+          { "text": "Vault média + scripts par modèle", "included": true },
+          { "text": "Mass DM par campagne", "included": true },
+          { "text": "Processeur de paiement intégré", "included": true },
+          { "text": "Tracking automatique chatters + ventes", "included": true },
+          { "text": "Dashboard CRM + KPI chatters", "included": true },
+          { "text": "Shifts &amp; planning chatters", "included": true },
+          { "text": "Support FR", "included": true }
+        ],
+        "ctaText": "7 jours gratuits →",
+        "ctaUrl": "https://app.syncagency.fr/register?plan=core_chatting",
+        "ctaDataAttr": "7_jours_gratuits",
+        "isCurrent": true,
+        "isSoon": false
+      },
+      {
+        "id": "growth",
+        "badge": "MARKETING",
+        "name": "Growth Marketing",
+        "price": "89€",
+        "priceNote": "/ modèle / mois",
+        "description": "",
+        "features": [
+          { "text": "Scraping Instagram, TikTok, Twitter", "included": true },
+          { "text": "Analytics Marketing &amp; Funnel", "included": true },
+          { "text": "Tracking Links + Deeplink Telegram", "included": true },
+          { "text": "Suivi des publications par compte", "included": true },
+          { "text": "Attribution par source d'acquisition", "included": true }
+        ],
+        "ctaText": "7 jours gratuits →",
+        "ctaUrl": "https://app.syncagency.fr/register?plan=growth_marketing",
+        "ctaDataAttr": "pricing-growth-marketing",
+        "ctaSecondaryText": "Voir l'offre Marketing →",
+        "ctaSecondaryUrl": "/marketing",
+        "isCurrent": false,
+        "isSoon": false
+      },
+      {
+        "id": "empire",
+        "badge": "TOUT-EN-UN",
+        "name": "Empire OS",
+        "price": "129€",
+        "priceNote": "/ modèle / mois",
+        "description": "",
+        "features": [
+          { "text": "<strong>Tout</strong> dans Core Chatting", "included": true },
+          { "text": "<strong>Tout</strong> dans Growth Marketing", "included": true },
+          { "text": "Migration assistée depuis ton ancien CRM", "included": true },
+          { "text": "Onboarding &amp; training équipe dédiés", "included": true },
+          { "text": "Support prioritaire", "included": true },
+          { "text": "SOP &amp; Knowledge Base intégrée", "included": true }
+        ],
+        "ctaText": "À venir",
+        "ctaUrl": "/empire",
+        "isCurrent": false,
+        "isSoon": true
+      }
+    ],
+    "guarantees": [
+      "<strong>7 jours d'essai gratuit</strong> sur tous les plans",
+      "<strong>Aucun engagement</strong> — résiliable en 1 clic",
+      "<strong>Support FR</strong> sur tous les plans",
+      "<strong>Migration depuis ton ancien CRM</strong> assistée gratuitement (Empire OS)"
+    ],
+    "transitionText": ""
+  },
+  "faq": {
+    "title": "Vos questions, nos réponses.",
+    "subtitle": "Tout ce qu'on te dit ici, on le tient.",
+    "items": [
+      {
+        "question": "Comment je connecte mes comptes Telegram et WhatsApp ?",
+        "answer": "Tu scannes un QR code depuis ton compte Telegram ou WhatsApp existant. Ça prend quelques secondes, rien à installer, aucune configuration technique requise. SyncAgency se connecte au compte existant : ton historique complet de conversations est récupéré automatiquement, tous tes contacts aussi. Les comptes Telegram Business et WhatsApp standard sont tous les deux supportés. Tu peux connecter plusieurs comptes en parallèle sous le même dashboard."
+      },
+      {
+        "question": "Mes chatters peuvent-ils basculer entre plusieurs modèles dans une seule fenêtre ?",
+        "answer": "Oui. Chaque chatter voit dans sa sidebar tous les modèles auxquels il a accès, avec leur statut d'activité en temps réel. Il bascule de l'un à l'autre en un clic, sans recharger ni changer d'onglet. Les conversations, le Vault et les scripts sont cloisonnés par modèle : le chatter ne risque jamais d'envoyer le mauvais contenu au mauvais fan. Idéal quand une équipe gère 3 à 10 créatrices en parallèle."
+      },
+      {
+        "question": "Le Vault, comment mes chatters l'utilisent pendant la conversation ?",
+        "answer": "Tu paramètres d'abord les scripts dans le Vault, organisés par modèle et par phase de vente (opener, upsell, closer, relance...). Pendant la conversation, le chatter clique sur le bouton Vault pour ouvrir le panneau, sélectionne la phase désirée et envoie le message en 1 clic. Les variables dynamiques (<code>{firstname}</code>, <code>{lastpurchase}</code>) se remplissent automatiquement. Zéro copier-coller, zéro improvisation, messages toujours propres."
+      },
+      {
+        "question": "Le Mass DM par campagne, comment je segmente mes fans ?",
+        "answer": "Tu filtres par trois axes : <strong>statut d'activité</strong> du fan, <strong>groupe</strong> que tu crées toi-même, ou <strong>tag personnalisé</strong> que tu poses sur chaque conversation. Tu peux croiser plusieurs filtres, par exemple : fans actifs ces 7 derniers jours + tag \"high value\". Tu sélectionnes ton script dans le Vault, tu personnalises les variables dynamiques, et tu lances. Chaque campagne est mesurée séparément : messages envoyés, taux de réponse, revenus générés."
+      },
+      {
+        "question": "Le processeur de paiement intégré, quelles méthodes de paiement supportées ?",
+        "answer": "Carte bancaire et Apple Pay via notre processeur intégré (markup 20% ajouté côté fan), plus Telegram Stars natif directement dans la conversation. Le paiement se déclenche dans la conversation. Le fan ne sort jamais vers un site externe. Tu reçois la notification à la seconde où la transaction est confirmée, avec le nom du chatter qui a closé et le modèle concerné. Aucun délai d'email, aucune attribution floue."
+      },
+      {
+        "question": "Comment je tracke la performance exacte de chaque chatter ?",
+        "answer": "Tout est auto-tracké sans aucune saisie manuelle : messages envoyés, ventes closées, vitesse de réponse, taux de conversion, revenu par heure travaillée, et activité en % sur chaque shift. Le dashboard affiche le <strong>golden ratio</strong> de chaque chatter — le rapport entre messages envoyés et ventes closées — pour identifier en un coup d'œil qui performe vraiment et qui remplit juste le chat sans convertir. Tu retrouves un leaderboard avec drill-down par chatter, par modèle et par période. Plus de Google Sheet à remplir à la main."
+      },
+      {
+        "question": "Pourquoi vous prenez 20% de commission sur les paiements ?",
+        "answer": "Parce que c'est le coût opérationnel d'un processeur de paiement intégré, propre et fiable. Pas une marge cachée. À comparer aux <strong>40%</strong> que prennent OnlyFans, MYM ou Fansly sur tes ventes, soit le double. Et chez nous, la commission est ajoutée côté fan, pas côté agence : tu touches 100% de ton prix nominal."
+      },
+      {
+        "question": "Je suis déjà sur un autre CRM, comment je migre ?",
+        "answer": "La migration est rapide et non-destructive. Tu gardes ton CRM actuel en parallèle pendant la transition. Étape 1 : tu connectes tes comptes Telegram et WhatsApp via QR code (2 minutes par compte), ton historique complet est récupéré automatiquement. Étape 2 : tu importes tes médias et scripts dans le Vault par modèle. Étape 3 : tu invites ton équipe de chatters. Sur le plan <strong>Empire OS</strong>, la migration est <strong>entièrement assistée gratuitement</strong>. Sur les plans Core Chatting et Growth Marketing, un guide de migration détaillé est fourni dès l'inscription."
+      },
+      {
+        "question": "Quelle est l'alternative à Infloww en français ?",
+        "answer": "SyncAgency est l'alternative française à Infloww, spécifiquement construite pour les agences OFM qui chattent sur Telegram et WhatsApp. À la différence d'Infloww qui est optimisé pour OnlyFans natif, SyncAgency couvre le hors-plateforme avec un CRM Telegram complet, un processeur de paiement intégré (20% vs 40% sur OF), du Mass DM par campagne et le tracking automatique des chatters. Support FR, lancé en 2026, basé en France."
+      },
+      {
+        "question": "C'est quoi un CRM OFM ?",
+        "answer": "Un CRM OFM (OnlyFans Management CRM) est un outil dédié aux agences qui gèrent plusieurs créatrices et leurs revenus. Il centralise les conversations avec les fans, suit les performances de chaque chatter, gère le vault de médias et de scripts, processe les paiements PPV, et tracke les ventes en temps réel. SyncAgency est un CRM OFM spécialisé pour le hors-plateforme (Telegram + WhatsApp) avec un focus sur les agences francophones."
+      },
+      {
+        "question": "Comment fonctionne un processeur de paiement OFM ?",
+        "answer": "Un processeur de paiement OFM permet aux agences de vendre du contenu PPV (Pay-Per-View) à leurs fans en dehors d'OnlyFans. Les options : plateforme native (OnlyFans/MYM = 40% de commission), processeurs externes (notification par email, attribution floue), ou processeur intégré au CRM comme SyncAgency (20% côté fan, notification temps réel, attribution automatique au chatter). Le processeur intégré est plus rentable et plus précis."
+      },
+      {
+        "question": "Pourquoi utiliser Telegram pour vendre au lieu d'OnlyFans ?",
+        "answer": "Les agences OFM utilisent Telegram pour éviter les 40% de commission OnlyFans, garder la propriété de leur base de fans, et avoir plus de contrôle sur la communication. Le taux de conversion est aussi meilleur qu'OnlyFans : la relation directe fan-créatrice, sans l'interface plateforme, génère plus d'achats impulsifs et un panier moyen plus élevé. Mais Telegram brut n'est pas pensé pour la gestion d'agence : pas de tracking, pas de vault, pas de processeur intégré. SyncAgency transforme Telegram en CRM complet pour agences OFM."
+      },
+      {
+        "question": "SyncAgency est-il gratuit ?",
+        "answer": "SyncAgency propose un essai gratuit de 7 jours sur tous les plans, sans engagement et sans carte bancaire requise. Tu accèdes à toutes les fonctionnalités du plan dès le premier jour. À l'issue des 7 jours, ton compte est désactivé si tu ne souscris pas — aucun débit automatique. Les abonnements démarrent ensuite à 59€ par modèle par mois (Core Chatting), 89€ (Growth Marketing) et 129€ (Empire OS)."
+      }
+    ],
+    "contact": "https://taap.it/pvzlucas"
+  }
+}

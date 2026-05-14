@@ -1,0 +1,194 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import PainCards from '@/components/sections/PainCards.astro';
+import PivotDiagnostic from '@/components/sections/PivotDiagnostic.astro';
+import SolutionSection from '@/components/sections/SolutionSection.astro';
+import ReviewCards from '@/components/sections/ReviewCards.astro';
+import PricingCards from '@/components/sections/PricingCards.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('landings', 'marketing');
+if (!entry) throw new Error('Marketing landing data not found');
+const data = entry.data;
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Comment je connecte mes comptes Instagram, TikTok et Twitter ?", "acceptedAnswer": { "@type": "Answer", "text": "Tu rentres juste les @username de tes comptes publics dans le dashboard. Pas de credentials à donner, pas d'OAuth à valider, pas d'app à connecter. Le scraping tourne sur les pages publiques de chaque réseau, comme un crawler intelligent qui surveille et collecte les datas pour toi." } },
+    { "@type": "Question", "name": "À quelle fréquence le scraping est mis à jour ?", "acceptedAnswer": { "@type": "Answer", "text": "Une fois par jour. Chaque matin, tu retrouves les nouvelles datas de tes comptes (vues, likes, commentaires, saves, partages) actualisées dans ton dashboard. Le rythme quotidien est largement suffisant pour piloter ta stratégie de contenu." } },
+    { "@type": "Question", "name": "Combien de comptes je peux connecter par modèle ?", "acceptedAnswer": { "@type": "Answer", "text": "Le plan Growth Marketing inclut 2 comptes Instagram + 2 comptes Twitter + 2 comptes TikTok par modèle. Si tes modèles ont plus de comptes, tu peux ajouter des add-ons : +5€/mois pour un compte Twitter, +10€/mois pour Instagram, +17€/mois pour TikTok." } },
+    { "@type": "Question", "name": "Comment fonctionne l'A/B testing automatisé ?", "acceptedAnswer": { "@type": "Answer", "text": "Tu publies plusieurs versions d'un même post sur tes comptes. SyncAgency track les performances de chacun en parallèle : vues, taux d'engagement, clics sur ta bio, fans ramenés. Tu obtiens un comparatif clair en quelques jours, sans compiler de tableur à la main." } },
+    { "@type": "Question", "name": "Combien de tracking links je peux créer ?", "acceptedAnswer": { "@type": "Answer", "text": "Liens trackés illimités sur les plans Growth Marketing et Empire OS. Crée un lien par post, par bio, par campagne, par story, sans aucune limite. Chaque lien te donne le compteur de clics, la source géographique, le device, et le revenu généré si le clic mène à une vente." } },
+    { "@type": "Question", "name": "Mes données et celles de mes modèles sont-elles privées ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Toutes tes données sont hébergées en France, chiffrées au repos et en transit. Aucune donnée n'est partagée avec d'autres agences ou utilisée pour entraîner des modèles tiers. Tu peux tout exporter à tout moment." } },
+    { "@type": "Question", "name": "Pourquoi 89€ par mois et par modèle ?", "acceptedAnswer": { "@type": "Answer", "text": "Parce que c'est le coût d'opérer un service qui scrape Instagram, TikTok et Twitter chaque jour, qui maintient des tracking links illimités, qui calcule l'attribution funnel, et qui te livre tout dans un dashboard unifié." } }
+  ]
+};
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.syncagency.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Marketing", "item": "https://www.syncagency.fr/marketing" }
+  ]
+};
+---
+
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  pageKey="marketing"
+  ogImage="/og/og-marketing.png"
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/videos/vsl-marketing-poster.jpg" fetchpriority="high" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  </Fragment>
+  <Hero data={data.hero} pageKey="marketing" ctaDataAttr="hero-7j-gratuits" />
+  <PainCards
+    title={data.painSection.title}
+    cards={data.painSection.cards}
+    bridgeText={data.painSection.bridgeText}
+  />
+  <PivotDiagnostic data={data.pivot} />
+  <SolutionSection
+    introTitle={data.solution.introTitle}
+    items={data.solution.items}
+    idPrefix="solution-m"
+    mode="marketing"
+  />
+  <ReviewCards
+    mode="marketing"
+    title={data.reviews.title}
+    subtitle={data.reviews.subtitle}
+    trust={data.reviews.trust}
+    cards={data.reviews.cards}
+    transitionText={data.reviews.transitionText}
+  />
+  <PricingCards
+    title={data.pricing.title}
+    subtitle={data.pricing.subtitle}
+    plans={data.pricing.plans}
+    guarantees={data.pricing.guarantees}
+    transitionText={data.pricing.transitionText}
+    mode="marketing"
+  />
+  <FAQ
+    title={data.faq.title}
+    subtitle={data.faq.subtitle}
+    items={data.faq.items}
+    contact={data.faq.contact}
+    idPrefix="faqm"
+  />
+
+  <!-- Affiliation bandeau -->
+  <section class="section affi-bandeau" style="background: #050505;">
+    <div class="container fade-in-up">
+      <div class="affi-bandeau-inner">
+        <div class="affi-bandeau-text">
+          <p class="affi-bandeau-eyebrow">Programme d'affiliation</p>
+          <h2 class="affi-bandeau-title">Tu as un réseau d'agences OFM&nbsp;?</h2>
+          <p class="affi-bandeau-sub">Gagne <strong>10% de commission récurrente</strong> sur chaque agence que tu nous parraines sur le plan Growth Marketing. Sans engagement, paiement mensuel.</p>
+        </div>
+        <a href="/affiliation?plan=marketing" class="btn-primary affi-bandeau-cta" data-cta="affiliation_bandeau" data-section="marketing_footer">
+          Découvrir le programme →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Transcripts vidéos module Marketing — crawlable par LLMs -->
+  <section id="transcripts-marketing" aria-label="Transcripts des démonstrations Marketing" style="background: #050505; padding: 60px 0;">
+    <div class="container" style="max-width: 880px;">
+      <h2 style="font-size: 18px; font-weight: 600; color: #F2F2F2; margin-bottom: 8px;">Transcripts des démonstrations</h2>
+      <p style="font-size: 14px; color: #555; margin-bottom: 32px;">Pour les lecteurs d'écran et les assistants IA.</p>
+
+      <details class="transcript-item">
+        <summary>Démo — Comptes marketing &amp; scraping (Instagram, TikTok, Twitter)</summary>
+        <div class="transcript-content">
+          <p>Le module Growth Marketing de SyncAgency centralise l'analyse de tes comptes de réseaux sociaux. Tu rentres les @username de tes comptes Instagram, TikTok et Twitter dans le dashboard. Pas de credentials à donner, pas d'OAuth à valider.</p>
+          <p>Le scraping tourne chaque jour sur les pages publiques. Chaque matin, tu retrouves les nouvelles métriques actualisées : vues, likes, commentaires, saves, partages — pour chaque post de chaque compte de chaque modèle.</p>
+          <p>Inclus par modèle : 2 comptes Instagram, 2 comptes Twitter, 2 comptes TikTok. Des add-ons sont disponibles si tes modèles ont plus de comptes.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Calendrier de publication &amp; gestion d'équipe</summary>
+        <div class="transcript-content">
+          <p>SyncAgency intègre un calendrier éditorial qui centralise tous les posts publiés et planifiés de tes créatrices. Chaque membre de ton équipe voit le planning en temps réel.</p>
+          <p>Tu assigns des posts à tes Social Media Managers par modèle. Le calendrier t'offre une vision claire de la fréquence de publication, des créneaux optimaux, et des gaps dans ton planning de contenu.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Analyse de performance par post</summary>
+        <div class="transcript-content">
+          <p>Chaque post importé depuis Instagram, TikTok ou Twitter est analysé individuellement. Tu vois les métriques clés : vues, engagement, saves, partages — et tu compares les performances entre les posts d'un même modèle.</p>
+          <p>L'A/B testing automatisé compare plusieurs versions d'un même type de contenu et te donne un comparatif clair en quelques jours. Tu identifes les formats qui performent le mieux sans avoir à compiler de tableur.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Tracking Links &amp; attribution des ventes</summary>
+        <div class="transcript-content">
+          <p>SyncAgency génère des tracking links uniques que tu places dans les bios, les stories, ou les posts de tes modèles. Chaque clic est tracké avec la source (IG, TikTok, Twitter), le device, la localisation géographique.</p>
+          <p>Quand un clic sur un tracking link mène à une vente dans l'inbox, la vente est automatiquement attribuée à la source. Tu sais exactement quel post, quelle bio, quelle campagne a généré quel revenu. Tracking links illimités sur les plans Growth Marketing et Empire OS.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Funnel d'acquisition &amp; vision globale</summary>
+        <div class="transcript-content">
+          <p>Le module Funnel de SyncAgency visualise le parcours complet d'un fan : de l'exposition à un post sur les réseaux sociaux, au clic sur le bio, à l'entrée dans l'inbox Telegram, jusqu'à la première vente.</p>
+          <p>Tu identifies les points de friction dans ton acquisition. Combien de fans entrent par IG vs TikTok ? Quel réseau génère les fans les plus actifs ? Quel modèle a le meilleur taux de conversion post → inbox → vente ?</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Posts scrapés &amp; inspiration contenu</summary>
+        <div class="transcript-content">
+          <p>SyncAgency scrape aussi les posts des comptes publics de tes concurrents ou de créatrices de référence. Tu constitues une bibliothèque d'inspiration contenu directement dans le dashboard.</p>
+          <p>Tu identifies les formats viraux dans ta niche, les types de posts qui génèrent le plus de saves et de partages, et tu adaptes ta stratégie éditoriale en conséquence. Le tout sans quitter SyncAgency.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <style>
+    /* Transcripts (styles partagés si non déjà définis dans ce fichier) */
+    .transcript-item {
+      background: rgba(10, 13, 26, 0.5);
+      border: 1px solid rgba(38, 38, 38, 0.5);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 10px;
+    }
+    .transcript-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      color: #F2F2F2;
+      list-style: none;
+      user-select: none;
+    }
+    .transcript-item summary::-webkit-details-marker { display: none; }
+    .transcript-item summary::before { content: '+ '; color: #8AA5FF; font-weight: 700; }
+    .transcript-item[open] summary::before { content: '− '; }
+    .transcript-content {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .transcript-content p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .transcript-content p:last-child { margin-bottom: 0; }
+  </style>
+</BaseLayout>

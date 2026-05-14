@@ -1,0 +1,96 @@
+---
+interface Props {
+  pageKey?: string;
+}
+
+const { pageKey = 'crm' } = Astro.props;
+
+const isLandingPage = pageKey === 'crm' || pageKey === 'marketing';
+const pricingHref = isLandingPage ? '#pricing' : '/#pricing';
+const faqHref = isLandingPage ? '#faq' : '/#faq';
+const headerCtaAttr = pageKey === 'marketing' ? 'header-7j-gratuits' : '7_jours_gratuits';
+---
+
+<header class="header" id="header">
+  <a href="/" class="header-logo" aria-label="SyncAgency — Accueil">
+    <img src="/assets/images/logo-original.webp" alt="" class="header-logo-img" />
+    <span class="header-logo-name">SyncAgency</span>
+  </a>
+  <nav class="header-nav" aria-label="Navigation principale">
+    <div class="nav-dropdown" id="navProductDropdown">
+      <button class="nav-dropdown-btn" id="navProductBtn" aria-haspopup="true" aria-expanded="false">
+        Produit <i data-lucide="chevron-down" class="nav-chevron" aria-hidden="true"></i>
+      </button>
+      <div class="nav-dropdown-panel" role="menu">
+        <a href="/" class="nav-dropdown-item" role="menuitem">CRM Chatting</a>
+        <a href="/marketing" class="nav-dropdown-item" role="menuitem">Growth Marketing</a>
+        <a href="#" class="nav-dropdown-item nav-dropdown-item--disabled" role="menuitem" aria-disabled="true">
+          Empire OS <span class="footer-badge-soon">Bientôt</span>
+        </a>
+      </div>
+    </div>
+    <a href={`/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`} class="header-nav-link">Affiliation</a>
+    <a href="/about" class="header-nav-link">À propos</a>
+    <a href={pricingHref} class="header-nav-link">Tarifs</a>
+    <a href={faqHref} class="header-nav-link">FAQ</a>
+  </nav>
+  <div class="header-actions">
+    <a href="https://app.syncagency.fr/login" class="header-nav-link header-login">Connexion</a>
+    <a href="https://syncagency-en.vercel.app" class="header-nav-link header-lang" aria-label="Switch to English">🇬🇧 EN</a>
+    <a href={pricingHref} class="btn-primary" data-cta={headerCtaAttr} data-section="header">7 jours gratuits</a>
+  </div>
+  <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Menu" aria-expanded="false">
+    <i data-lucide="menu" class="menu-icon"></i>
+  </button>
+</header>
+
+<div class="mobile-nav" id="mobileNav" role="navigation" aria-label="Menu mobile" aria-hidden="true">
+  <p class="mobile-nav-group-title">Produit</p>
+  <a href="/" class="mobile-nav-link">CRM Chatting</a>
+  <a href="/marketing" class="mobile-nav-link">Growth Marketing</a>
+  <a href="#" class="mobile-nav-link mobile-nav-link--disabled">
+    Empire OS <span class="mobile-nav-soon">Bientôt</span>
+  </a>
+  <a href={`/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`} class="mobile-nav-link">Affiliation</a>
+  <a href="/about" class="mobile-nav-link">À propos</a>
+  <a href={pricingHref} class="mobile-nav-link">Tarifs</a>
+  <a href={faqHref} class="mobile-nav-link">FAQ</a>
+  <div class="mobile-nav-actions">
+    <a href="https://app.syncagency.fr/login" class="mobile-nav-link">Connexion</a>
+    <a href={pricingHref} class="btn-primary" data-cta={headerCtaAttr} data-section="mobile_nav">7 jours gratuits</a>
+  </div>
+</div>
+
+<script>
+  var navProductBtn = document.getElementById('navProductBtn');
+  var navProductDropdown = document.getElementById('navProductDropdown');
+  if (navProductBtn && navProductDropdown) {
+    var dropdownPanel = navProductDropdown.querySelector('.nav-dropdown-panel');
+
+    navProductBtn.addEventListener('click', function (e) {
+      e.stopPropagation();
+      var isOpen = navProductDropdown.classList.contains('open');
+      navProductDropdown.classList.toggle('open', !isOpen);
+      navProductBtn.setAttribute('aria-expanded', String(!isOpen));
+    });
+
+    document.addEventListener('click', function () {
+      if (navProductDropdown.classList.contains('open')) {
+        navProductDropdown.classList.remove('open');
+        navProductBtn.setAttribute('aria-expanded', 'false');
+      }
+    });
+
+    if (dropdownPanel) {
+      dropdownPanel.addEventListener('click', function (e) { e.stopPropagation(); });
+    }
+
+    navProductBtn.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') {
+        navProductDropdown.classList.remove('open');
+        navProductBtn.setAttribute('aria-expanded', 'false');
+        navProductBtn.focus();
+      }
+    });
+  }
+</script>

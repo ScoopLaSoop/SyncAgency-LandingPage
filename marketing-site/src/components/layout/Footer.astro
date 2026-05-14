@@ -1,0 +1,79 @@
+---
+interface Props {
+  pageKey?: string;
+}
+
+const { pageKey = 'crm' } = Astro.props;
+
+const tagline = pageKey === 'marketing'
+  ? 'Track ton acquisition Instagram, TikTok et Twitter depuis un seul dashboard.'
+  : 'Le CRM des agences OFM qui chattent sur Telegram.';
+---
+
+<footer class="footer" role="contentinfo">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="/" class="footer-logo" aria-label="SyncAgency — Accueil">
+        <img src="/assets/images/logo-original.webp" alt="" class="footer-logo-img" />
+        <span class="footer-logo-name">SyncAgency</span>
+      </a>
+      <p class="footer-tagline">{tagline}</p>
+      <a href="https://app.syncagency.fr/register" class="footer-cta">7 jours gratuits →</a>
+      <div class="footer-socials">
+        <a href="https://taap.it/SyncAgencyy" class="footer-social-link" aria-label="YouTube" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M2.5 17a24.12 24.12 0 0 1 0-10 2 2 0 0 1 1.4-1.4 49.56 49.56 0 0 1 16.2 0A2 2 0 0 1 21.5 7a24.12 24.12 0 0 1 0 10 2 2 0 0 1-1.4 1.4 49.55 49.55 0 0 1-16.2 0A2 2 0 0 1 2.5 17"/>
+            <path d="m10 15 5-3-5-3z"/>
+          </svg>
+        </a>
+        <a href="https://taap.it/SyncAgencyyy" class="footer-social-link" aria-label="Instagram" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect width="20" height="20" x="2" y="2" rx="5" ry="5"/>
+            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/>
+            <line x1="17.5" x2="17.51" y1="6.5" y2="6.5"/>
+          </svg>
+        </a>
+        <a href="https://taap.it/pvzlucas" class="footer-social-link" aria-label="Telegram" target="_blank" rel="noopener">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="m22 2-7 20-4-9-9-4Z"/>
+            <path d="M22 2 11 13"/>
+          </svg>
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Solutions</p>
+      <a href="/" class="footer-link">CRM Chatting</a>
+      <a href="/marketing" class="footer-link">Growth Marketing</a>
+      <a href="#" class="footer-link footer-link--soon">Empire OS <span class="footer-badge-soon">Bientôt</span></a>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Ressources</p>
+      <a href="/blog" class="footer-link">Blog</a>
+      <a href="/about" class="footer-link">À propos</a>
+      <a href="/migration-infloww" class="footer-link">Migration Infloww</a>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Compte</p>
+      <a href="https://app.syncagency.fr/login" class="footer-link">Se connecter</a>
+      <a href="https://app.syncagency.fr/register" class="footer-link">Créer un compte</a>
+      <a href={`/affiliation?plan=${pageKey === 'marketing' ? 'marketing' : 'chatting'}`} class="footer-link">Affiliation</a>
+      <a href="https://calendly.com/lucas-provenzano9/30min" class="footer-link" target="_blank" rel="noopener">Réserver une démo</a>
+      <a href="https://taap.it/provenzanolucas" class="footer-link" target="_blank" rel="noopener">Contact</a>
+    </div>
+
+    <div class="footer-col">
+      <p class="footer-col-title">Légal</p>
+      <a href="/cgu" class="footer-link">CGU</a>
+      <a href="/cgv" class="footer-link">CGV</a>
+      <a href="/privacy" class="footer-link">Confidentialité</a>
+    </div>
+  </div>
+
+  <div class="footer-bottom">
+    <span>© 2026 SyncAgency. Tous droits réservés.</span>
+  </div>
+</footer>

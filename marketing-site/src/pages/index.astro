@@ -1,0 +1,406 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Hero from '@/components/sections/Hero.astro';
+import PainCards from '@/components/sections/PainCards.astro';
+import PivotDiagnostic from '@/components/sections/PivotDiagnostic.astro';
+import SolutionSection from '@/components/sections/SolutionSection.astro';
+import ReviewCards from '@/components/sections/ReviewCards.astro';
+import PricingCards from '@/components/sections/PricingCards.astro';
+import FAQ from '@/components/sections/FAQ.astro';
+import { getEntry } from 'astro:content';
+
+const entry = await getEntry('landings', 'crm');
+if (!entry) throw new Error('CRM landing data not found');
+const data = entry.data;
+
+const schemaSoftwareApp = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  "name": "SyncAgency",
+  "applicationCategory": "BusinessApplication",
+  "applicationSubCategory": "CRM Software",
+  "operatingSystem": "Web",
+  "description": "Le CRM des agences OFM qui chattent sur Telegram. Centralise tes conversations Telegram et WhatsApp, tracke tes chatters et chaque vente.",
+  "url": "https://www.syncagency.fr/",
+  "screenshot": "https://www.syncagency.fr/og/og-home.png",
+  "offers": [
+    { "@type": "Offer", "name": "Core Chatting", "price": "59", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Growth Marketing", "price": "89", "priceCurrency": "EUR" },
+    { "@type": "Offer", "name": "Empire OS", "price": "129", "priceCurrency": "EUR" }
+  ],
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "2",
+    "bestRating": "5",
+    "worstRating": "1"
+  }
+};
+
+const schemaFAQ = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    { "@type": "Question", "name": "Comment je connecte mes comptes Telegram et WhatsApp ?", "acceptedAnswer": { "@type": "Answer", "text": "Tu scannes un QR code depuis ton compte Telegram ou WhatsApp existant — ça prend quelques secondes, rien à installer, aucune configuration technique requise. SyncAgency se connecte au compte existant : ton historique complet de conversations est récupéré automatiquement, tous tes contacts aussi. Les comptes Telegram Business et WhatsApp standard sont tous les deux supportés. Tu peux connecter plusieurs comptes en parallèle sous le même dashboard." } },
+    { "@type": "Question", "name": "Mes chatters peuvent-ils basculer entre plusieurs modèles dans une seule fenêtre ?", "acceptedAnswer": { "@type": "Answer", "text": "Oui. Chaque chatter voit dans sa sidebar tous les modèles auxquels il a accès, avec leur statut d'activité en temps réel. Il bascule de l'un à l'autre en un clic, sans recharger ni changer d'onglet. Les conversations, le Vault et les scripts sont cloisonnés par modèle : le chatter ne risque jamais d'envoyer le mauvais contenu au mauvais fan. Idéal quand une équipe gère 3 à 10 créatrices en parallèle." } },
+    { "@type": "Question", "name": "Le Vault, comment mes chatters l'utilisent pendant la conversation ?", "acceptedAnswer": { "@type": "Answer", "text": "Le Vault est cloisonné par modèle : chaque créatrice a ses propres dossiers de médias et de scripts. Pendant la conversation, le chatter ouvre le Vault à côté de la fenêtre, sélectionne le bon média ou le bon script, et l'envoie en 2 clics. Les variables dynamiques se remplissent toutes seules." } },
+    { "@type": "Question", "name": "Le Mass DM par campagne, comment je segmente mes fans ?", "acceptedAnswer": { "@type": "Answer", "text": "Tu filtres par trois axes : statut d'activité du fan, groupe que tu crées toi-même, ou tag personnalisé que tu poses sur chaque conversation. Tu peux croiser plusieurs filtres — par exemple fans actifs ces 7 derniers jours avec tag high value. Tu sélectionnes ton script dans le Vault, tu personnalises les variables dynamiques, et tu lances. Chaque campagne est mesurée séparément : messages envoyés, taux de réponse, revenus générés." } },
+    { "@type": "Question", "name": "Le processeur de paiement intégré, quelles méthodes de paiement supportées ?", "acceptedAnswer": { "@type": "Answer", "text": "Carte bancaire et Apple Pay via notre processeur intégré (markup 20% ajouté côté fan), plus Telegram Stars natif directement dans la conversation. Le paiement se déclenche dans la conv — le fan ne sort jamais vers un site externe. Tu reçois la notification à la seconde où la transaction est confirmée, avec le nom du chatter qui a closé et le modèle concerné. Aucun délai d'email, aucune attribution floue." } },
+    { "@type": "Question", "name": "Comment je tracke la performance exacte de chaque chatter ?", "acceptedAnswer": { "@type": "Answer", "text": "Tout est auto-tracké sans aucune saisie manuelle : messages envoyés, ventes closées, vitesse de réponse moyenne, taux de conversion, revenu par heure travaillée. Tu retrouves un leaderboard dans ton dashboard avec drill-down par chatter, par modèle et par période personnalisée. Les données sont disponibles en temps réel — tu identifies immédiatement quel chatter performe le mieux et sur quel modèle. Plus de Google Sheet à remplir à la main." } },
+    { "@type": "Question", "name": "Pourquoi vous prenez 20% de commission sur les paiements ?", "acceptedAnswer": { "@type": "Answer", "text": "Parce que c'est le coût opérationnel d'un processeur de paiement intégré, propre et fiable. Pas une marge cachée. À comparer aux 40% que prennent OnlyFans, MYM ou Fansly sur tes ventes — soit le double. Et chez nous, la commission est ajoutée côté fan, pas côté agence : tu touches 100% de ton prix nominal." } },
+    { "@type": "Question", "name": "Quelle est l'alternative à Infloww en français ?", "acceptedAnswer": { "@type": "Answer", "text": "SyncAgency est l'alternative française à Infloww, spécifiquement construite pour les agences OFM qui chattent sur Telegram et WhatsApp. À la différence d'Infloww qui est optimisé pour OnlyFans natif, SyncAgency couvre le hors-plateforme avec un CRM Telegram complet, un processeur de paiement intégré (20% vs 40% sur OF), du Mass DM par campagne et le tracking automatique des chatters. Support FR, lancé en 2026, basé en France." } },
+    { "@type": "Question", "name": "C'est quoi un CRM OFM ?", "acceptedAnswer": { "@type": "Answer", "text": "Un CRM OFM (OnlyFans Management CRM) est un outil dédié aux agences qui gèrent plusieurs créatrices et leurs revenus. Il permet de centraliser les conversations avec les fans, suivre les performances de chaque chatter, gérer le vault de médias et de scripts, processer les paiements PPV, et tracker les ventes en temps réel. SyncAgency est un CRM OFM spécialisé pour le hors-plateforme (Telegram + WhatsApp) avec un focus sur les agences francophones." } },
+    { "@type": "Question", "name": "Comment fonctionne un processeur de paiement OFM ?", "acceptedAnswer": { "@type": "Answer", "text": "Un processeur de paiement OFM permet aux agences OnlyFans de vendre du contenu PPV (Pay-Per-View) à leurs fans en hors-plateforme. Les options classiques sont : plateforme native (OnlyFans/MYM = 40% de commission), processeurs externes type Dropp Fans (notification email avec délai, attribution chatter floue), processeur intégré au CRM comme SyncAgency (20% de commission, notification temps réel, attribution automatique au chatter). Le processeur intégré au CRM est généralement plus rentable et plus précis." } },
+    { "@type": "Question", "name": "Pourquoi utiliser Telegram pour vendre au lieu d'OnlyFans ?", "acceptedAnswer": { "@type": "Answer", "text": "Les agences OFM utilisent Telegram en complément ou en remplacement d'OnlyFans pour : éviter les 40% de commission OnlyFans, garder la propriété de leur base de fans, éviter les bans plateforme, avoir plus de contrôle sur la communication. Mais Telegram brut n'est pas pensé pour la gestion d'agence : pas de tracking, pas de vault, pas de processeur de paiement intégré. C'est pour ça que SyncAgency a été construit : transformer Telegram en CRM complet pour agences OFM." } },
+    { "@type": "Question", "name": "SyncAgency est-il gratuit ?", "acceptedAnswer": { "@type": "Answer", "text": "SyncAgency propose un essai gratuit de 7 jours sur tous les plans, sans engagement, sans carte bancaire requise, annulable en 1 clic. Après l'essai, les abonnements démarrent à 59€ par modèle par mois pour le plan Core Chatting (CRM Telegram complet). Le plan Growth Marketing est à 89€/modèle/mois (CRM + module acquisition IG/TikTok/Twitter). Empire OS (Chatting + Marketing + Paiements) est à 129€/modèle/mois. Tous les plans incluent une migration assistée gratuite depuis Infloww." } }
+  ]
+};
+
+const schemaVideo = {
+  "@context": "https://schema.org",
+  "@type": "VideoObject",
+  "name": "Le CRM des agences OFM qui chattent sur Telegram — Présentation SyncAgency",
+  "description": "VSL de présentation de SyncAgency : le CRM construit pour les agences OnlyFans qui chattent sur Telegram et WhatsApp en hors-plateforme. Centralisation, vault, tracking, paiement intégré, Mass DM par campagne.",
+  "thumbnailUrl": "https://www.syncagency.fr/assets/images/vsl-chatting-poster.jpg",
+  "uploadDate": "2026-05-10",
+  "duration": "PT2M19S",
+  "contentUrl": "https://www.syncagency.fr/assets/videos/vsl-chatting.mp4",
+  "embedUrl": "https://www.syncagency.fr/",
+  "publisher": {
+    "@id": "https://www.syncagency.fr/#organization"
+  },
+  "transcript": "Comment tu suis tes ventes au quotidien ? Si la réponse c'est un Google Sheet, t'as un problème. Tu chattes sur Telegram. Mais tes scripts, tes ventes, ton équipe — tout est éparpillé. Imagine : cinq chatters, dix modèles, et un Google Sheet en guise de CRM. C'est pas scalable. C'est pas professionnel. Et surtout, c'est de l'argent qui part par la fenêtre. SyncAgency centralise tout. Tes conversations Telegram et WhatsApp dans une seule interface. Ton vault de médias et scripts par modèle. Ton processeur de paiement intégré avec notifs temps réel. Ton tracking automatique — messages envoyés, ventes closées, revenus par chatter. Plus ton Mass DM par campagne avec segmentation avancée. Tu connectes tes comptes en scannant un QR code. Pas de configuration technique. Ton historique complet est récupéré en quelques secondes. Ton équipe de chatters voit tous les modèles dans une sidebar unifiée. Ils basculent d'un modèle à l'autre en un clic. Le Vault est cloisonné par modèle : médias, scripts, variables dynamiques. Pendant la conversation, le chatter envoie le bon contenu en 2 clics. Le processeur de paiement intégré déclenche la transaction dans la conversation. Le fan ne sort jamais vers un site externe. Tu reçois la notif avec le nom du chatter qui a closé. Le tracking est entièrement automatique. Plus de Google Sheet à remplir à la main. Tu retrouves un leaderboard dans ton dashboard avec drill-down par chatter, par modèle et par période. Le Mass DM t'permet de cibler par statut d'activité, groupe ou tag personnalisé. Tu lances une campagne, tu mesures les résultats. Tout ça dans un seul outil. SyncAgency — le CRM des agences OFM qui chattent sur Telegram.",
+  "inLanguage": "fr-FR"
+};
+---
+
+<BaseLayout
+  title={data.meta.title}
+  description={data.meta.description}
+  pageKey="crm"
+  ogImage="/og/og-home.png"
+>
+  <Fragment slot="head">
+    <link rel="preload" as="image" href="/assets/videos/vsl-chatting-poster.jpg" fetchpriority="high" />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaSoftwareApp)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaFAQ)} />
+    <script type="application/ld+json" set:html={JSON.stringify(schemaVideo)} />
+  </Fragment>
+  <Hero data={data.hero} pageKey="crm" ctaDataAttr="7_jours_gratuits" />
+  <PainCards
+    title={data.painSection.title}
+    cards={data.painSection.cards}
+    bridgeText={data.painSection.bridgeText}
+  />
+  <PivotDiagnostic data={data.pivot} />
+  <SolutionSection
+    introTitle={data.solution.introTitle}
+    items={data.solution.items}
+  />
+  <!-- Section comparative SyncAgency vs Infloww -->
+  <section class="section" id="vs-infloww" style="background: #080808;">
+    <div class="container fade-in-up">
+      <!-- Header centré -->
+      <div style="text-align: center; margin-bottom: 56px;">
+        <p style="font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: #8AA5FF; margin-bottom: 12px;">Comparatif</p>
+        <h2 class="section-title" style="margin-bottom: 16px;">SyncAgency vs Infloww.</h2>
+        <p style="font-size: 16px; color: #999; max-width: 480px; margin: 0 auto; line-height: 1.6;">Tu connais déjà Infloww. Voici pourquoi les agences migrent.</p>
+      </div>
+
+      <!-- Table comparative -->
+      <div class="vs-table-wrap">
+        <table class="vs-table">
+          <thead>
+            <tr>
+              <th class="vs-th vs-th-feature">Fonctionnalité</th>
+              <th class="vs-th vs-th-sync">
+                <span class="vs-th-logo">SyncAgency</span>
+                <span class="vs-th-badge">Notre choix</span>
+              </th>
+              <th class="vs-th vs-th-comp">Infloww</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="vs-td-feature">Optimisé pour Telegram natif</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Vault média + scripts par modèle</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-partial">✓</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Mass DM par campagne (statut / groupe / tag)</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-partial">Limité</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Commission processeur</td>
+              <td class="vs-td-sync"><span class="vs-check">20%</span> côté fan</td>
+              <td class="vs-td-comp"><span class="vs-cross">40%</span> côté agence</td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Notification temps réel par vente</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-partial">✓</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Tracking Links + attribution</td>
+              <td class="vs-td-sync"><span class="vs-check">✓ Inclus</span></td>
+              <td class="vs-td-comp"><span class="vs-partial">Liens seulement</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Migration assistée gratuite</td>
+              <td class="vs-td-sync"><span class="vs-check">✓ Empire OS</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">✗</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div style="text-align: center; margin-top: 48px;">
+        <a href="/#pricing" class="btn-primary" data-cta="vs_infloww_cta" data-section="vs_infloww">
+          Essayer SyncAgency 7 jours →
+        </a>
+        <p style="font-size: 13px; color: #555; margin-top: 12px;">Migration assistée gratuite sur Empire OS</p>
+      </div>
+    </div>
+  </section>
+
+  <ReviewCards
+    mode="crm"
+    title={data.reviews.title}
+    subtitle={data.reviews.subtitle}
+    trust={data.reviews.trust}
+    cards={data.reviews.cards}
+    transitionText={data.reviews.transitionText}
+  />
+  <PricingCards
+    title={data.pricing.title}
+    subtitle={data.pricing.subtitle}
+    plans={data.pricing.plans}
+    guarantees={data.pricing.guarantees}
+    transitionText={data.pricing.transitionText}
+  />
+  <FAQ
+    title={data.faq.title}
+    subtitle={data.faq.subtitle}
+    items={data.faq.items}
+    contact={data.faq.contact}
+  />
+
+  <!-- Affiliation bandeau -->
+  <section class="section affi-bandeau" style="background: #050505;">
+    <div class="container fade-in-up">
+      <div class="affi-bandeau-inner">
+        <div class="affi-bandeau-text">
+          <p class="affi-bandeau-eyebrow">Programme d'affiliation</p>
+          <h2 class="affi-bandeau-title">Tu as un réseau d'agences OFM&nbsp;?</h2>
+          <p class="affi-bandeau-sub">Gagne <strong>40% de commission récurrente</strong> sur chaque agence que tu nous parraines. Sans engagement, paiement mensuel.</p>
+        </div>
+        <a href="/affiliation?plan=chatting" class="btn-primary affi-bandeau-cta" data-cta="affiliation_bandeau" data-section="home_footer">
+          Découvrir le programme →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <style>
+    /* ── Comparative table ─────────────────────────────────────────────── */
+    .vs-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+      border: 1px solid #1E1E1E;
+      border-radius: 16px;
+      background: #0E0E0E;
+    }
+    .vs-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+    .vs-th {
+      padding: 20px 24px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+    .vs-th-feature {
+      text-align: left;
+      color: #CCCCCC;
+      width: 45%;
+    }
+    .vs-th-sync {
+      background: #131828;
+      border-top: 2px solid rgba(138,165,255,0.7);
+      border-left: 1px solid rgba(138,165,255,0.2);
+      border-right: 1px solid rgba(138,165,255,0.2);
+      color: var(--color-primary);
+      width: 27.5%;
+    }
+    .vs-th-comp {
+      color: #555;
+      width: 27.5%;
+    }
+    .vs-th-logo {
+      display: block;
+      font-size: 15px;
+      margin-bottom: 6px;
+    }
+    .vs-th-badge {
+      display: inline-block;
+      background: rgba(138,165,255,0.2);
+      color: var(--color-primary);
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      padding: 3px 10px;
+      border-radius: 6px;
+      text-transform: uppercase;
+    }
+    .vs-table tbody tr:last-child td { border-bottom: none; }
+    .vs-table tbody tr:hover td { background: #141414; }
+    .vs-table tbody tr td {
+      padding: 15px 24px;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      font-size: 14px;
+      transition: background 0.15s;
+    }
+    .vs-td-feature {
+      color: #CCCCCC;
+      text-align: left;
+    }
+    .vs-td-sync {
+      text-align: center;
+      background: #111620;
+      border-left: 1px solid rgba(138,165,255,0.2);
+      border-right: 1px solid rgba(138,165,255,0.2);
+      color: #F2F2F2;
+      font-weight: 500;
+    }
+    .vs-td-comp {
+      text-align: center;
+      color: #4A4A4A;
+    }
+    .vs-check {
+      color: var(--color-primary);
+      font-weight: 700;
+    }
+    .vs-cross {
+      color: #3E3E3E;
+    }
+    .vs-partial {
+      color: #F59E0B;
+      font-size: 12px;
+    }
+    @media (max-width: 768px) {
+      .vs-table { min-width: 480px; }
+    }
+  </style>
+
+  <!-- Transcripts vidéos — crawlable par LLMs -->
+  <section id="transcripts" aria-label="Transcripts des vidéos" style="background: #050505; padding: 60px 0;">
+    <div class="container" style="max-width: 880px;">
+      <h2 style="font-size: 18px; font-weight: 600; color: #F2F2F2; margin-bottom: 8px;">Transcripts des vidéos</h2>
+      <p style="font-size: 14px; color: #555; margin-bottom: 32px;">Pour les lecteurs d'écran et les assistants IA.</p>
+
+      <details class="transcript-item">
+        <summary>Présentation — Le CRM des agences OFM qui chattent sur Telegram (2:19)</summary>
+        <div class="transcript-content">
+          <p>Comment tu suis tes ventes au quotidien ? Si la réponse c'est un Google Sheet, t'as un problème.</p>
+          <p>Tu chattes sur Telegram. Mais tes scripts, tes ventes, ton équipe — tout est éparpillé. Imagine : cinq chatters, dix modèles, et un Google Sheet en guise de CRM. C'est pas scalable. C'est pas professionnel. Et surtout, c'est de l'argent qui part par la fenêtre.</p>
+          <p>SyncAgency centralise tout. Tes conversations Telegram et WhatsApp dans une seule interface. Ton vault de médias et scripts par modèle. Ton processeur de paiement intégré avec notifications temps réel. Ton tracking automatique. Plus ton Mass DM par campagne avec segmentation avancée.</p>
+          <p>Tu connectes tes comptes en scannant un QR code. Ton historique complet est récupéré en quelques secondes. Pas de configuration technique. Ton équipe de chatters voit tous les modèles dans une sidebar unifiée, et bascule d'un modèle à l'autre en un clic.</p>
+          <p>Le Vault est cloisonné par modèle : médias, scripts, variables dynamiques. Pendant la conversation, le chatter envoie le bon contenu en 2 clics. Le processeur de paiement intégré déclenche la transaction dans la conversation — le fan ne sort jamais vers un site externe. Tu reçois la notification avec le nom du chatter qui a closé.</p>
+          <p>Le tracking est entièrement automatique : messages envoyés, ventes closées, revenus par heure travaillée. Leaderboard avec drill-down par chatter, par modèle et par période. Plus de Google Sheet à remplir à la main.</p>
+          <p>SyncAgency — le CRM des agences OFM qui chattent sur Telegram.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Comptes &amp; contacts centralisés</summary>
+        <div class="transcript-content">
+          <p>Avec SyncAgency, tu connectes tous tes comptes Telegram et WhatsApp en quelques secondes via un simple QR code. Tous tes contacts, tous tes modèles, toutes tes conversations — dans un seul outil.</p>
+          <p>Plus besoin de jongler entre plusieurs téléphones ou plusieurs onglets. Chaque chatter voit dans sa sidebar tous les modèles auxquels il a accès, avec leur statut d'activité. Il bascule d'un modèle à l'autre en un clic, sans recharger ni changer d'onglet.</p>
+          <p>L'historique complet de chaque fan est récupéré automatiquement à la connexion. Rien à migrer manuellement.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Vault médias &amp; scripts</summary>
+        <div class="transcript-content">
+          <p>Le Vault est la bibliothèque de contenu de tes chatters. Il est cloisonné par modèle : chaque créatrice a ses propres dossiers de médias et de scripts. Rien ne se mélange entre modèles.</p>
+          <p>Pendant une conversation, le chatter ouvre le Vault à côté de la fenêtre de chat. Il sélectionne le bon média ou le bon script en 2 clics et l'envoie directement. Les variables dynamiques — prénom du fan, dernier achat, date — se remplissent automatiquement.</p>
+          <p>Résultat : zéro temps perdu à chercher, zéro copier-coller manuel. Chaque message est personnalisé et envoyé en quelques secondes.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Processeur de paiement intégré</summary>
+        <div class="transcript-content">
+          <p>Le processeur de paiement SyncAgency est entièrement intégré à l'interface de chat. Le chatter déclenche le paiement directement dans la conversation — le fan paie sans quitter Telegram ou WhatsApp.</p>
+          <p>Méthodes acceptées : carte bancaire, Apple Pay, et Telegram Stars natif. La commission est de 20%, ajoutée côté fan. L'agence touche 100% de son prix nominal.</p>
+          <p>Dès la vente confirmée, le chatter reçoit une notification temps réel avec le montant et le contexte. Les données sont attribuées automatiquement au chatter qui a closé. Zéro délai, zéro rapport manuel à remplir.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Tracking automatique des chatters</summary>
+        <div class="transcript-content">
+          <p>SyncAgency traque automatiquement la performance de chaque chatter : messages envoyés, ventes closées, vitesse de réponse moyenne, taux de conversion, et revenu par heure travaillée.</p>
+          <p>Toutes ces métriques sont visibles dans un leaderboard dans ton dashboard. Tu peux faire un drill-down par chatter, par modèle et par période. Plus de Google Sheet à remplir à la main. Plus de rapport hebdomadaire à compiler.</p>
+          <p>Tu sais exactement qui performe, sur quel modèle, à quelle heure, et quel revenu a été généré.</p>
+        </div>
+      </details>
+
+      <details class="transcript-item">
+        <summary>Démo — Mass DM par campagne</summary>
+        <div class="transcript-content">
+          <p>Le module Mass DM te permet d'envoyer des messages en masse à tes fans de manière ciblée. Tu filtres par trois axes : statut d'activité du fan, groupe que tu crées toi-même, ou tag personnalisé que tu poses sur chaque conversation.</p>
+          <p>Tu peux croiser plusieurs filtres pour cibler exactement le segment que tu veux. Tu sélectionnes ton script dans le Vault, tu choisis tes comptes cibles, et tu lances. Chaque campagne est mesurée séparément : nombre de messages envoyés, taux d'ouverture estimé, ventes générées.</p>
+          <p>Résultat : des campagnes Mass DM structurées, traçables et optimisables — sans sortir de l'interface CRM.</p>
+        </div>
+      </details>
+    </div>
+  </section>
+
+  <style>
+    .transcript-item {
+      background: rgba(10, 13, 26, 0.5);
+      border: 1px solid rgba(38, 38, 38, 0.5);
+      border-radius: 12px;
+      padding: 16px 24px;
+      margin-bottom: 10px;
+    }
+    .transcript-item summary {
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 14px;
+      color: #F2F2F2;
+      list-style: none;
+      user-select: none;
+    }
+    .transcript-item summary::-webkit-details-marker { display: none; }
+    .transcript-item summary::before {
+      content: '+ ';
+      color: #8AA5FF;
+      font-weight: 700;
+    }
+    .transcript-item[open] summary::before { content: '− '; }
+    .transcript-content {
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid rgba(255,255,255,0.05);
+    }
+    .transcript-content p {
+      font-size: 14px;
+      color: #666;
+      line-height: 1.7;
+      margin-bottom: 12px;
+    }
+    .transcript-content p:last-child { margin-bottom: 0; }
+  </style>
+</BaseLayout>

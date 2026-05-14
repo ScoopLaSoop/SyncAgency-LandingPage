@@ -1,0 +1,33 @@
+---
+interface Props {
+  variant?: 'primary' | 'secondary' | 'tertiary' | 'soon';
+  href?: string;
+  'data-cta'?: string;
+  'data-section'?: string;
+  class?: string;
+  id?: string;
+}
+
+const {
+  variant = 'primary',
+  href,
+  class: className,
+  ...rest
+} = Astro.props;
+
+const classMap = {
+  primary: 'btn-primary',
+  secondary: 'btn-secondary',
+  tertiary: 'btn-tertiary',
+  soon: 'pricing-cta-soon',
+};
+const cls = [classMap[variant], className].filter(Boolean).join(' ');
+---
+
+{variant === 'soon' ? (
+  <span class={cls}><slot /></span>
+) : href ? (
+  <a href={href} class={cls} {...rest}><slot /></a>
+) : (
+  <button class={cls} type="button" {...rest}><slot /></button>
+)}

@@ -1,0 +1,51 @@
+---
+interface FAQItem {
+  question: string;
+  answer: string;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  items: FAQItem[];
+  contact: string;
+  idPrefix?: string;
+}
+
+const { title, subtitle, items, contact, idPrefix = 'faq' } = Astro.props;
+
+const delayClasses = ['delay-1', 'delay-2', 'delay-3', 'delay-4'];
+---
+
+<section class="section section--faq" id="faq">
+  <div class="container container--narrow">
+    <h2 class="section-title fade-in-up">{title}</h2>
+    {subtitle && <p class="section-subtitle fade-in-up delay-1">{subtitle}</p>}
+
+    <div class="accordion" role="list">
+      {items.map((item, index) => {
+        const delayClass = delayClasses[index % 4];
+        return (
+          <details class={`accordion-item fade-in-up ${delayClass}`} role="listitem">
+            <summary class="accordion-trigger">
+              <span>{item.question}</span>
+              <i data-lucide="chevron-down" class="accordion-icon" aria-hidden="true"></i>
+            </summary>
+            <div class="accordion-content">
+              <div class="accordion-body" set:html={item.answer} />
+            </div>
+          </details>
+        );
+      })}
+    </div>
+
+    <p class="faq-contact fade-in-up">
+      Une question qui n'est pas dans la liste ?{' '}
+      {contact.startsWith('http') ? (
+        <a href={contact} class="faq-link" target="_blank" rel="noopener">Contacte-nous sur Telegram</a>
+      ) : (
+        <a href={`mailto:${contact}`} class="faq-link">{contact}</a>
+      )}.
+    </p>
+  </div>
+</section>

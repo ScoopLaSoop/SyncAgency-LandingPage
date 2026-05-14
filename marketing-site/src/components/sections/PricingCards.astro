@@ -1,0 +1,133 @@
+---
+interface PricingFeature {
+  text: string;
+  included: boolean;
+}
+
+interface PricingPlan {
+  id: 'core' | 'growth' | 'empire';
+  badge: string;
+  name: string;
+  price: string;
+  priceNote?: string;
+  description?: string;
+  features: PricingFeature[];
+  ctaText: string;
+  ctaUrl: string;
+  ctaDataAttr?: string;
+  ctaSecondaryText?: string;
+  ctaSecondaryUrl?: string;
+  ctaSecondaryDataAttr?: string;
+  isCurrent?: boolean;
+  isSoon?: boolean;
+}
+
+interface Props {
+  title: string;
+  subtitle?: string;
+  plans: PricingPlan[];
+  guarantees: string[];
+  transitionText?: string;
+  mode?: 'crm' | 'marketing';
+}
+
+const { title, subtitle, plans, guarantees, transitionText, mode = 'crm' } = Astro.props;
+
+const delayClass = ['delay-1', 'delay-2', 'delay-3'];
+---
+
+<section class="section section--key section--pricing spotlight-zone" id="pricing">
+  <div class="glow-blobs">
+    <div class="glow-blob glow-blob-1"></div>
+    <div class="glow-blob glow-blob-2"></div>
+  </div>
+  <div class="container">
+    <h2 class="section-title fade-in-up" set:html={title} />
+    {subtitle && <p class="section-subtitle fade-in-up delay-1" set:html={subtitle} />}
+
+    <div class="pricing-grid">
+      {plans.map((plan, i) => (
+        <div class={[
+          'pricing-card',
+          'card',
+          `fade-in-up`,
+          delayClass[i] ?? 'delay-1',
+          plan.isCurrent ? 'pricing-card--current' : '',
+        ].filter(Boolean).join(' ')}>
+
+          <p class="badge-plan">{plan.badge}</p>
+
+          <h3 class="pricing-name">{plan.name}</h3>
+
+          <div class="pricing-price">
+            <span class="price-amount">{plan.price}</span>
+          </div>
+          {plan.priceNote && <span class="price-meta">{plan.priceNote}</span>}
+
+          {plan.description && <p class={mode === 'marketing' ? 'mktg-card-desc' : 'pricing-desc'} set:html={plan.description} />}
+
+          <ul class="feature-list" role="list">
+            {plan.features.map((feature) => (
+              <li>
+                {feature.included ? (
+                  <i data-lucide="check-circle-2" class="feature-check" aria-hidden="true"></i>
+                ) : (
+                  <i data-lucide="x" class="feature-cross" aria-hidden="true"></i>
+                )}
+                <span set:html={feature.text} />
+              </li>
+            ))}
+          </ul>
+
+          {plan.isSoon ? (
+            <span class="pricing-cta-soon">À venir</span>
+          ) : plan.ctaSecondaryText && plan.ctaSecondaryUrl ? (
+            <div class="pricing-cta-group">
+              <a
+                href={plan.ctaSecondaryUrl}
+                class="btn-secondary pricing-cta"
+                data-cta={plan.ctaSecondaryDataAttr ?? `pricing-${plan.id}-secondary`}
+                data-section="pricing"
+              >
+                {plan.ctaSecondaryText}
+              </a>
+              <a
+                href={plan.ctaUrl}
+                class="btn-primary pricing-cta"
+                data-cta={plan.ctaDataAttr ?? `pricing-${plan.id}`}
+                data-section="pricing"
+              >
+                {plan.ctaText}
+              </a>
+            </div>
+          ) : (
+            <a
+              href={plan.ctaUrl}
+              class="btn-primary pricing-cta"
+              data-cta={plan.ctaDataAttr ?? `pricing-${plan.id}`}
+              data-section="pricing"
+            >
+              {plan.ctaText}
+            </a>
+          )}
+
+        </div>
+      ))}
+    </div>
+
+    {guarantees.length > 0 && (
+      <div class="guarantees fade-in-up">
+        {guarantees.map((g) => (
+          <div class="guarantee-item">
+            <i data-lucide="check-circle-2" class="guarantee-icon" aria-hidden="true"></i>
+            <span set:html={g} />
+          </div>
+        ))}
+      </div>
+    )}
+
+    {transitionText && (
+      <p class="pivot-phrase fade-in-up" set:html={transitionText} />
+    )}
+  </div>
+</section>

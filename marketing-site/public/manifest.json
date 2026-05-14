@@ -1,0 +1,21 @@
+{
+  "name": "SyncAgency",
+  "short_name": "SyncAgency",
+  "description": "Le CRM des agences OFM qui chattent sur Telegram.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#050505",
+  "theme_color": "#8AA5FF",
+  "icons": [
+    {
+      "src": "/assets/images/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png"
+    },
+    {
+      "src": "/assets/images/logo-original.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

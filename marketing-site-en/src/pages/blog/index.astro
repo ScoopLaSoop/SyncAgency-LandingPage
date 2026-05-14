@@ -1,0 +1,29 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+const articles = [
+  { title: "SyncAgency vs Infloww: The complete 2026 comparison", slug: "syncagency-vs-infloww", date: "10-05-2026", excerpt: "A complete dashboard to choose between SyncAgency and Infloww for your OFM agency." },
+  { title: "Google Sheet for OFM agency: why it's mathematically impossible to scale", slug: "google-sheet-ofm-cannot-scale", date: "10-05-2026", excerpt: "An analysis of the 4 pain points of manual tracking and why a real CRM changes everything." },
+  { title: "Payment processor for OFM agency: Dropp Fans vs SyncAgency vs Stripe", slug: "payment-processor-ofm-comparison", date: "10-05-2026", excerpt: "A data-driven comparison of payment solutions for OnlyFans Management agencies." }
+];
+---
+<BaseLayout title="SyncAgency Blog — CRM and Marketing for OFM agencies" description="Articles on the Telegram CRM for OFM agencies, Instagram/TikTok acquisition, and payment tools." pageKey="crm" ogImage="/og/og-blog.png">
+  <section class="section section--pain" id="blog">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p style="font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#8AA5FF;margin-bottom:12px;">Blog</p>
+        <h1 class="section-title">Resources for OFM agencies</h1>
+        <p class="section-subtitle">Guides, comparisons and strategies to scale your OFM agency.</p>
+      </div>
+      <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(320px,1fr));gap:24px;max-width:960px;margin:0 auto;">
+        {articles.map(a => (
+          <a href={`/blog/${a.slug}`} style="display:block;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.07);border-radius:20px;padding:28px;text-decoration:none;transition:border-color 0.2s;color:inherit;">
+            <p style="font-size:11px;color:#8AA5FF;margin-bottom:12px;font-weight:600;text-transform:uppercase;letter-spacing:0.08em;">{a.date}</p>
+            <h2 style="font-size:18px;font-weight:700;color:#F2F2F2;margin-bottom:10px;line-height:1.3;">{a.title}</h2>
+            <p style="font-size:14px;color:#999;line-height:1.6;">{a.excerpt}</p>
+            <p style="margin-top:16px;font-size:13px;color:#8AA5FF;font-weight:500;">Read the article →</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

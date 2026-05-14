@@ -1,0 +1,21 @@
+---
+interface Props {
+  question: string;
+  answer: string;
+  isOpen?: boolean;
+}
+const { question, answer, isOpen = false } = Astro.props;
+---
+<details class="accordion-item" open={isOpen || undefined}>
+  <summary class="accordion-trigger">
+    <span>{question}</span>
+    <span class="accordion-icon" aria-hidden="true">
+      <i data-lucide="chevron-down"></i>
+    </span>
+  </summary>
+  <div class="accordion-content">
+    <div class="accordion-body">
+      <p set:html={answer} />
+    </div>
+  </div>
+</details>

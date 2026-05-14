@@ -1,0 +1,13 @@
+---
+interface Props {
+  plan: 'crm' | 'marketing' | 'empire';
+  text?: string;
+}
+const { plan, text } = Astro.props;
+const labels = {
+  crm: text ?? 'CRM TELEGRAM',
+  marketing: text ?? 'MARKETING',
+  empire: text ?? 'TOUT-EN-UN',
+};
+---
+<span class={`badge-plan badge-plan--${plan}`}>{labels[plan]}</span>

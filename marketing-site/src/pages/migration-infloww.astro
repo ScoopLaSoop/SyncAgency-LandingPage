@@ -1,0 +1,544 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+
+const schemaBreadcrumb = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://www.syncagency.fr/" },
+    { "@type": "ListItem", "position": 2, "name": "Migration Infloww", "item": "https://www.syncagency.fr/migration-infloww" }
+  ]
+};
+---
+
+<BaseLayout
+  title="Migrer d'Infloww vers SyncAgency — 7 jours gratuits"
+  description="Tu utilises Infloww ? Voici pourquoi les agences OFM migrent vers SyncAgency. Telegram natif, 20% de commission, support FR. Migration assistée gratuite."
+  pageKey="crm"
+  ogImage="/og/og-migration.png"
+>
+  <Fragment slot="head">
+    <script type="application/ld+json" set:html={JSON.stringify(schemaBreadcrumb)} />
+  </Fragment>
+
+  <style>
+    /* ── Pain cards ─────────────────────────────────────────────── */
+    .pain-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto;
+    }
+    .pain-card {
+      background: rgba(255,255,255,0.03);
+      border: 1px solid rgba(255,255,255,0.07);
+      border-radius: 20px;
+      padding: 32px;
+    }
+    .pain-card-icon {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      background: rgba(138,165,255,0.10);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #8AA5FF;
+      margin-bottom: 16px;
+    }
+    .pain-card-title {
+      font-size: 17px;
+      font-weight: 700;
+      color: #F2F2F2;
+      margin-bottom: 10px;
+    }
+    .pain-card-body {
+      font-size: 14px;
+      color: #999;
+      line-height: 1.7;
+    }
+
+    /* ── Pivot section ─────────────────────────────────────────── */
+    .pivot-text {
+      font-size: 36px;
+      font-weight: 800;
+      color: #F2F2F2;
+      line-height: 1.15;
+      max-width: 640px;
+      margin: 0 auto 16px;
+    }
+    .pivot-text-2 {
+      font-size: 28px;
+      font-weight: 700;
+      color: #8AA5FF;
+      max-width: 640px;
+      margin: 0 auto 24px;
+    }
+    .pivot-support {
+      font-size: 16px;
+      color: #737373;
+      max-width: 560px;
+      margin: 0 auto;
+      line-height: 1.7;
+    }
+
+    /* ── Comparative table ─────────────────────────────────────── */
+    .vs-table-wrap {
+      overflow-x: auto;
+      -webkit-overflow-scrolling: touch;
+    }
+    .vs-table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 560px;
+    }
+    .vs-th {
+      padding: 16px 20px;
+      font-size: 13px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-align: center;
+      border-bottom: 1px solid rgba(255,255,255,0.07);
+    }
+    .vs-th-feature { text-align: left; color: #999; width: 45%; }
+    .vs-th-sync { background: rgba(138,165,255,0.06); border-radius: 12px 12px 0 0; color: #8AA5FF; width: 27.5%; }
+    .vs-th-comp { color: #737373; width: 27.5%; }
+    .vs-th-logo { display: block; font-size: 15px; margin-bottom: 4px; }
+    .vs-th-badge { display: inline-block; background: rgba(138,165,255,0.15); color: #8AA5FF; font-size: 10px; letter-spacing: 0.08em; padding: 2px 8px; border-radius: 6px; text-transform: uppercase; }
+    .vs-table tbody tr:hover td { background: rgba(255,255,255,0.02); }
+    .vs-table tbody tr td { padding: 14px 20px; border-bottom: 1px solid rgba(255,255,255,0.04); font-size: 14px; transition: background 0.15s; }
+    .vs-td-feature { color: #999; text-align: left; }
+    .vs-td-sync { text-align: center; background: rgba(138,165,255,0.03); color: #F2F2F2; font-weight: 500; }
+    .vs-td-comp { text-align: center; color: #737373; }
+    .vs-check { color: #8AA5FF; font-weight: 600; }
+    .vs-cross { color: #555; }
+    .vs-partial { color: #F59E0B; font-size: 12px; }
+
+    /* ── Eco section ───────────────────────────────────────────── */
+    .eco-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 24px;
+      max-width: 880px;
+      margin: 0 auto 40px;
+    }
+    .eco-card {
+      border-radius: 20px;
+      padding: 36px;
+      text-align: center;
+    }
+    .eco-card--before {
+      background: rgba(255,255,255,0.025);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+    .eco-card--after {
+      background: rgba(138,165,255,0.07);
+      border: 1px solid rgba(138,165,255,0.20);
+    }
+    .eco-card-label {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: #737373;
+      margin-bottom: 16px;
+    }
+    .eco-card--after .eco-card-label { color: #8AA5FF; }
+    .eco-card-stat {
+      font-size: 52px;
+      font-weight: 800;
+      color: #555;
+      line-height: 1;
+      margin-bottom: 12px;
+    }
+    .eco-card--after .eco-card-stat { color: #8AA5FF; }
+    .eco-card-desc {
+      font-size: 14px;
+      color: #737373;
+      line-height: 1.65;
+    }
+    .eco-card--after .eco-card-desc { color: #999; }
+    .eco-conclusion {
+      text-align: center;
+      padding: 24px 32px;
+      background: rgba(138,165,255,0.06);
+      border: 1px solid rgba(138,165,255,0.15);
+      border-radius: 14px;
+      max-width: 560px;
+      margin: 0 auto;
+      font-size: 18px;
+      font-weight: 700;
+      color: #F2F2F2;
+    }
+
+    /* ── Pricing card ──────────────────────────────────────────── */
+    .empire-card {
+      max-width: 480px;
+      margin: 0 auto;
+      background: rgba(138,165,255,0.05);
+      border: 1px solid rgba(138,165,255,0.25);
+      border-radius: 24px;
+      padding: 48px 40px;
+      text-align: center;
+    }
+    .empire-card-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      background: rgba(138,165,255,0.10);
+      border: 1px solid rgba(138,165,255,0.20);
+      border-radius: 20px;
+      padding: 5px 14px;
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: #8AA5FF;
+      margin-bottom: 24px;
+    }
+    .empire-card-price {
+      font-size: 56px;
+      font-weight: 800;
+      color: #F2F2F2;
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+    .empire-card-price-sub {
+      font-size: 14px;
+      color: #737373;
+      margin-bottom: 32px;
+    }
+    .empire-card-features {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 36px;
+      text-align: left;
+    }
+    .empire-card-features li {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 15px;
+      color: #999;
+      padding: 9px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.04);
+    }
+    .empire-card-features li:last-child { border-bottom: none; }
+    .empire-card-features li .check { color: #8AA5FF; font-weight: 700; flex-shrink: 0; }
+    .empire-card-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: #555;
+    }
+
+    /* ── FAQ ───────────────────────────────────────────────────── */
+    .faq-list {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .faq-item {
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      padding: 24px 0;
+    }
+    .faq-q {
+      font-size: 17px;
+      font-weight: 600;
+      color: #F2F2F2;
+      margin-bottom: 10px;
+    }
+    .faq-a {
+      font-size: 15px;
+      color: #737373;
+      line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+      .pain-grid { grid-template-columns: 1fr; }
+      .eco-grid { grid-template-columns: 1fr; }
+      .pivot-text { font-size: 28px; }
+      .eco-card-stat { font-size: 40px; }
+    }
+  </style>
+
+  <!-- ── Section 1 : Hero ──────────────────────────────────────────────────── -->
+  <section class="section section--hero spotlight-zone" id="hero-migration">
+    <div class="glow-blobs">
+      <div class="glow-blob glow-blob-1"></div>
+      <div class="glow-blob glow-blob-2"></div>
+    </div>
+    <div class="container fade-in-up" style="max-width: 760px; text-align: center;">
+      <p class="eyebrow" style="margin-bottom:24px;">
+        Migration depuis Infloww &nbsp;•&nbsp; 7 jours d'essai gratuit &nbsp;•&nbsp; Migration assistée
+      </p>
+      <h1 class="section-title" style="font-size:52px;font-weight:800;line-height:1.08;margin-bottom:20px;">
+        Tu es sur Infloww ? Voici pourquoi les agences migrent vers SyncAgency.
+      </h1>
+      <p class="section-subtitle" style="max-width:580px;margin:0 auto 48px;">
+        Infloww est bon pour l'onsite. SyncAgency est construit pour le hors-plateforme — là où se fait l'argent réel.
+      </p>
+      <div style="display:flex;align-items:center;justify-content:center;gap:16px;flex-wrap:wrap;">
+        <a
+          href="https://app.syncagency.fr/register?plan=empire_os"
+          class="btn-primary"
+          data-cta="migration_hero_main"
+          data-section="migration_hero"
+        >
+          Commencer la migration gratuite →
+        </a>
+        <a
+          href="#vs-infloww-migration"
+          style="font-size:15px;color:#737373;text-decoration:none;font-weight:500;transition:color 0.2s;"
+          onmouseover="this.style.color='#F2F2F2'" onmouseout="this.style.color='#737373'"
+        >
+          Voir la comparaison ↓
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 2 : Douleurs Infloww ─────────────────────────────────────── -->
+  <section class="section section--pain" style="background:#080808;" id="douleurs-infloww">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p class="eyebrow" style="margin-bottom:12px;">Pourquoi migrer</p>
+        <h2 class="section-title" style="margin-bottom:16px;">4 limites d'Infloww que tu ressens chaque jour.</h2>
+      </div>
+      <div class="pain-grid">
+        <div class="pain-card">
+          <div class="pain-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <circle cx="12" cy="12" r="10"/><line x1="12" y1="8" x2="12" y2="12"/><line x1="12" y1="16" x2="12.01" y2="16"/>
+            </svg>
+          </div>
+          <p class="pain-card-title">Commission 40%</p>
+          <p class="pain-card-body">
+            OnlyFans, MYM, Fansly prennent 40% sur tes ventes. Infloww n'intègre pas de processeur alternatif. Tu subis la marge de la plateforme.
+          </p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="m22 2-7 20-4-9-9-4Z"/><path d="M22 2 11 13"/>
+            </svg>
+          </div>
+          <p class="pain-card-title">Pas de Telegram natif</p>
+          <p class="pain-card-body">
+            Tes chatters chattent sur Telegram ? Infloww n'est pas conçu pour ça. Tu jonglons entre deux outils, tu perds du contexte et tu rates des ventes.
+          </p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
+            </svg>
+          </div>
+          <p class="pain-card-title">Support en anglais seulement</p>
+          <p class="pain-card-body">
+            Quand t'as un bug à 2h du mat un samedi, le support en anglais c'est pas ce que tu veux. L'équipe SyncAgency répond en FR.
+          </p>
+        </div>
+        <div class="pain-card">
+          <div class="pain-card-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round">
+              <rect x="3" y="11" width="18" height="11" rx="2" ry="2"/><path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+            </svg>
+          </div>
+          <p class="pain-card-title">Lock-in plateforme</p>
+          <p class="pain-card-body">
+            Infloww est pensé pour OnlyFans. Si tes modèles migrent vers Fansly, Mym ou une plateforme privée, tu reconstruis tout.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 3 : Pivot ─────────────────────────────────────────────────── -->
+  <section class="section section--key spotlight-zone" id="pivot">
+    <div class="glow-blobs">
+      <div class="glow-blob glow-blob-1"></div>
+      <div class="glow-blob glow-blob-2"></div>
+    </div>
+    <div class="container fade-in-up" style="text-align:center;">
+      <p class="pivot-text">Le vrai problème, c'est pas Infloww.</p>
+      <p class="pivot-text-2">C'est qu'il n'a pas été pensé pour le hors-plateforme.</p>
+      <p class="pivot-support">
+        Telegram, WhatsApp, plateformes privées — c'est là que se font les vraies marges des agences OFM modernes. SyncAgency est le seul CRM construit pour cet usage.
+      </p>
+    </div>
+  </section>
+
+  <!-- ── Section 4 : Comparatif ────────────────────────────────────────────── -->
+  <section class="section section--key" id="vs-infloww-migration" style="background:#050505;">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p class="eyebrow" style="margin-bottom:12px;">Comparatif</p>
+        <h2 class="section-title" style="margin-bottom:16px;">La comparaison honnête.</h2>
+        <p style="font-size:16px;color:#999;max-width:480px;margin:0 auto;line-height:1.6;">
+          Fonctionnalité par fonctionnalité. Sans langue de bois.
+        </p>
+      </div>
+      <div class="vs-table-wrap">
+        <table class="vs-table">
+          <thead>
+            <tr>
+              <th class="vs-th vs-th-feature">Fonctionnalité</th>
+              <th class="vs-th vs-th-sync">
+                <span class="vs-th-logo">SyncAgency</span>
+                <span class="vs-th-badge">Notre choix</span>
+              </th>
+              <th class="vs-th vs-th-comp">Infloww</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="vs-td-feature">Optimisé pour Telegram natif</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Vault média + scripts</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">✗</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Mass DM segmenté</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-partial">Limité</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Commission processeur</td>
+              <td class="vs-td-sync"><span class="vs-check">20%</span> côté fan</td>
+              <td class="vs-td-comp"><span class="vs-cross">40%</span> côté agence</td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Notification temps réel</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-partial">Délai</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Tracking Links attribution</td>
+              <td class="vs-td-sync"><span class="vs-check">✓ Inclus</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">Add-on</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Support FR</td>
+              <td class="vs-td-sync"><span class="vs-check">✓</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">EN only</span></td>
+            </tr>
+            <tr>
+              <td class="vs-td-feature">Migration assistée gratuite</td>
+              <td class="vs-td-sync"><span class="vs-check">✓ Empire OS</span></td>
+              <td class="vs-td-comp"><span class="vs-cross">✗</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+      <div style="text-align:center;margin-top:48px;">
+        <a href="https://app.syncagency.fr/register?plan=empire_os" class="btn-primary" data-cta="migration_table_cta" data-section="vs_infloww_migration">
+          Commencer la migration gratuite →
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 5 : Argument économique ───────────────────────────────────── -->
+  <section class="section section--pain" style="background:#080808;" id="eco-argument">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p class="eyebrow" style="margin-bottom:12px;">Impact financier</p>
+        <h2 class="section-title" style="margin-bottom:16px;">Ce que ça change sur 100k€/mois.</h2>
+      </div>
+      <div class="eco-grid">
+        <div class="eco-card eco-card--before">
+          <p class="eco-card-label">Avec Infloww</p>
+          <p class="eco-card-stat">40 000€</p>
+          <p class="eco-card-desc">
+            Tu paies 40% à OnlyFans/MYM sur tes 100k€ de ventes PPV. Soit <strong style="color:#F2F2F2;">40 000€</strong> de commission plateforme — directement prélevés sur ta marge.
+          </p>
+        </div>
+        <div class="eco-card eco-card--after">
+          <p class="eco-card-label">Avec SyncAgency</p>
+          <p class="eco-card-stat">20 000€</p>
+          <p class="eco-card-desc">
+            Tu paies 20% à SyncAgency sur tes ventes. Soit <strong style="color:#F2F2F2;">20 000€</strong> de commission. Tu récupères <strong style="color:#8AA5FF;">20 000€/mois</strong> de marge.
+          </p>
+        </div>
+      </div>
+      <div class="eco-conclusion">
+        Sur 12 mois : +240 000€ de revenu récupéré.
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 6 : Pricing / Migration CTA ───────────────────────────────── -->
+  <section class="section section--key spotlight-zone" id="migration-cta" style="background:#050505;">
+    <div class="glow-blobs">
+      <div class="glow-blob glow-blob-1"></div>
+      <div class="glow-blob glow-blob-2"></div>
+    </div>
+    <div class="container fade-in-up" style="text-align:center;">
+      <h2 class="section-title" style="background:linear-gradient(135deg,#8AA5FF,#A8BBFF);-webkit-background-clip:text;-webkit-text-fill-color:transparent;background-clip:text;margin-bottom:48px;">
+        Migration gratuite. 7 jours d'essai. Zéro risque.
+      </h2>
+      <div class="empire-card">
+        <div class="empire-card-badge">Empire OS</div>
+        <p class="empire-card-price">129€</p>
+        <p class="empire-card-price-sub">/modèle/mois</p>
+        <ul class="empire-card-features">
+          <li><span class="check">✓</span> CRM Chatting complet</li>
+          <li><span class="check">✓</span> Growth Marketing</li>
+          <li><span class="check">✓</span> Migration de données assistée</li>
+          <li><span class="check">✓</span> Support FR prioritaire</li>
+          <li><span class="check">✓</span> Onboarding personnalisé</li>
+        </ul>
+        <a
+          href="https://app.syncagency.fr/register?plan=empire_os"
+          class="btn-primary"
+          data-cta="migration_pricing_cta"
+          data-section="migration_pricing"
+          style="width:100%;display:block;text-align:center;"
+        >
+          Commencer la migration gratuite →
+        </a>
+        <p class="empire-card-note">7 jours gratuits sans carte bancaire</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ── Section 7 : FAQ migration ─────────────────────────────────────────── -->
+  <section class="section section--pain" style="background:#080808;" id="faq-migration">
+    <div class="container">
+      <div style="text-align:center;margin-bottom:56px;">
+        <p class="eyebrow" style="margin-bottom:12px;">FAQ</p>
+        <h2 class="section-title" style="margin-bottom:16px;">Questions sur la migration.</h2>
+      </div>
+      <div class="faq-list">
+        <div class="faq-item">
+          <p class="faq-q">Combien de temps prend la migration ?</p>
+          <p class="faq-a">
+            Généralement 24 à 48h selon le volume de données. Un membre de l'équipe SyncAgency t'accompagne étape par étape. Tu ne migres pas seul.
+          </p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Et mes données Infloww — historique, contacts, scripts ?</p>
+          <p class="faq-a">
+            On peut importer tes contacts, scripts et historique dans le format SyncAgency. Un export depuis Infloww + import guidé suffit. Rien n'est perdu.
+          </p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">Mes chatters doivent-ils se reconnecter ?</p>
+          <p class="faq-a">
+            Non. Tes chatters continuent depuis leur interface habituelle. C'est toi qui changes d'outil côté agence — eux ne voient rien.
+          </p>
+        </div>
+        <div class="faq-item">
+          <p class="faq-q">C'est quoi le plan Empire OS exactement ?</p>
+          <p class="faq-a">
+            Empire OS = Core Chatting (CRM Telegram/WhatsApp, Vault, Mass DM, paiements 20%) + Growth Marketing (tracking Instagram/TikTok/Twitter, attribution, A/B testing) dans un seul plan à 129€/modèle/mois.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

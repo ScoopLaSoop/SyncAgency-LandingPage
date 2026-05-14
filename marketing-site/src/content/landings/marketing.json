@@ -1,0 +1,273 @@
+{
+  "meta": {
+    "title": "SyncAgency — Le CRM marketing des agences OFM",
+    "description": "Track tes datas Instagram, TikTok et Twitter. Identifie tes posts qui convertissent. Scale ton acquisition avec de la data, plus du feeling."
+  },
+  "hero": {
+    "eyebrow": "CRM Marketing &nbsp;•&nbsp; Instagram, TikTok, Twitter &nbsp;•&nbsp; Tracking + Acquisition",
+    "h1": "Le CRM marketing des agences OFM.",
+    "subtitle": "Track tes datas Instagram, TikTok et Twitter. Identifie tes posts qui convertissent. Scale ton acquisition avec de la data, plus du feeling.",
+    "ctaText": "7 jours gratuits →",
+    "ctaUrl": "https://app.syncagency.fr/register?plan=growth_marketing",
+    "reassurance": "Sans engagement • Annulation en 1 clic • Support FR",
+    "proofBadge": "7 agences OFM utilisent déjà SyncAgency pour scaler leur acquisition organique.",
+    "vslSrc": "/assets/videos/vsl-marketing.mp4",
+    "vslPoster": "/assets/images/vsl-marketing-poster.jpg"
+  },
+  "painSection": {
+    "title": "Pourquoi ton acquisition stagne.",
+    "cards": [
+      {
+        "icon": "file-spreadsheet",
+        "title": "Aucun tracking, ou un <em>Google Sheet</em> rempli à la main.",
+        "description": "Tes stats Instagram, TikTok, Twitter, tu les notes à la main dans un tableur quand t'as le temps. Tu pilotes au feeling, pas à la data.",
+        "highlightPhrase": "Google Sheet"
+      },
+      {
+        "icon": "search-x",
+        "title": "Tu sais pas ce qui convertit vraiment.",
+        "description": "Tes 40 derniers posts du mois, tu peux pas les classer du meilleur au pire en termes de fans ramenés. Tu refais les mêmes hooks au hasard.",
+        "highlightPhrase": "40 derniers posts"
+      },
+      {
+        "icon": "flask-conical",
+        "title": "Ton A/B testing est inexistant, ou fait à moitié.",
+        "description": "Pour comparer deux hooks, faut compiler les datas à la main entre trois plateformes. La plupart abandonnent. Personne n'optimise vraiment.",
+        "highlightPhrase": "trois plateformes"
+      },
+      {
+        "icon": "filter",
+        "title": "Tu sais pas où ton <strong>funnel fuit</strong>.",
+        "description": "Entre la vue, le clic, le contact, la vente : tu perds forcément des fans à chaque étape. Mais tu sais pas où, ni combien, ni pourquoi.",
+        "highlightPhrase": "funnel fuit"
+      }
+    ],
+    "bridgeText": "Résultat : <span class=\"text-accent\">ton acquisition stagne</span>. Sans data, sans funnel visible, sans A/B test,<br>\n          tu peux pas optimiser ce que tu mesures pas."
+  },
+  "pivot": {
+    "line1": "Le vrai problème, c'est pas ton contenu.",
+    "line2": "C'est que tu vois pas ce qui marche.",
+    "supportText": "Tu veux scaler ton acquisition, mais tu prends pas les bonnes décisions,<br>\n          parce que tu vois pas tes <strong>données</strong>.",
+    "transitionTitle": "Ce que SyncAgency change."
+  },
+  "solution": {
+    "introTitle": "Voici comment ton acquisition va tourner.",
+    "items": [
+      {
+        "eyebrow": "01 · COMPTES &amp; RÉSEAUX",
+        "title": "Tous tes comptes d'acquisition, scrapés automatiquement chaque jour.",
+        "description": "Connecte tous tes comptes par modèle, par réseau. Le scraping tourne automatiquement, mis à jour chaque matin. Tu vois toutes tes datas dans un seul dashboard. Fini les trois apps en parallèle.",
+        "bullets": [
+          { "label": "Multi-comptes par modèle", "text": " : chaque créatrice peut avoir plusieurs comptes par réseau" },
+          { "label": "Scraping auto quotidien", "text": " : Instagram, TikTok, Twitter actualisés chaque matin" },
+          { "label": "Un seul dashboard", "text": " : fini les 12 onglets ouverts entre les apps natives" }
+        ],
+        "microCta": "Voir le scraping en action",
+        "videoSrc": "/assets/videos/marketing-accounts-scraping.mp4"
+      },
+      {
+        "eyebrow": "02 · CALENDRIER &amp; ÉQUIPE",
+        "title": "Ton calendrier de posts et tes tâches, partagés avec ton équipe.",
+        "description": "Crée tes posts à publier, assigne des tâches à tes managers ou tes créatrices. Tout le monde voit ce qui est à faire, ce qui est fait, ce qui est en retard. Notifications automatiques pour rien rater.",
+        "bullets": [
+          { "label": "Calendrier partagé", "text": " : posts planifiés et tâches dans une seule vue" },
+          { "label": "Assignation par membre", "text": " : tu sais qui fait quoi, sans relancer" },
+          { "label": "Notifications auto", "text": " : chaque membre est prévenu sur Telegram ou Discord" }
+        ],
+        "microCta": "Voir le calendrier équipe",
+        "videoSrc": "/assets/videos/marketing-calendar-team.mp4"
+      },
+      {
+        "eyebrow": "03 · POSTS &amp; DATAS",
+        "title": "Chaque post de chaque compte, avec toutes ses stats.",
+        "description": "Scraping auto de tous tes posts publiés. Vues, likes, saves, retweets, taux d'engagement : tout est là. Trie par compte, par période, par performance, et identifie les patterns gagnants.",
+        "bullets": [
+          { "label": "Toutes les stats par post", "text": " : vues, engagement, saves, taux d'engagement" },
+          { "label": "Tri multi-critères", "text": " : par compte, par période, par perf, par modèle" },
+          { "label": "Patterns gagnants", "text": " : les hooks qui reviennent dans tes posts qui explosent" }
+        ],
+        "microCta": "Voir les posts trackés",
+        "videoSrc": "/assets/videos/marketing-posts-data.mp4"
+      },
+      {
+        "eyebrow": "04 · PERFORMANCE",
+        "title": "L'analyse de chaque compte et de chaque réseau.",
+        "description": "Quel compte performe, lequel décroche. Quel réseau te ramène le plus de fans. Quel format convertit le mieux. Toutes les questions que tu te poses ont une réponse chiffrée.",
+        "bullets": [
+          { "label": "Performance par compte", "text": " : qui scale, qui stagne, qui chute" },
+          { "label": "Performance par réseau", "text": " : TikTok vs IG vs X, ROI par canal" },
+          { "label": "Datas visualisables rapidement", "text": " : chaque métrique récupérée pour calculer ton taux de conversion et construire un pré-funnel parfait" }
+        ],
+        "microCta": "Voir le dashboard performance",
+        "videoSrc": "/assets/videos/marketing-performance.mp4"
+      },
+      {
+        "eyebrow": "05 · TRACKING LINKS",
+        "title": "Des liens trackés pour savoir d'où viennent vraiment tes fans.",
+        "description": "Crée des liens trackés par bio ou par campagne. Tu vois exactement quel lien a généré quel fan, et combien de revenu. Plus jamais de mystère sur l'attribution : tu doubles ce qui marche, tu coupes ce qui marche pas.",
+        "bullets": [
+          { "label": "Liens trackés illimités", "text": "" },
+          { "label": "Attribution complète", "text": " : quel lien → quel fan → combien de revenu" },
+          { "label": "Plus de mystère", "text": " : tu sais d'où vient chaque revenu." }
+        ],
+        "microCta": "Voir un tracking link",
+        "videoSrc": "/assets/videos/marketing-tracking-links.mp4"
+      },
+      {
+        "eyebrow": "06 · FUNNEL D'ACQUISITION",
+        "title": "Le funnel complet de tes comptes : de la vue à la vente.",
+        "description": "Combien de vues sur ce TikTok. Combien de clics ensuite sur ta bio. Combien sont arrivés sur ton point de contact. Combien ont acheté. Chaque étape est mesurée. Chaque décrochage est visible.",
+        "bullets": [
+          { "label": "Funnel multi-étapes", "text": " : vue → clic bio → contact → vente" },
+          { "label": "Taux de conversion par étape", "text": " : tu vois exactement où ça décroche" },
+          { "label": "Comparaison par campagne", "text": " : quel funnel performe, lequel doit être réparé" }
+        ],
+        "microCta": "Voir un funnel complet",
+        "videoSrc": "/assets/videos/marketing-funnel.mp4"
+      }
+    ]
+  },
+  "reviews": {
+    "title": "Ce qu'en disent les agences.",
+    "subtitle": "",
+    "trust": [
+      "Avis non rémunérés",
+      "Augmentation de +30% de CA",
+      "Équipe aime le produit"
+    ],
+    "cards": [
+      {
+        "name": "Luca",
+        "context": "",
+        "avatar": "/assets/images/review-luca.webp",
+        "stars": 5,
+        "beforeQuote": "\"je postais sur plusieurs comptes sans vraiment savoir lequel performait. je regardais Instagram Insights à la main mais j'arrivais à aucune conclusion claire. maintenant je vois direct quel contenu a converti et sur quel compte. j'aurais économisé beaucoup de temps si je l'avais eu avant\""
+      },
+      {
+        "name": "MaxaM",
+        "context": "",
+        "avatar": "/assets/images/review-maxam.webp",
+        "stars": 5,
+        "beforeQuote": "\"avant je savais pas d'où venaient mes fans. je faisais du contenu un peu au hasard et j'avais aucune data propre. maintenant avec les tracking links je sais quel post a ramené qui. j'ai arrêté de perdre du temps sur ce qui marchait pas et mes résultats s'en ressentent\""
+      }
+    ],
+    "transitionText": ""
+  },
+  "pricing": {
+    "title": "Trois plans. Aucun engagement.",
+    "subtitle": "Facturation par modèle, mensuelle, résiliable en 1 clic. 7 jours d'essai gratuit sur tous les plans.",
+    "plans": [
+      {
+        "id": "core",
+        "badge": "CRM TELEGRAM",
+        "name": "Core Chatting",
+        "price": "59€",
+        "priceNote": "/ modèle / mois",
+        "description": "Tout le CRM Telegram pour les agences focus chatting hors-plateforme.",
+        "features": [
+          { "text": "Inbox Telegram &amp; WhatsApp natifs", "included": true },
+          { "text": "Vault média + scripts par modèle", "included": true },
+          { "text": "Mass DM par campagne (statut, groupe, tag)", "included": true },
+          { "text": "Processeur de paiement intégré", "included": true },
+          { "text": "Tracking automatique chatters + ventes", "included": true },
+          { "text": "Dashboard CRM + KPI chatters", "included": true },
+          { "text": "Shifts &amp; planning chatters", "included": true },
+          { "text": "Support FR", "included": true }
+        ],
+        "ctaText": "7 jours gratuits →",
+        "ctaUrl": "https://app.syncagency.fr/register?plan=core_chatting",
+        "ctaDataAttr": "pricing-core-chatting",
+        "ctaSecondaryText": "Voir l'offre CRM →",
+        "ctaSecondaryUrl": "/",
+        "ctaSecondaryDataAttr": "pricing-crm-redirect",
+        "isCurrent": false,
+        "isSoon": false
+      },
+      {
+        "id": "growth",
+        "badge": "GROWTH MARKETING",
+        "name": "Growth Marketing",
+        "price": "89€",
+        "priceNote": "/ modèle / mois",
+        "description": "Tout pour scaler ton acquisition organique : scraping IG / TikTok / Twitter, attribution complète, A/B testing automatisé.",
+        "features": [
+          { "text": "Scraping Instagram, TikTok, Twitter chaque jour", "included": true },
+          { "text": "Calendrier de posts + tâches partagés équipe", "included": true },
+          { "text": "Analytics par compte, par réseau, par format", "included": true },
+          { "text": "Funnel d'acquisition complet (vue → vente)", "included": true },
+          { "text": "Tracking Links illimités + attribution par source", "included": true },
+          { "text": "Multi-comptes par modèle, par réseau", "included": true },
+          { "text": "Notifications équipe automatiques", "included": true },
+          { "text": "Support FR", "included": true }
+        ],
+        "ctaText": "7 jours gratuits →",
+        "ctaUrl": "https://app.syncagency.fr/register?plan=growth_marketing",
+        "ctaDataAttr": "pricing-growth-marketing",
+        "isCurrent": true,
+        "isSoon": false
+      },
+      {
+        "id": "empire",
+        "badge": "TOUT-EN-UN",
+        "name": "Empire OS",
+        "price": "129€",
+        "priceNote": "/ modèle / mois",
+        "description": "Le CRM Telegram + tout le marketing dans un seul plan. Pour les agences qui veulent tout piloter au même endroit.",
+        "features": [
+          { "text": "<strong>Tout</strong> dans Core Chatting", "included": true },
+          { "text": "<strong>Tout</strong> dans Growth Marketing", "included": true },
+          { "text": "Migration assistée depuis ton ancien CRM", "included": true },
+          { "text": "Onboarding &amp; training équipe dédiés", "included": true },
+          { "text": "Support prioritaire", "included": true },
+          { "text": "SOP &amp; Knowledge Base intégrée", "included": true }
+        ],
+        "ctaText": "Voir l'offre Empire",
+        "ctaUrl": "#",
+        "isCurrent": false,
+        "isSoon": true
+      }
+    ],
+    "guarantees": [
+      "<strong>7 jours d'essai gratuit</strong> sur tous les plans",
+      "<strong>Aucun engagement</strong> : résiliable en 1 clic",
+      "<strong>Support FR</strong> sur tous les plans",
+      "<strong>Migration depuis ton ancien CRM</strong> assistée gratuitement (Empire OS)"
+    ],
+    "transitionText": ""
+  },
+  "faq": {
+    "title": "Vos questions, nos réponses.",
+    "subtitle": "Tout ce qu'on te dit ici, on le tient.",
+    "items": [
+      {
+        "question": "Comment je connecte mes comptes Instagram, TikTok et Twitter ?",
+        "answer": "Tu rentres juste les <strong>@username</strong> de tes comptes publics dans le dashboard. Pas de credentials à donner, pas d'OAuth à valider, pas d'app à connecter. Le scraping tourne sur les pages publiques de chaque réseau, comme un crawler intelligent qui surveille et collecte les datas pour toi."
+      },
+      {
+        "question": "À quelle fréquence le scraping est mis à jour ?",
+        "answer": "<strong>Une fois par jour,</strong> à l'heure que tu choisis. Tu fixes toi-même l'horaire de mise à jour depuis les paramètres de ton compte — par exemple chaque matin à 8h. Tu retrouves les nouvelles datas de tes comptes (vues, likes, commentaires, saves, partages) actualisées à l'heure voulue dans ton dashboard. Le rythme quotidien est largement suffisant pour piloter ta stratégie de contenu."
+      },
+      {
+        "question": "Combien de comptes je peux connecter par modèle ?",
+        "answer": "Le plan <strong>Growth Marketing</strong> inclut <strong>2 comptes Instagram + 2 comptes Twitter + 2 comptes TikTok</strong> par modèle. Si tes modèles ont plus de comptes, tu peux ajouter des add-ons : <span class=\"mktg-price-tag\">+5€/mois</span> pour un compte Twitter, <span class=\"mktg-price-tag\">+10€/mois</span> pour un compte Instagram, <span class=\"mktg-price-tag\">+17€/mois</span> pour un compte TikTok."
+      },
+      {
+        "question": "Comment fonctionne l'A/B testing automatisé ?",
+        "answer": "Tu publies plusieurs versions d'un même post (différents hooks, thumbnails, captions) sur tes comptes. SyncAgency track les performances de chacun en parallèle : vues, taux d'engagement, clics sur ta bio, fans ramenés. Tu obtiens un comparatif clair en quelques jours, sans compiler de tableur à la main."
+      },
+      {
+        "question": "Combien de tracking links je peux créer ?",
+        "answer": "<strong>Liens trackés illimités</strong> sur les plans <strong>Growth Marketing</strong> et <strong>Empire OS</strong>. Crée un lien par post, par bio, par campagne, par story, sans aucune limite. Chaque lien te donne le compteur de clics, la source géographique, le device, et le revenu généré si le clic mène à une vente."
+      },
+      {
+        "question": "Mes données et celles de mes modèles sont-elles privées ?",
+        "answer": "Oui. Toutes tes données (stats de posts, tracking links, ventes attribuées) sont hébergées en France, chiffrées au repos et en transit. Aucune donnée n'est partagée avec d'autres agences ou utilisée pour entraîner des modèles tiers. Tu peux tout exporter à tout moment."
+      },
+      {
+        "question": "Pourquoi 89€ par mois et par modèle ?",
+        "answer": "Parce que c'est le coût d'opérer un service qui scrape Instagram, TikTok et Twitter chaque jour, qui maintient des tracking links illimités, qui calcule l'attribution funnel, et qui te livre tout dans un dashboard unifié. À comparer aux outils éparpillés que tu utilisais avant (un scraper, un outil de tracking, un calendrier de contenu, un tableur) : tu paies un seul plan pour un système plus puissant et unifié."
+      }
+    ],
+    "contact": "https://taap.it/pvzlucas"
+  }
+}

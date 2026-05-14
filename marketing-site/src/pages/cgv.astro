@@ -1,0 +1,158 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="CGV — SyncAgency" description="Conditions générales de vente de SyncAgency.">
+  <div style="max-width: 800px; margin: 120px auto; padding: 0 24px 120px;">
+    <style>
+      .legal-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted, #737373); margin-bottom: 16px; }
+      .legal-title { font-size: clamp(28px, 5vw, 40px); font-weight: 700; color: var(--color-text-primary, #F2F2F2); line-height: 1.15; margin-bottom: 12px; }
+      .legal-date { font-size: 13px; color: var(--color-text-muted, #737373); margin-bottom: 56px; }
+      .legal-intro { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 56px; }
+      .legal-section { margin-bottom: 44px; }
+      .legal-section-title { font-size: 16px; font-weight: 600; color: var(--color-text-primary, #F2F2F2); margin-bottom: 14px; }
+      .legal-section p { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin: 0 0 12px; }
+      .legal-section ul { padding-left: 20px; margin: 8px 0 12px; }
+      .legal-section li { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 6px; }
+      .legal-section strong { color: var(--color-text-primary, #F2F2F2); font-weight: 600; }
+      .legal-section a { color: var(--color-primary, #8AA5FF); text-decoration: none; }
+      .legal-section a:hover { text-decoration: underline; }
+      .legal-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 0 0 44px; }
+      .pricing-table { width: 100%; border-collapse: collapse; margin: 16px 0; }
+      .pricing-table th, .pricing-table td { padding: 12px 16px; text-align: left; font-size: 14px; border-bottom: 1px solid rgba(255,255,255,0.06); }
+      .pricing-table th { color: #F2F2F2; font-weight: 600; }
+      .pricing-table td { color: #999; }
+      .pricing-table tr:last-child td { border-bottom: none; }
+    </style>
+
+    <p class="legal-eyebrow">Légal</p>
+    <h1 class="legal-title">Conditions Générales de Vente</h1>
+    <p class="legal-date">Dernière mise à jour : 13 mai 2026</p>
+
+    <p class="legal-intro">Les présentes Conditions Générales de Vente (CGV) s'appliquent à toute souscription à un abonnement payant proposé par SyncAgency. Elles complètent les <a href="/cgu">Conditions Générales d'Utilisation</a> et constituent, avec ces dernières, le contrat liant SyncAgency au Client.</p>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">1. Vendeur</h2>
+      <ul>
+        <li><strong>Dénomination :</strong> SyncAgency LLC</li>
+        <li><strong>Membre gérant :</strong> Lucas Provenzano (Sole Member)</li>
+        <li><strong>EIN :</strong> 35-2955550</li>
+        <li><strong>Siège social :</strong> 1209 Mountain Rd Pl NE Ste H, Albuquerque, NM 87110, États-Unis</li>
+        <li><strong>Email :</strong> <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></li>
+      </ul>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">2. Offres et tarifs</h2>
+      <p>SyncAgency propose les plans d'abonnement suivants, facturés par modèle par mois :</p>
+      <table class="pricing-table">
+        <thead>
+          <tr>
+            <th>Plan</th>
+            <th>Prix (HT, par modèle/mois)</th>
+            <th>Fonctionnalités principales</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td><strong>Core Chatting</strong></td>
+            <td>59 €</td>
+            <td>CRM Telegram, Vault, Mass DM, processeur de paiement</td>
+          </tr>
+          <tr>
+            <td><strong>Growth Marketing</strong></td>
+            <td>89 €</td>
+            <td>Core Chatting + module acquisition IG/TikTok/Twitter, tracking links</td>
+          </tr>
+          <tr>
+            <td><strong>Empire OS</strong></td>
+            <td>129 €</td>
+            <td>Growth Marketing + dashboard Empire, migration assistée gratuite</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Des add-ons peuvent être proposés en supplément (comptes sociaux additionnels, etc.). Les prix sont indiqués hors taxes. La TVA applicable est celle du pays du Client, conformément à la réglementation en vigueur.</p>
+      <p>SyncAgency se réserve le droit de modifier ses tarifs avec un préavis de 30 jours. Les modifications de prix ne s'appliquent pas aux abonnements en cours pendant la période de facturation en cours.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">3. Essai gratuit</h2>
+      <p>SyncAgency propose un essai gratuit de <strong>7 jours</strong> sur l'ensemble de ses plans. L'essai gratuit :</p>
+      <ul>
+        <li>Ne nécessite pas de carte bancaire ;</li>
+        <li>Donne accès à toutes les fonctionnalités du plan sélectionné ;</li>
+        <li>Se termine automatiquement à l'issue des 7 jours, sans débit automatique ;</li>
+        <li>Ne peut être utilisé qu'une seule fois par Agence.</li>
+      </ul>
+      <p>À l'issue de l'essai gratuit, le Client doit souscrire à un plan payant pour continuer à utiliser le Service. En l'absence de souscription, le compte est désactivé et les données sont conservées pendant 30 jours avant suppression définitive.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">4. Commande et facturation</h2>
+      <p>La souscription à un abonnement s'effectue directement depuis l'espace client sur <a href="https://app.syncagency.fr">https://app.syncagency.fr</a>. Le Client reconnaît avoir pris connaissance des présentes CGV avant de procéder au paiement.</p>
+      <p>L'abonnement est facturé mensuellement, à date anniversaire de la souscription. Les factures sont disponibles dans l'espace client et envoyées par email à l'adresse de facturation renseignée.</p>
+      <p>Le paiement s'effectue par carte bancaire via notre prestataire de paiement sécurisé. Les données bancaires ne sont pas stockées par SyncAgency.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">5. Renouvellement et résiliation</h2>
+      <p>L'abonnement est reconduit tacitement chaque mois. Le Client peut résilier son abonnement à tout moment depuis les paramètres de son espace client, sans frais de résiliation.</p>
+      <p>La résiliation prend effet à la fin de la période de facturation mensuelle en cours. Aucun remboursement au prorata n'est effectué pour la période restante, sauf disposition légale contraire.</p>
+      <p>SyncAgency peut résilier un abonnement en cas de non-paiement après 7 jours de retard, ou en cas de violation des CGU, sans préjudice de tout recours en dommages et intérêts.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">6. Processeur de paiement intégré</h2>
+      <p>SyncAgency propose un processeur de paiement intégré permettant aux Agences de recevoir des paiements directement dans leurs conversations Telegram. Ce service est soumis aux conditions spécifiques suivantes :</p>
+      <ul>
+        <li>Un markup de <strong>20% est ajouté côté fan</strong> sur le prix de vente défini par l'Agence (le fan paie prix × 1,20) ;</li>
+        <li>L'Agence perçoit 100% du prix nominal qu'elle a défini ;</li>
+        <li>Des frais de traitement de paiement s'appliquent selon le prestataire utilisé (Tagada, EFI, etc.) ;</li>
+        <li>Les versements vers l'Agence sont effectués selon un calendrier défini dans les paramètres du compte, sous réserve d'une réserve de 10% maintenue pendant 60 jours ;</li>
+        <li>L'Agence est seule responsable de la conformité fiscale et légale des ventes effectuées via le processeur.</li>
+      </ul>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">7. Droit de rétractation</h2>
+      <p>Conformément à la réglementation applicable, le Client professionnel (B2B) ne bénéficie pas du droit de rétractation prévu pour les consommateurs.</p>
+      <p>Pour les Clients particuliers (B2C), en souscrivant à un abonnement payant et en accédant immédiatement aux fonctionnalités du Service, le Client reconnaît expressément renoncer à son droit de rétractation de 14 jours conformément à l'article L.221-28 du Code de la consommation français (et dispositions équivalentes belges).</p>
+      <p>Toutefois, SyncAgency propose une période d'essai gratuite de 7 jours permettant d'évaluer le Service avant tout engagement financier. En cas de difficulté, contactez-nous à <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a>.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">8. Garanties et niveau de service</h2>
+      <p>SyncAgency s'engage à fournir le Service avec professionnalisme et à maintenir une disponibilité raisonnablement élevée. Toutefois, aucune garantie de disponibilité continue (SLA) n'est fournie sur les plans standard.</p>
+      <p>En cas d'indisponibilité prolongée du Service imputable à SyncAgency (supérieure à 48 heures consécutives), le Client pourra demander un avoir ou une prolongation de sa période d'abonnement équivalente à la durée d'indisponibilité.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">9. Données et confidentialité</h2>
+      <p>Les données clients et médias intégrés dans SyncAgency appartiennent exclusivement au Client. En cas de résiliation, les données sont conservées pendant 30 jours et peuvent être exportées sur demande avant suppression définitive.</p>
+      <p>SyncAgency n'utilise jamais les données des Clients à des fins commerciales propres, ni ne les cède à des tiers. Le traitement des données est régi par la <a href="/privacy">Politique de Confidentialité</a>.</p>
+    </div>
+
+    <hr class="legal-divider" />
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">10. Droit applicable et litiges</h2>
+      <p>Les présentes CGV sont soumises au droit de l'État du Nouveau-Mexique (États-Unis). En cas de litige, les parties s'engagent à rechercher une solution amiable dans un délai de 30 jours. À défaut d'accord, le litige sera soumis aux tribunaux compétents du comté de Bernalillo, Nouveau-Mexique (États-Unis), sauf disposition impérative contraire applicable au consommateur.</p>
+      <p>Pour toute réclamation, contactez-nous à <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a>.</p>
+    </div>
+  </div>
+</BaseLayout>

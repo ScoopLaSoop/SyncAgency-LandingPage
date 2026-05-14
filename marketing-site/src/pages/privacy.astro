@@ -1,0 +1,107 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+---
+<BaseLayout title="Confidentialité — SyncAgency" description="Politique de confidentialité et protection des données personnelles de SyncAgency.">
+  <div style="max-width: 800px; margin: 120px auto; padding: 0 24px 120px;">
+    <style>
+      .legal-eyebrow { font-size: 11px; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-text-muted, #737373); margin-bottom: 16px; }
+      .legal-title { font-size: clamp(28px, 5vw, 40px); font-weight: 700; color: var(--color-text-primary, #F2F2F2); line-height: 1.15; margin-bottom: 12px; }
+      .legal-date { font-size: 13px; color: var(--color-text-muted, #737373); margin-bottom: 56px; }
+      .legal-intro { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 56px; }
+      .legal-section { margin-bottom: 44px; }
+      .legal-section-title { font-size: 16px; font-weight: 600; color: var(--color-text-primary, #F2F2F2); margin-bottom: 14px; }
+      .legal-section p { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin: 0 0 12px; }
+      .legal-section ul { padding-left: 20px; margin: 8px 0 12px; }
+      .legal-section li { font-size: 15px; color: var(--color-text-secondary, #999); line-height: 1.75; margin-bottom: 6px; }
+      .legal-section strong { color: var(--color-text-primary, #F2F2F2); font-weight: 600; }
+      .legal-section a { color: var(--color-primary, #8AA5FF); text-decoration: none; }
+      .legal-section a:hover { text-decoration: underline; }
+      .legal-divider { border: none; border-top: 1px solid rgba(255,255,255,0.06); margin: 0 0 44px; }
+    </style>
+
+    <p class="legal-eyebrow">Légal</p>
+    <h1 class="legal-title">Politique de Confidentialité</h1>
+    <p class="legal-date">Dernière mise à jour : 30 novembre 2025</p>
+
+    <p class="legal-intro">Bienvenue chez <strong>SyncAgency</strong>. Cette Politique de Confidentialité a pour but de vous aider à comprendre quelles informations nous collectons, pourquoi nous les collectons et comment vous pouvez mettre à jour, gérer, exporter et supprimer vos informations lorsque vous utilisez nos services.</p>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">1. Responsable du traitement des données</h2>
+      <p>Le traitement des données à caractère personnel effectué sur le site <a href="https://www.syncagency.fr">https://www.syncagency.fr</a> et l'application associée est sous la responsabilité de :</p>
+      <ul>
+        <li><strong>Dénomination :</strong> SyncAgency LLC</li>
+        <li><strong>Membre gérant :</strong> Lucas Provenzano (Sole Member)</li>
+        <li><strong>EIN (Employer Identification Number) :</strong> 35-2955550</li>
+        <li><strong>Siège social :</strong> 1209 Mountain Rd Pl NE Ste H, Albuquerque, NM 87110, États-Unis</li>
+        <li><strong>Contact :</strong> <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">2. Données collectées</h2>
+      <p>Dans le cadre de l'utilisation de notre solution logicielle (SaaS), nous sommes amenés à collecter les données suivantes :</p>
+      <ul>
+        <li><strong>Données d'identification :</strong> Nom, prénom, nom de l'agence, adresse email, numéro de téléphone.</li>
+        <li><strong>Données de facturation et de paiement :</strong> Historique des transactions, adresse de facturation (les informations sensibles de cartes bancaires sont traitées et sécurisées directement par notre partenaire de paiement certifié PCI-DSS et ne transitent pas sur nos serveurs).</li>
+        <li><strong>Données techniques de connexion :</strong> Adresse IP, logs de connexion, type de navigateur, pour assurer la sécurité de l'infrastructure.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">3. Finalités du traitement</h2>
+      <p>Vos données sont strictement utilisées pour :</p>
+      <ul>
+        <li>La création et la gestion de votre compte utilisateur sur notre CRM.</li>
+        <li>La fourniture de nos services de gestion de communication et d'audience.</li>
+        <li>La gestion de la facturation, des paiements et de la comptabilité.</li>
+        <li>Le support client et la résolution des problèmes techniques.</li>
+        <li>La prévention des fraudes et le respect de nos obligations légales (notamment pour la lutte contre le blanchiment d'argent).</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">4. Partage des données à des tiers</h2>
+      <p>Vos données ne sont jamais revendues à des fins commerciales. Elles peuvent être transmises uniquement à nos sous-traitants stricts pour l'exécution du service :</p>
+      <ul>
+        <li>Nos prestataires d'hébergement sécurisé.</li>
+        <li>Nos partenaires de paiement (passerelles bancaires et acquéreurs) pour le traitement sécurisé des transactions financières.</li>
+      </ul>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">5. Durée de conservation</h2>
+      <p>Nous conservons vos données pendant la durée stricte d'utilisation de nos services. En cas de suppression de votre compte, vos données d'identification et de facturation sont conservées pendant la durée légale obligatoire (généralement 7 ans pour les obligations fiscales et comptables) avant d'être définitivement effacées.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">6. Sécurité des données</h2>
+      <p>SyncAgency met en œuvre des mesures techniques et organisationnelles renforcées pour protéger vos données contre l'accès non autorisé, la perte ou l'altération (chiffrement des communications via SSL/TLS, accès restreint aux bases de données).</p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">7. Vos droits (Conformité RGPD)</h2>
+      <p>Conformément au Règlement Général sur la Protection des Données (RGPD), vous disposez des droits suivants sur vos données personnelles :</p>
+      <ul>
+        <li>Droit d'accès et de rectification.</li>
+        <li>Droit à l'effacement (droit à l'oubli).</li>
+        <li>Droit à la limitation du traitement.</li>
+        <li>Droit à la portabilité de vos données.</li>
+      </ul>
+      <p>Pour exercer ces droits, vous pouvez nous contacter à l'adresse suivante : <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">8. Modifications de la politique</h2>
+      <p>Nous nous réservons le droit de modifier la présente politique de confidentialité à tout moment pour la mettre en conformité avec les évolutions légales. La version en vigueur est celle accessible en ligne sur cette page.</p>
+    </div>
+
+    <div class="legal-section">
+      <h2 class="legal-section-title">9. Nous contacter</h2>
+      <p>Si vous avez des questions concernant cette Politique de Confidentialité ou la gestion de vos données, veuillez nous contacter :</p>
+      <ul>
+        <li><strong>Email :</strong> <a href="mailto:contact@syncagency.fr">contact@syncagency.fr</a></li>
+        <li><strong>Site Web :</strong> <a href="https://www.syncagency.fr">www.syncagency.fr</a></li>
+      </ul>
+    </div>
+  </div>
+</BaseLayout>

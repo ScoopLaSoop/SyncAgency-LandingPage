@@ -1,0 +1,8 @@
+---
+interface Props {
+  text: string;
+  class?: string;
+}
+const { text, class: className } = Astro.props;
+---
+<span class={`eyebrow${className ? ' ' + className : ''}`}>{text}</span>

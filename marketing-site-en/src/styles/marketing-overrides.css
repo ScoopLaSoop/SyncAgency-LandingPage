@@ -1,0 +1,345 @@
+/* ===========================
+   LANDING MARKETING — Styles spécifiques
+   Charge après styles.css (tokens partagés)
+   =========================== */
+
+/* ── Hero eyebrow ─────────────────────────────────────────────────────────── */
+.hero-eyebrow {
+  margin-bottom: 20px;
+}
+
+/* ── Hero reversed — mêmes proportions que CRM (VSL 55fr, texte 45fr) ──────── */
+.mktg-hero-reversed {
+  grid-template-columns: 55fr 45fr;
+}
+
+
+/* ── Solution layout — aligner en haut pour éviter le déséquilibre titre/vidéo */
+.solution-layout,
+.solution-layout--reverse {
+  align-items: start;
+}
+
+/* ── Solution intro wrapper ───────────────────────────────────────────────── */
+.mktg-solution-intro-wrap {
+  padding-top: 96px;
+  padding-bottom: 48px;
+  text-align: center;
+}
+
+.mktg-solution-intro-wrap .section-title {
+  margin-bottom: 0;
+}
+
+/* ── Video placeholder ────────────────────────────────────────────────────── */
+.mktg-video-ph {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  aspect-ratio: 16 / 9;
+  background: rgba(10, 13, 26, 0.60);
+  border: 1px solid rgba(38, 38, 38, 0.50);
+  border-radius: var(--radius-lg);
+  cursor: default;
+}
+
+.mktg-video-ph:hover {
+  border-color: rgba(138, 165, 255, 0.20);
+  box-shadow: 0 0 40px rgba(138, 165, 255, 0.08);
+}
+
+.mktg-ph-inner {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  color: var(--color-text-muted);
+  user-select: none;
+}
+
+.mktg-ph-inner svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 1.5;
+  color: rgba(138, 165, 255, 0.30);
+}
+
+.mktg-ph-inner span {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  color: var(--color-text-muted);
+  text-transform: uppercase;
+}
+
+.mktg-ph-inner small {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  opacity: 0.7;
+}
+
+/* ── Micro-CTA (lien flèche dans les sous-sections) ───────────────────────── */
+.mktg-micro-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--color-primary);
+  text-decoration: none;
+  margin-top: 24px;
+  transition: gap 0.2s ease;
+}
+
+.mktg-micro-cta:hover {
+  color: var(--color-primary-hover);
+  gap: 8px;
+}
+
+/* ── Section avis clients ─────────────────────────────────────────────────── */
+.mktg-section--reviews {
+  background-color: var(--color-bg-card);
+}
+
+.mktg-review-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 64px;
+}
+
+.mktg-review-card {
+  border-radius: var(--radius-xl);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  border: 1px solid rgba(51, 51, 51, 0.40);
+  transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.mktg-review-card:hover {
+  border-color: rgba(138, 165, 255, 0.20);
+  box-shadow: 0 0 60px rgba(59, 91, 255, 0.08);
+}
+
+.mktg-review-header {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  margin-bottom: 4px;
+}
+
+.mktg-review-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--color-bg-elevated);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.mktg-review-avatar svg {
+  width: 22px;
+  height: 22px;
+  stroke-width: 1.5;
+  color: var(--color-text-tertiary);
+}
+
+.mktg-review-identity {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.mktg-review-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-text-primary);
+}
+
+.mktg-review-context {
+  font-size: 12px;
+  font-weight: 400;
+  color: var(--color-text-tertiary);
+}
+
+.mktg-review-label {
+  font-size: 11px;
+  font-weight: 600;
+  letter-spacing: 0.10em;
+  text-transform: uppercase;
+  margin-top: 24px;
+  margin-bottom: 8px;
+}
+
+.mktg-review-label--before {
+  color: var(--color-text-tertiary);
+}
+
+.mktg-review-label--after {
+  color: var(--color-primary);
+  margin-top: 20px;
+}
+
+.mktg-review-quote {
+  font-size: 14px;
+  font-weight: 400;
+  font-style: italic;
+  color: var(--color-text-secondary);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.mktg-review-quote--after {
+  color: var(--color-text-primary);
+  font-size: 15px;
+}
+
+/* ── Pricing — carte Growth Marketing recommandée ─────────────────────────── */
+.mktg-pricing-card--recommended {
+  position: relative;
+  border-color: rgba(138, 165, 255, 0.50);
+  box-shadow: 0 0 60px rgba(59, 91, 255, 0.20);
+  transform: translateY(-8px);
+}
+
+.mktg-pricing-card--recommended:hover {
+  border-color: rgba(138, 165, 255, 0.65);
+  box-shadow: 0 0 80px rgba(59, 91, 255, 0.28);
+}
+
+.mktg-badge-recommended {
+  position: absolute;
+  top: -14px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: var(--color-primary);
+  color: #ffffff;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 5px 16px;
+  border-radius: 999px;
+  box-shadow: 0 0 30px rgba(138, 165, 255, 0.40);
+  white-space: nowrap;
+}
+
+.mktg-badge-plan--hidden {
+  opacity: 0;
+  pointer-events: none;
+  height: 0;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* ── Pricing card description ─────────────────────────────────────────────── */
+.mktg-card-desc {
+  font-size: 15px;
+  font-weight: 400;
+  color: var(--color-text-secondary);
+  line-height: 1.5;
+  margin-top: 24px;
+  margin-bottom: 32px;
+}
+
+/* ── Review grid 2 colonnes (remplace le 3-col avant/après) ──────────────── */
+.mktg-review-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Cartes opaques — le fond transparent clash avec le grid background */
+.mktg-section--reviews .review-card {
+  background: #111728;
+  border-color: rgba(138, 165, 255, 0.10);
+}
+
+@media (max-width: 768px) {
+  .mktg-review-grid-2 {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+/* ── FAQ price tags ───────────────────────────────────────────────────────── */
+.mktg-price-tag {
+  font-family: var(--font-family);
+  font-weight: 500;
+  color: var(--color-primary);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ===========================
+   RESPONSIVE — TABLET (≤ 1024px)
+   =========================== */
+@media (max-width: 768px) {
+  .mktg-hero-reversed > .hero-text { order: 1; }
+  .mktg-hero-reversed > .hero-vsl-col { order: 2; }
+}
+
+@media (max-width: 1024px) {
+  .mktg-review-grid {
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+  }
+
+  .mktg-review-grid .mktg-review-card:last-child {
+    grid-column: 1 / -1;
+    max-width: 540px;
+    margin: 0 auto;
+  }
+
+  .mktg-pricing-card--recommended {
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   RESPONSIVE — MOBILE (≤ 640px)
+   =========================== */
+@media (max-width: 640px) {
+  .mktg-solution-intro-wrap {
+    padding-top: 64px;
+    padding-bottom: 32px;
+  }
+
+  .mktg-review-grid {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .mktg-review-grid .mktg-review-card:last-child {
+    grid-column: auto;
+    max-width: none;
+  }
+
+  .mktg-review-card {
+    padding: 28px 24px;
+  }
+
+  .mktg-pricing-card--recommended {
+    transform: translateY(0);
+  }
+}
+
+/* ===========================
+   REDUCED MOTION
+   =========================== */
+@media (prefers-reduced-motion: reduce) {
+  .mktg-micro-cta {
+    transition: none;
+  }
+
+  .mktg-review-card,
+  .mktg-pricing-card--recommended {
+    transition: none;
+  }
+}
