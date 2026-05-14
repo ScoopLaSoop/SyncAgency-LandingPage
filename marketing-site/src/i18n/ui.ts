@@ -63,7 +63,7 @@ export const ui = {
     // Hero
     'hero.videoPlayLabel': 'Lire la vidéo de présentation',
     // Language switcher (label/aria describe the TARGET language)
-    'lang.switchLabel': '🇬🇧 EN',
+    'lang.switchLabel': 'EN',
     'lang.switchAria': 'Switch to English',
   },
   en: {
@@ -115,7 +115,7 @@ export const ui = {
     'faq.contactLink': 'Contact us on Telegram',
     'solution.videoComing': 'VIDEO COMING SOON',
     'hero.videoPlayLabel': 'Play the presentation video',
-    'lang.switchLabel': '🇫🇷 FR',
+    'lang.switchLabel': 'FR',
     'lang.switchAria': 'Passer en français',
   },
 } as const;
